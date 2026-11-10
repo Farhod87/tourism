@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BukharaPulse</title>
+  <link rel="stylesheet" href="../css/tours.css">
+</head>
+<body>
+  <!-- ============================================
+     HEADER
+============================================ -->
+<div class="header-wrap">
+  <header class="header">
+    <a href="#" class="logo">
+      <div class="logo-mark">B</div>
+      <div class="logo-text">
+        <span class="name">BukharaPulse</span>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="../index.html">Главная</a>
+      <a href="../pages/tours.html">Туры</a>
+      <a href="../pages/hotels.html">Отели</a>
+      <a href="../pages/blog.html">Блог</a>
+      <a href="../pages/about.html">О нас</a>
+    </nav>
+
+    <div style="display:flex; align-items:center; gap:10px;">
+
+      <!-- Выпадающий переключатель языка -->
+<div class="lang-dropdown" id="langDropdown">
+  <button class="lang-current" id="langBtn">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+    </svg>
+    <span id="currentLang">RU</span>
+    <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="m6 9 6 6 6-6"/>
+    </svg>
+  </button>
+
+  <div class="lang-menu" id="langMenu">
+    <button data-lang="RU" class="active">
+      <span class="name">Русский</span>
+    </button>
+    <button data-lang="EN">
+      <span class="name">English</span>
+    </button>
+    <button data-lang="UZ">
+      <span class="name">O‘zbek</span>
+    </button>
+  </div>
+</div>
+      <a href="#" class="header-cta">Забронировать</a>
+      <button class="burger" id="burgerBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16M4 6h16M4 18h16"/></svg>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#">Главная</a>
+      <a href="#">Выездной туризм</a>
+      <a href="#">Въездной туризм</a>
+      <a href="#">Отели</a>
+      <a href="#">Блог</a>
+      <a href="#">О нас</a>
+      <a href="#" style="background:var(--ink); color:var(--cream); border-radius:999px; text-align:center; padding:14px; margin-top:12px; border:none;">Забронировать</a>
+    </div>
+  </header>
+</div>
+
+
+<section class="hero-section">
+  <div class="container">
+
+
+      <!-- Заголовок -->
+      <h1 class="main-title">
+          Путешествия, где <span class="highlight">всё уже продумано</span> — от завтрака до заката
+      </h1>
+
+      <!-- Подзаголовок -->
+      <p class="subtitle">
+          Маленькие группы, местные гиды и никаких галопов по достопримечательностям. Только то, что запоминается.
+      </p>
+
+      <!-- Переключатель -->
+      <div class="toggle-switch">
+          <button class="toggle-btn">Внутренние</button>
+          <button class="toggle-btn">Зарубежные</button>
+          <button class="toggle-btn active">Оба</button>
+      </div>
+  </div>
+</section>
+
+
+<section class="tours-section" id="block-tours-list">
+        
+  <!-- ПАНЕЛЬ ФИЛЬТРОВ -->
+  <div class="tours-toolbar">
+      <!-- Левая часть: счетчик и текст -->
+      <div class="toolbar-info">
+          <div class="count-badge">8</div>
+          <div class="info-text">
+              <h3>Найдено 8 туров</h3>
+              <p>Везде • обновлено сегодня</p>
+          </div>
+      </div>
+
+      <!-- Правая часть: фильтры и сортировка -->
+      <div class="toolbar-filters">
+          <div class="filter-pills">
+              <button class="pill active">Все</button>
+              <button class="pill">До 3 дней</button>
+              <button class="pill">Семейные</button>
+              <button class="pill">Пляжный</button>
+              <button class="pill">Исторические</button>
+          </div>
+          
+          <div class="filter-divider"></div>
+          
+          <!-- Кнопка сортировки -->
+          <button class="sort-btn">
+              Популярные
+              <svg width="12" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 15l5 5 5-5M7 9l5-5 5 5"/>
+              </svg>
+          </button>
+      </div>
+  </div>
+  <!-- КОНЕЦ ПАНЕЛИ ФИЛЬТРОВ -->
+
+  <main class="tours-grid">
+
+    <!-- ================= КАРТОЧКА 1 ================= -->
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://media.istockphoto.com/id/1184019772/photo/bukhara-uzbekistan-kalyan-minaret-and-madressa-sunset-twilight.webp?b=1&s=612x612&w=0&k=20&c=Ua3MEkq4nlJXYea3ftEYygMYRPygLPESzmpdMToYGOs=" alt="Бухара">
+        <span class="badge-type">Экскурсионный</span>
+        <button class="fav-btn" aria-label="В избранное">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−5%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.7</strong> (64 отзыва) · Узбекистан, Бухара
+        </div>
+        <h3 class="tour-title">Бухара — город-музей под открытым небом</h3>
+        <p class="tour-desc">Ляби-Хауз, Пои-Калон и крепость Арк. Прогулка по торговым куполам.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 16 900</span>
+          <span class="price-old">₽ 17 800</span>
+          <span class="price-per">/ 2 дня</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">10–11 мая</span>
+          <span class="date-tag">+88 дат</span>
+        </div>
+        <a class="more-link" href="../tours-page/Bukhara-tour.html" target="_blank">
+          Подробнее
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= КАРТОЧКА 2 ================= -->    
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://media.istockphoto.com/id/1249451586/photo/panorama-samarkand-uzbekistan-registan-square-sher-dor-madrasah.webp?b=1&s=612x612&w=0&k=20&c=wjf5CW6AqvPhSuTHIadDy-a3bdDXflnzPbHxrwr0Y1Y=" alt="Самарканд">
+        <span class="badge-type">Экскурсионный</span>
+        <button class="fav-btn" aria-label="В избранное">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−7%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.9</strong> (128 отзывов) · Узбекистан, Самарканд
+        </div>
+        <h3 class="tour-title">Самарканд — жемчужина Великого шёлкового пути</h3>
+        <p class="tour-desc">Регистан, Гур-Эмир, Шахи-Зинда. Вечерняя прогулка по древнему городу.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 18 500</span>
+          <span class="price-old">₽ 19 900</span>
+          <span class="price-per">/ 3 дня</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">15–17 мая</span>
+          <span class="date-tag">+72 даты</span>
+        </div>
+        <a class="more-link" href="../tours-page/Samarkand-tour.html" target="_blank">
+          Подробнее
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= КАРТОЧКА 3 ================= -->
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAbM702FzZn-PzpVerjvTZdttq4hTaKR2BAY9fHVSyYQ&s=10" alt="Хива">
+        <span class="badge-type">Экскурсионный</span>
+        <button class="fav-btn" aria-label="В избранное">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−4%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.8</strong> (41 отзыв) · Узбекистан, Хива
+        </div>
+        <h3 class="tour-title">Хива — город-крепость Ичан-Кала</h3>
+        <p class="tour-desc">Ичан-Кала, минарет Ислам-Ходжа и дворец Таш-Хаули. Атмосфера древнего Востока.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 15 700</span>
+          <span class="price-old">₽ 16 400</span>
+          <span class="price-per">/ 2 дня</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">5–6 июня</span>
+          <span class="date-tag">+45 дат</span>
+        </div>
+        <a class="more-link" href="../tours-page/Xiva-tour.html" target="_blank">
+          Подробнее
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= КАРТОЧКА 4 ================= -->    
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFUl4RUEqSAKVKLrdECZ6m_7YBIuoWzv_KavckR0NfJg&s=10" alt="Ташкент">
+        <span class="badge-type">Городской</span>
+        <button class="fav-btn" aria-label="В избранное">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−6%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.6</strong> (95 отзывов) · Узбекистан, Ташкент
+        </div>
+        <h3 class="tour-title">Ташкент — современная столица Узбекистана</h3>
+        <p class="tour-desc">Площадь Амира Темура, метро Ташкента и рынок Чорсу. Контраст истории и современности.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 12 900</span>
+          <span class="price-old">₽ 13 800</span>
+          <span class="price-per">/ 2 дня</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">1–2 июня</span>
+          <span class="date-tag">+120 дат</span>
+        </div>
+        <a class="more-link" href="../tours-page/Tashkent-tour.html" target="_blank">
+          Подробнее
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= КАРТОЧКА 5 ================= -->
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://viasun.ru/blog/wp-content/uploads/2023/06/Kir.jpg" alt="Турция">
+        <span class="badge-type">Пляжный</span>
+        <button class="fav-btn" aria-label="В избранное">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−15%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.8</strong> (312 отзывов) · Турция, Анталья
+        </div>
+        <h3 class="tour-title">Турция — всё включено на Средиземном море</h3>
+        <p class="tour-desc">Отели 5★, песчаные пляжи, аквапарки и турецкая кухня. Идеально для семьи.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 54 900</span>
+          <span class="price-old">₽ 64 900</span>
+          <span class="price-per">/ 7 ночей</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">20–27 июня</span>
+          <span class="date-tag">+200 дат</span>
+        </div>
+        <a class="more-link" href="../tours-page/Turkey-tour.html" target="_blank">
+          Подробнее
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= КАРТОЧКА 6 ================= -->    
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2v-8jx7r2FLPXjSep7jtfC1uPt76-Ce-ff0yQlIhlbA&s=10" alt="ОАЭ">
+        <span class="badge-type">Пляжный</span>
+        <button class="fav-btn" aria-label="В избранное">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−10%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.9</strong> (204 отзыва) · ОАЭ, Дубай
+        </div>
+        <h3 class="tour-title">ОАЭ — роскошь и солнце Персидского залива</h3>
+        <p class="tour-desc">Бурдж-Халифа, пляжи Джумейры и шопинг в Dubai Mall. Отдых премиум-класса.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 79 900</span>
+          <span class="price-old">₽ 88 800</span>
+          <span class="price-per">/ 7 ночей</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">12–19 июля</span>
+          <span class="date-tag">+150 дат</span>
+        </div>
+        <a class="more-link" href="../tours-page/UAE-tour.html" target="_blank">
+          Подробнее
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= КАРТОЧКА 7 ================= -->    
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRzDtZt2oGJaYl4zlPA-zwUfXSqgSoHpbRLytvShMDbw&s=10" alt="Египет">
+        <span class="badge-type">Пляжный</span>
+        <button class="fav-btn" aria-label="В избранное">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−12%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.7</strong> (276 отзывов) · Египет, Хургада
+        </div>
+        <h3 class="tour-title">Египет — Красное море и пирамиды</h3>
+        <p class="tour-desc">Коралловые рифы, дайвинг и экскурсии к пирамидам Гизы. Всё включено.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 42 900</span>
+          <span class="price-old">₽ 48 800</span>
+          <span class="price-per">/ 7 ночей</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">18–25 июня</span>
+          <span class="date-tag">+180 дат</span>
+        </div>
+        <a class="more-link" href="../tours-page/Egypt-tour.html" target="_blank">
+          Подробнее
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= КАРТОЧКА 8 ================= -->    
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7PEDwU8lbrt3IDFBmbHCsFhXI8e_Aj_Sh7M7HeUUuMQ&s=10" alt="Малайзия">
+        <span class="badge-type">Экскурсионный</span>
+        <button class="fav-btn" aria-label="В избранное">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−8%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.8</strong> (88 отзывов) · Малайзия, Куала-Лумпур
+        </div>
+        <h3 class="tour-title">Малайзия — тропики и небоскрёбы</h3>
+        <p class="tour-desc">Башни Петронас, пещеры Бату и остров Пенанг. Восточная экзотика.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 89 900</span>
+          <span class="price-old">₽ 97 800</span>
+          <span class="price-per">/ 9 ночей</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">3–12 августа</span>
+          <span class="date-tag">+60 дат</span>
+        </div>
+        <a class="more-link" href="../tours-page/Malayziya-tour.html" target="_blank">
+          Подробнее
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= КАРТОЧКА 9 ================= -->    
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsC5DY8r0zDbyfTCIuh_Ontmy2bJuAt1i0heBVfNp84g&s=10" alt="Китай">
+        <span class="badge-type">Экскурсионный</span>
+        <button class="fav-btn" aria-label="В избранное">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−9%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.6</strong> (142 отзыва) · Китай, Пекин
+        </div>
+        <h3 class="tour-title">Китай — от Великой стены до Шанхая</h3>
+        <p class="tour-desc">Запретный город, Великая Китайская стена и набережная Бунд. Глубокое погружение.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 94 900</span>
+          <span class="price-old">₽ 104 900</span>
+          <span class="price-per">/ 8 ночей</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">5–13 сентября</span>
+          <span class="date-tag">+40 дат</span>
+        </div>
+        <a class="more-link" href="../tours-page/China-tour.html" target="_blank">
+          Подробнее
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= КАРТОЧКА 10 ================= -->    
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxtEhDpT-2mrMho4WxVrkmDqhLUjZZSlBzgD7djWvJug&s=10" alt="Азербайджан">
+        <span class="badge-type">Экскурсионный</span>
+        <button class="fav-btn" aria-label="В избранное">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−6%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.7</strong> (73 отзыва) · Азербайджан, Баку
+        </div>
+        <h3 class="tour-title">Азербайджан — огни Баку и горы Кавказа</h3>
+        <p class="tour-desc">Старый город Ичери-шехер, Девичья башня и Гобустан. Восточное гостеприимство.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 38 900</span>
+          <span class="price-old">₽ 41 400</span>
+          <span class="price-per">/ 4 дня</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">8–11 июня</span>
+          <span class="date-tag">+55 дат</span>
+        </div>
+        <a class="more-link" href="../tours-page/Azerbaijan-tour.html" target="_blank">
+          Подробнее
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= КАРТОЧКА 11 ================= -->    
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMxQBmc_A0kfOFfCD7-NvsOeUmGNG0-g0ptpzTdcSMfQ&s=10" alt="Грузия">
+        <span class="badge-type">Экскурсионный</span>
+        <button class="fav-btn" aria-label="В избранное">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−8%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.9</strong> (187 отзывов) · Грузия, Тбилиси
+        </div>
+        <h3 class="tour-title">Грузия — вино, горы и гостеприимство</h3>
+        <p class="tour-desc">Тбилиси, Мцхета и Казбеги. Дегустации вин и грузинская кухня.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 34 900</span>
+          <span class="price-old">₽ 37 900</span>
+          <span class="price-per">/ 5 дней</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">14–18 июня</span>
+          <span class="date-tag">+90 дат</span>
+        </div>
+        <a class="more-link" href="../tours-page/Georgia-tour.html" target="_blank">
+          Подробнее
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= КАРТОЧКА 12 ================= -->    
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRFjuNocqDOovkFrK6xB1e4dMKNkD-H3kWahw1LedNZg&s=10" alt="Кыргызстан">
+        <span class="badge-type">Приключенческий</span>
+        <button class="fav-btn" aria-label="В избранное">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−5%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.8</strong> (52 отзыва) · Кыргызстан, Бишкек
+        </div>
+        <h3 class="tour-title">Кыргызстан — озёра и горы Тянь-Шаня</h3>
+        <p class="tour-desc">Иссык-Куль, ущелье Ала-Арча и юрты кочевников. Дикая природа и треккинг.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 29 900</span>
+          <span class="price-old">₽ 31 500</span>
+          <span class="price-per">/ 5 дней</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">22–26 июля</span>
+          <span class="date-tag">+35 дат</span>
+        </div>
+        <a class="more-link" href="../tours-page/Kyrgyzstan-tour.html" target="_blank">
+          Подробнее
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= КАРТОЧКА 13 ================= -->
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiINjO1zMtanXCzOeB4GGW_sG1bWWdXpvIjzzpU1K89A&s=10" alt="Индонезия, Бали">
+        <span class="badge-type">Пляжный</span>
+        <button class="fav-btn" aria-label="В избранное">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−11%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.9</strong> (231 отзыв) · Индонезия, Бали
+        </div>
+        <h3 class="tour-title">Бали — остров богов и океанских закатов</h3>
+        <p class="tour-desc">Храмы Улувату, рисовые террасы Убуда и пляжи Нуса-Дуа. Серфинг и спа.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 84 900</span>
+          <span class="price-old">₽ 95 400</span>
+          <span class="price-per">/ 8 ночей</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">10–18 июля</span>
+          <span class="date-tag">+110 дат</span>
+        </div>
+        <a class="more-link" href="../tours-page/Indonesia-tour.html" target="_blank">
+          Подробнее
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= КАРТОЧКА 14 ================= -->    
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcG1ZUFsihUd5WdIMVDrnF24P4iXBO95ODRadBBUPfOQ&s=10" alt="Таиланд, Пхукет">
+        <span class="badge-type">Пляжный</span>
+        <button class="fav-btn" aria-label="В избранное">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−13%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.8</strong> (264 отзыва) · Таиланд, Пхукет
+        </div>
+        <h3 class="tour-title">Пхукет — тропический рай Андаманского моря</h3>
+        <p class="tour-desc">Пляж Патонг, острова Пхи-Пхи и бухта Пханг-Нга. Тайский массаж и уличная еда.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 67 900</span>
+          <span class="price-old">₽ 77 800</span>
+          <span class="price-per">/ 7 ночей</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">16–23 июля</span>
+          <span class="date-tag">+130 дат</span>
+        </div>
+        <a class="more-link" href="../tours-page/Phuket-tour.html" target="_blank">
+          Подробнее
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= КАРТОЧКА 15 ================= -->
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFaKqnrtj88qxaZOoNYoymscA5TTcWK2nylw-1QBJgSQ&s=10" alt="Сингапур">
+        <span class="badge-type">Экскурсионный</span>
+        <button class="fav-btn" aria-label="В избранное">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−7%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.9</strong> (118 отзывов) · Сингапур
+        </div>
+        <h3 class="tour-title">Сингапур — город будущего и тропической зелени</h3>
+        <p class="tour-desc">Marina Bay Sands, Gardens by the Bay и остров Сентоза. Шопинг и гастрономия.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 98 900</span>
+          <span class="price-old">₽ 106 400</span>
+          <span class="price-per">/ 6 ночей</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">6–12 августа</span>
+          <span class="date-tag">+75 дат</span>
+        </div>
+        <a class="more-link" href="../tours-page/Singapore-tour.html" target="_blank">
+          Подробнее
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= КАРТОЧКА 16 ================= -->
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsXv6JUxEoUnB0Ie_FvGlXEWZcIl4KWbVvoDUj-BB6fg&s=10" alt="Вьетнам, Фукуок">
+        <span class="badge-type">Пляжный</span>
+        <button class="fav-btn" aria-label="В избранное">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−12%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.8</strong> (156 отзывов) · Вьетнам, Фукуок
+        </div>
+        <h3 class="tour-title">Фукуок — жемчужина Вьетнама</h3>
+        <p class="tour-desc">Белые пляжи, канатная дорога Hon Thom и ночной рынок. Тропический отдых без визы.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 72 900</span>
+          <span class="price-old">₽ 82 800</span>
+          <span class="price-per">/ 8 ночей</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">14–22 июля</span>
+          <span class="date-tag">+95 дат</span>
+        </div>
+        <a class="more-link" href="../tours-page/PhuQuoc-tour.html" target="_blank">
+          Подробнее
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= КАРТОЧКА 17 ================= -->    
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtld-fh12a-odWLjRGkMNB9L2ydCWn47cXMQV04es_Rg&s=10" alt="Мальдивы">
+        <span class="badge-type">Пляжный</span>
+        <button class="fav-btn" aria-label="В избранное">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−10%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>5.0</strong> (96 отзывов) · Мальдивы, Мале
+        </div>
+        <h3 class="tour-title">Мальдивы — райские острова и бирюзовая лагуна</h3>
+        <p class="tour-desc">Виллы на воде, снорклинг с черепахами и закаты над Индийским океаном. Всё включено.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 149 900</span>
+          <span class="price-old">₽ 166 500</span>
+          <span class="price-per">/ 7 ночей</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">20–27 августа</span>
+          <span class="date-tag">+85 дат</span>
+        </div>
+        <a class="more-link" href="../tours-page/Maldives-tour.html" target="_blank">
+          Подробнее
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= КАРТОЧКА 18 ================= -->    
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk-E4viQqyqocGJX75x8cZS0MPnx0J0YU6if3BCcIWBQ&s=10" alt="Катар">
+        <span class="badge-type">Экскурсионный</span>
+        <button class="fav-btn" aria-label="В избранное">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−6%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.7</strong> (64 отзыва) · Катар, Доха
+        </div>
+        <h3 class="tour-title">Катар — современная роскошь и восточные традиции</h3>
+        <p class="tour-desc">Музей исламского искусства, рынок Сук-Вакиф и набережная Корниш. Арабская сказка.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 68 900</span>
+          <span class="price-old">₽ 73 300</span>
+          <span class="price-per">/ 5 ночей</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">9–14 июня</span>
+          <span class="date-tag">+60 дат</span>
+        </div>
+        <a class="more-link" href="../tours-page/Qatar-tour.html" target="_blank">
+          Подробнее
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+      
+  </main>
+</section>
+
+
+
+<!-- Блок подбора -->
+<section class="custom-selection-section">
+  <div class="custom-selection-wrapper">
+      
+      <!-- Левая часть (Форма) -->
+      <div class="selection-form-side">
+          <div class="badge">
+              <span class="badge-dot"></span> ПОДБОР ВРУЧНУЮ
+          </div>
+          
+          <h2 class="selection-title">
+              Не нашли? Мы подберем за <span class="highlight-text">15 минут</span>
+          </h2>
+          
+          <p class="selection-desc">
+              Расскажите, куда хочется и с кем едете. Пришлём 2–3 варианта без спама — только то, что реально подходит.
+          </p>
+
+          <div class="manager-info">
+              <!-- Заглушки для аватарок, как на скрине -->
+              <div class="avatars">
+                  <div class="avatar-placeholder"></div>
+                  <div class="avatar-placeholder"></div>
+              </div>
+              <div class="manager-text">
+                  <strong>Мадина и команда</strong>
+                  <span>Отвечаем в среднем за 7 минут</span>
+              </div>
+          </div>
+
+          <form class="selection-form">
+              <div class="input-row">
+                  <input type="text" placeholder="Ваше имя" class="form-input">
+                  <input type="tel" placeholder="+998 — телефон" class="form-input">
+              </div>
+              <div class="input-row">
+                  <input type="text" placeholder="Куда хотите и когда? (например: Самарканд, с детьми, 3 дня)" class="form-input full-width">
+              </div>
+              
+              <div class="form-footer">
+                  <button type="submit" class="submit-btn">Получить подборку</button>
+                  <p class="privacy-text">
+                      Нажимая, вы соглашаетесь с обработкой данных. Никакого спама.
+                  </p>
+              </div>
+          </form>
+      </div>
+
+      <!-- Правая часть (Фото и отзыв) -->
+      <div class="selection-image-side">
+          <!-- Замените ссылку на нужное фото -->
+          <img src="https://images.unsplash.com/photo-1542385151-efd9000785a0?q=80&w=800&auto=format&fit=crop" alt="Путешествие">
+          
+          <div class="review-overlay">
+              <div class="review-badge">
+                  <span class="dot"></span> Честные отзывы • без фотошопа
+              </div>
+              <p class="review-text">
+                  «Попросили тихий тур без толп — сделали идеально. Дети спали, мы пили чай не на крыше бухары.»
+              </p>
+              <span class="review-author">— Семья Азизовых, Бухара 3 дня</span>
+          </div>
+      </div>
+
+  </div>
+</section>
+
+
+<section class="reviews-section">
+        
+  <!-- Шапка секции -->
+  <div class="reviews-header">
+      <div class="reviews-title-wrap">
+          <h2>Истории гостей</h2>
+          <p>Не про сервис, а про дворики, завтраки и крыши. Три реальных отзыва за последний месяц.</p>
+      </div>
+      
+      <!-- Кнопки навигации (стрелки) -->
+      <div class="reviews-nav">
+          <button class="nav-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="nav-btn nav-btn-dark">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+      </div>
+  </div>
+
+  <!-- Сетка с карточками -->
+  <div class="reviews-grid">
+
+      <!-- Карточка 1 -->
+      <article class="review-card">
+          <div class="review-top">
+              <div class="user-info">
+                  <div class="avatar avatar-beige">А</div>
+                  <div class="user-details">
+                      <span class="user-name">Аня, дизайнер</span>
+                      <span class="user-date">12 окт • Бухара</span>
+                  </div>
+              </div>
+              <div class="stars">★★★★★</div>
+          </div>
+          
+          <p class="review-text">
+              "Просыпалась от запаха лепешек. Хозяин показал как режут ганч, потом пили чай с мятой на веранде. Вечером — крыша, плов и тишина Ляби-Хауза. Никакого лобби, только дворик."
+          </p>
+
+          <div class="hotel-info-card">
+              <div class="hotel-thumb thumb-blue"></div>
+              <div class="hotel-text">
+                  <span class="hotel-label">ГДЕ ЖИЛИ</span>
+                  <strong class="hotel-name">Lyabi & Mint</strong>
+                  <span class="hotel-tags">Дворик • Завтрак • Крыша</span>
+              </div>
+          </div>
+      </article>
+
+      <!-- Карточка 2 -->
+      <article class="review-card">
+          <div class="review-top">
+              <div class="user-info">
+                  <div class="avatar avatar-green">М</div>
+                  <div class="user-details">
+                      <span class="user-name">Миша и Лера</span>
+                      <span class="user-date">3 окт • Самарканд</span>
+                  </div>
+              </div>
+              <div class="stars">★★★★★</div>
+          </div>
+          
+          <p class="review-text">
+              "Приехали за Регистаном, остались из-за двора. Гранаты падали прямо на стол для завтрака. Дети делали бумагу в Конигиле, вернулись с листами. Хозяин — бывший археолог, рассказывал про Афрасиаб до полуночи."
+          </p>
+
+          <div class="hotel-info-card">
+              <div class="hotel-thumb thumb-beige"></div>
+              <div class="hotel-text">
+                  <span class="hotel-label">ГДЕ ЖИЛИ</span>
+                  <strong class="hotel-name">Meros Courtyard</strong>
+                  <span class="hotel-tags">Дворик • Завтрак • Крыша</span>
+              </div>
+          </div>
+      </article>
+
+      <!-- Карточка 3 -->
+      <article class="review-card">
+          <div class="review-top">
+              <div class="user-info">
+                  <div class="avatar avatar-pink">Д</div>
+                  <div class="user-details">
+                      <span class="user-name">Даша, фотограф</span>
+                      <span class="user-date">28 сен • Хива</span>
+                  </div>
+              </div>
+              <div class="stars">★★★★★</div>
+          </div>
+          
+          <p class="review-text">
+              "Хива на закате — это бассейн на крыше и минарет в золоте. Днем глина раскалена, а вечером сидишь в белом дворике, пьешь чай с дыней. Отель маленький, всего 6 номеров, все друг друга знают к утру."
+          </p>
+
+          <div class="hotel-info-card">
+              <div class="hotel-thumb thumb-yellow"></div>
+              <div class="hotel-text">
+                  <span class="hotel-label">ГДЕ ЖИЛИ</span>
+                  <strong class="hotel-name">Itchan Kala Roof</strong>
+                  <span class="hotel-tags">Дворик • Завтрак • Крыша</span>
+              </div>
+          </div>
+      </article>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <!-- КОЛОНКА 1 — ЛОГОТИП -->
+      <div>
+        <a href="#" class="footer-logo">
+          <span>Uzbek</span><span class="accent">Pulse</span>
+        </a>
+        <p class="footer-desc">
+          Премиальные путешествия из Бухары. EST 2024. Лицензия № 123. Честно, с заботой.
+        </p>
+
+        <!-- Социальные иконки -->
+        <div class="socials">
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/uzbekpulse?igsh=MTZmMTlyemE5M21kcw==" class="social-icon instagram" aria-label="Instagram" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        
+          <!-- Telegram -->
+          <a href="https://t.me/UzbekPulse" class="social-icon telegram" aria-label="Telegram" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          </a>
+        
+          <!-- YouTube -->
+          <a href="https://www.youtube.com/@UzbekPulse2026" class="social-icon youtube" aria-label="YouTube" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        
+          <!-- Facebook -->
+          <a href="#" class="social-icon facebook" aria-label="Facebook" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        
+          <!-- WhatsApp -->
+          <a href="https://whatsapp.com/channel/0029VbDC3mLKGGGPmxRoi016" class="social-icon whatsapp" aria-label="WhatsApp" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </a>
+        
+          <!-- X (Twitter) -->
+          <a href="#" class="social-icon x-twitter" aria-label="X" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        
+          <!-- Max -->
+          <a href="#" class="social-icon max" aria-label="Max" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 5.94 2 10.8c0 2.485 1.094 4.727 2.859 6.328V22l3.734-2.05a11.31 11.31 0 003.407.525c5.523 0 10-3.94 10-8.8S17.523 2 12 2zm-4.5 9.6a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7zm4.5 0a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7zm4.5 0a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7z"/></svg>
+          </a>
+        
+        </div>
+      </div>
+
+      <!-- КОЛОНКА 2 — ВЫЕЗД -->
+      <div class="footer-col">
+        <h4>Выезд</h4>
+        <ul>
+          <li><a href="#">Все зарубежные туры</a></li>
+          <li><a href="#">Пляжный отдых</a></li>
+          <li><a href="#">Семейные туры</a></li>
+          <li><a href="#">Экскурсионные</a></li>
+          <li><a href="#">Страны</a></li>
+          <li><a href="#">Индивидуальный подбор</a></li>
+        </ul>
+      </div>
+
+      <!-- КОЛОНКА 3 — УЗБЕКИСТАН -->
+      <div class="footer-col">
+        <h4>Узбекистан</h4>
+        <ul>
+          <li><a href="#">Все туры по Узбекистану</a></li>
+          <li><a href="#">Бухара</a></li>
+          <li><a href="#">Самарканд</a></li>
+          <li><a href="#">Хива</a></li>
+          <li><a href="#">Ташкент</a></li>
+          <li><a href="#">Шелковый путь</a></li>
+          <li><a href="#">Исторические</a></li>
+          <li><a href="#">Индивидуальные</a></li>
+          <li><a href="#">Однодневные</a></li>
+        </ul>
+      </div>
+
+      <!-- КОЛОНКА 4 — КОНТАКТЫ -->
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <div class="contacts">
+          <div>Бухара, ул. Ляби-Хауз 12</div>
+          <div><a href="tel:+998900000000">+998 90 000 00 00</a></div>
+          <div><a href="mailto:hello@uzbekpulse.uz">hello@uzbekpulse.uz</a></div>
+          <div class="schedule">
+            Пн-Сб 09:00-19:00<br>
+            Вс — по записи
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- НИЖНЯЯ ПОЛОСА -->
+    <div class="footer-bottom">
+      <span>© 2026 UzbekPulse Travel. Все права защищены.</span>
+      <div class="footer-links">
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Договор оферты</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+  <script src="../js/tours.js"></script>
+</body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BukharaPulse</title>
+  <link rel="stylesheet" href="../../css/blog.css">
+</head>
+<body>
+
+  <div class="header-wrap">
+    <header class="header">
+      <a href="#" class="logo">
+        <div class="logo-mark">B</div>
+        <div class="logo-text">
+          <span class="name">BukharaPulse</span>
+        </div>
+      </a>
+  
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="./tours.html">Tours</a>
+        <a href="./hotels.html">Hotels</a>
+        <a href="./blog.html">Blog</a>
+        <a href="./about.html">About Us</a>
+      </nav>
+  
+      <div style="display:flex; align-items:center; gap:10px;">
+  
+        <!-- Выпадающий переключатель языка -->
+  <div class="lang-dropdown" id="langDropdown">
+    <button class="lang-current" id="langBtn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+      <span id="currentLang">EN</span>
+      <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="m6 9 6 6 6-6"/>
+      </svg>
+    </button>
+  
+    <div class="lang-menu" id="langMenu">
+      <button data-lang="RU">
+        <span class="name">Русский</span>
+      </button>
+      <button data-lang="EN" class="active">
+        <span class="name">English</span>
+      </button>
+      <button data-lang="UZ">
+        <span class="name">O‘zbek</span>
+      </button>
+    </div>
+  </div>
+        <a href="#" class="header-cta">Book Now</a>
+        <button class="burger" id="burgerBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16M4 6h16M4 18h16"/></svg>
+        </button>
+      </div>
+  
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#">Home</a>
+        <a href="#">Outbound Tourism</a>
+        <a href="#">Inbound Tourism</a>
+        <a href="#">Hotels</a>
+        <a href="#">Blog</a>
+        <a href="#">About Us</a>
+        <a href="#" style="background:var(--ink); color:var(--cream); border-radius:999px; text-align:center; padding:14px; margin-top:12px; border:none;">Book Now</a>
+      </div>
+    </header>
+  </div>
+
+
+<!-- ============================================
+     HERO SLIDER
+============================================ -->
+<section class="hero">
+  <div class="hero-slider" id="heroSlider">
+    <div class="slide active" style="background-image:url('../img/blog/Buxara')"></div>
+    <div class="slide" style="background-image:url('../img/blog/Samarkand')"></div>
+    <div class="slide" style="background-image:url('../img/blog/Tashkent')"></div>
+    <div class="slide" style="background-image:url('../img/blog/Xiva')"></div>
+    <div class="slide" style="background-image:url('../img/blog/chimyon')"></div>
+  </div>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1 class="hero-title">
+      Uzbekistan, where<br>
+      <span class="italic">empires were born</span>
+    </h1>
+    <p class="hero-sub">The Great Silk Road, turquoise domes, and secrets hidden in the sands of centuries</p>
+  </div>
+
+  <div class="hero-dots" id="heroDots"></div>
+</section>
+
+<!-- ============================================
+     LEGENDS / BENTO GRID
+============================================ -->
+<section class="legends">
+  <div class="container">
+
+    <div class="legends-head">
+      <h2 class="legends-title">Main Legends</h2>
+      <p class="legends-desc">
+        Stories passed down from generation to generation. Secrets of the old city, kept in stones and legends.
+      </p>
+    </div>
+
+    <!-- Фильтры -->
+    <div class="filters" id="filters">
+      <button class="filter-btn active" data-filter="all">ALL</button>
+      <button class="filter-btn" data-filter="history">STORIES</button>
+      <button class="filter-btn" data-filter="photo">PHOTO STORIES</button>
+      <button class="filter-btn" data-filter="secrets">SECRETS</button>
+      <button class="filter-btn" data-filter="legends">LEGENDS</button>
+      <button class="filter-btn" data-filter="tips">TIPS</button>
+    </div>
+
+    <!-- Единая Bento Grid -->
+    <div class="bento-grid" id="bentoGrid">
+      
+      <!-- Большая карточка -->
+      <article class="bento-card card-lg" data-cat="secrets" data-desc="Registan in Samarkand is not just one building. It is three madrasahs built over 200 years without a single crane:
+      Ulugh Beg Madrasah — 1417-1420
+      Sher-Dor — 1619-1636
+      Tillya-Kari — 1646-1660
+      How did they lift them 30 meters without machinery?   
+      1. Brick and ganch, not concrete.
+      The foundation is fired brick on a ganch mortar (gypsum + clay). It is light and sets in minutes. The domes were made double — an inner load-bearing one and an outer decorative one.
+      2. Mulberry scaffolding and earthen ramps.
+      Scaffolding of juniper and mulberry was built around the building. And materials were lifted along bulk ramps made of earth and adobe — donkeys dragged bricks up them. After construction, the ramp was simply dismantled.      
+      3. The mosaic was assembled below.
+      Thousands of majolica and glazed ceramic tiles were laid out in a pattern on the ground, and then lifted onto the wall as finished panels. That is why the patterns are so perfect — they were made horizontally.      
+      4. Geometry without lasers.
+      All arches and minarets were aligned with ropes, plumb lines, and water. And still — Ulugh Beg's minarets were deliberately tilted outward by 1.5 meters so that during an earthquake they would fall away from the madrasah.      
+      A trick few know:
+      Registan is an optical illusion. If you stand in the center of the square, all three portals seem equal in size, although Sher-Dor is 5 meters taller than Ulugh Beg. The builders deliberately played with perspective.      
+      Total: 200 years, hands, donkeys, clay, and brilliant mathematics. And it has stood for 600 years.">
+        <div class="card-img" style="background-image:url('../img/blog/Samarkand-1')"></div>
+        <div class="card-content">
+          <span class="card-tag">SECRETS</span>
+          <h3>Registan: How the Pearl of the East was Built Without Cranes</h3>
+        </div>
+      </article>
+
+      <!-- Маленькие карточки -->
+      <article class="bento-card" data-cat="history" data-desc="Itchan Kala in Khiva is the only city in Central Asia preserved in its entirety. A city within a city. 26 hectares surrounded by a clay wall 10 meters high and 6 meters thick. Inside — 60 historical monuments, outside — the large Khiva Dishan Kala.
+      The wall has 4 gates:      
+      Ata-Darvaza — western, main
+      Palvan-Darvaza — eastern, the largest
+      Tash-Darvaza — southern
+      Bagcha-Darvaza — northern
+      Why 'a city within a city':      
+      It was the last oasis. Caravans that crossed the Kyzylkum and Karakum reached Khiva — the last city before the desert. Here they paid taxes, rested in caravanserais, sold silk and slaves.
+      Everything inside. Within these walls was everything for life: khans' palaces, 26 mosques, 60 madrasahs, a mint, the Zindan prison, and even its own gallows. People were born, lived, and died without leaving the gates.
+      A living museum city. Unlike Samarkand and Bukhara, Itchan Kala is not an open-air museum. About 300 families still live here. They fire up tandirs in houses that are 300 years old.
+      3 details that surprise:      
+      Kalta-Minor — a short minaret with blue tiles. The khan wanted to build the tallest minaret in the Islamic world to see Bukhara, but he died, and the minaret remained a 'shorty' — 29 meters instead of 70.
+      Juma Mosque — 213 carved wooden columns, each of different wood and from a different century. The oldest is 1000 years old.
+      Clay walls. They were not repaired with cement — every year they are coated with fresh clay, just like 500 years ago.
+      Enter Itchan Kala through one gate and exit through another — and it is as if you traveled the Silk Road in 20 minutes. From east to west.
+      Khiva is the point where the Silk Road ended and the legend began.">
+        <div class="card-img" style="background-image:url('../img/blog/Ichan-qala.webp')"></div>
+        <div class="card-content">
+          <span class="card-tag">STORIES</span>
+          <h3>Itchan Kala: A City Within a City on the Great Silk Road</h3>
+        </div>
+      </article>
+
+      <article class="bento-card" data-cat="legends" data-desc="Logic suggests — the capital is in Samarkand, the palace should be there. But Timur builds his most grandiose palace, Ak-Saray, 80 km to the south, in the small Shahrisabz. Why?
+      Reason 1: It is his homeland. Kesh.      
+      Shahrisabz was then called Kesh. Timur was born in 1336 in the village of Khoja-Ilgar, 10 km from Kesh. He was from the Barlas clan, nomads who settled in this valley. Kesh was his small homeland, where he was remembered not as a conqueror of the world, but as Temur — the son of Taraghai.      
+      He wanted to do what no one had done: turn his native village into the capital of an empire.      
+      Reason 2: To show who is in charge here.      
+      Samarkand was an ancient city with an aristocracy that did not always like the upstart Barlas. And Kesh was his personal city. Here he could build without looking back at the old emirs.      
+      In 1380 he began building Ak-Saray — the 'White Palace'. According to the plan, the portal was to be 70 meters high and visible from 30 km away. The inscription on the portal read: 'If you doubt our power — look at our buildings'.      
+      It was a personal manifesto.      
+      Reason 3: The green city.      
+      Shahrisabz translates as 'Green City'. Unlike hot Samarkand, here in the mountains it was cool, with plenty of water and gardens. Timur, who spent his childhood on campaigns, wanted a garden palace, not a fortress.      
+      The plan was this: Samarkand — the administrative capital, Shahrisabz — the ancestral residence, the family city of the Timurid dynasty.      
+      Why wasn't it finished?      
+      The palace was built for 24 years. But Timur died in 1405 on his way to China. His grandson Ulugh Beg finally moved the capital to Samarkand, and Shahrisabz remained a symbol.      
+      Today, only 2 portal pylons of 38 meters each remain from Ak-Saray, with remnants of blue mosaic. But even they make it clear: this was supposed to be the largest palace in Central Asia.
+      Timur conquered half the world, but built his most important palace where he was born. Empires are built in capitals, but the soul is left in the homeland.">
+        <div class="card-img" style="background-image:url('../img/blog/Shaxrisabz')"></div>
+        <div class="card-content">
+          <span class="card-tag">LEGENDS</span>
+          <h3>Why Timur Chose Shahrisabz for His Palace</h3>
+        </div>
+      </article>
+
+      <article class="bento-card" data-cat="secrets" data-desc="The Tashkent metro is the only one in Central Asia and one of the most beautiful in the world. But for 41 years it was forbidden to photograph it.
+      Secret #1: Why photography was banned until 2018.      
+      The metro began construction immediately after the devastating earthquake of 1966. It opened on November 6, 1977.      
+      But it is not just transport. All stations were built as nuclear bomb shelters in case of war. Deep — up to 100 meters, with hermetic doors, water supplies. That is why photography was banned — a strategic facility. It was only allowed in June 2018.      
+      Secret #2: Why every station is different.      
+      In the USSR they wanted to make a 'People's Palace' underground. For 29 stations, the best artists and craftsmen of the republic were invited.      
+      Each station has its own theme:      
+      Alisher Navoi — domes like in mosques and madrasahs, blue ceramics
+      Kosmonavtlar — space, Ulugh Beg and stars, portraits of Gagarin and Ulugh Beg side by side
+      Pakhtakor — white cotton, mosaic with cotton growers
+      Mustaqillik — independence, storks and national ornaments
+      Chorsu — bazaar and silk
+      Marble, granite, smalt, ganch, painting — all like in a palace.      
+      Secret #3: How it was built in a seismic zone.      
+      Tashkent sits on a fault line. Engineers came up with a special technology — column stations with seismic joints that can 'play' during tremors. That is why the metro has survived dozens of earthquakes.">
+        <div class="card-img" style="background-image:url('../img/blog/metro')"></div>
+        <div class="card-content">
+          <span class="card-tag">SECRETS</span>
+          <h3>Secrets of the Tashkent Metro — An Underground Palace</h3>
+        </div>
+      </article>
+
+      <article class="bento-card" data-cat="photo" data-desc="The pearl of the western Tien Shan and a 'turquoise sea' 60 km from Tashkent. The reservoir is distinguished by its turquoise water color. Artificial. Formed in 1970 after the construction of the Charvak HPP on the Chirchiq River. The flow was blocked by a stone-filled dam 168 meters high. At the confluence of three mountain rivers — Chatkal, Pskem, and Koksu — a lake was formed. They carry clean, transparent glacial water, which gives this famous turquoise hue. The mirror area is 40.1 km², full capacity — 2006 million m³, used for energy and irrigation of 300 thousand hectares in the Chirchiq valley. In summer, this is the main escape from the Tashkent heat — beaches, recreation areas, paragliders, boats.">
+        <div class="card-img" style="background-image:url('../img/blog/chorvoq')"></div>
+        <div class="card-content">
+          <span class="card-tag">PHOTO STORIES</span>
+          <h3>Charvak Reservoir — Turquoise in the Tien Shan Mountains</h3>
+        </div>
+      </article>
+
+      <!-- Маленькие карточки для второго ряда (чтобы большая встала справа) -->
+      <article class="bento-card" data-cat="history" data-desc="Termez is the only center of Buddhism in Uzbekistan. In the 1st century AD, these lands became part of the Kushan Empire, and the ruler Kanishka I was a Buddhist. It was from here that Buddhism spread further to China. Fayaztepa is a ground-level monastery of the 1st-3rd centuries. Excavated in 1968-1976 by archaeologist Albaum.
+      Kara-Tepe is a whole monastic city on 3 hills on the bank of the Amu Darya. Built in the early 2nd century, semi-underground: cells are carved into the sandstone, and outside are buildings made of pakhsa and adobe bricks. It includes stupas, courtyards, and corridor streets. They were buried by sand. In the 3rd century, the Sassanids invaded and destroyed the temples. Then in the 5th century, the monastery finally fell into desolation. Over the centuries, a huge layer of sand and dust hid the temples — this is what preserved them.
+      Caves and pakhsa. The semi-underground architecture of Kara-Tepe and thick clay walls withstood earthquakes better than brick.
+      Second birth. After the monks, the caves were used by Sufi dervishes for burials, and they were only found in the 20th century. From 2004 to 2006, a full conservation and restoration was carried out with a grant from the Japan Foundation.">
+        <div class="card-img" style="background-image:url('../img/blog/budda')"></div>
+        <div class="card-content">
+          <span class="card-tag">STORIES</span>
+          <h3>How the Buddhist Temples of Termez Survived the Centuries</h3>
+        </div>
+      </article>
+
+      <article class="bento-card" data-cat="legends" data-desc="Muynak was the main port in the south of the Aral Sea. Back in the 60s, life was in full swing here — a fish factory, a cannery, a fleet. The Aral Sea was considered the 4th largest lake in the world. Then, due to the diversion of water from the Amu Darya and Syr Darya for cotton, the sea began to catastrophically shrink. The ships moored in the port were left standing. The harbor of Muynak turned into a cemetery. Only rusting hulls remain of the ships, resembling the skeletons of huge animals. The sea has receded 100-150 km from Muynak — it has not been visible from the lighthouse for over 30 years. The exposed bottom was overgrown with saxaul and became a full-fledged desert Aralkum — 'White Sands'. Old people in Muynak say that the Aral breathes in cycles of 100 years and one day the water will return. That is why the lighthouse in Muynak is still not dismantled. At night in the desert, you can hear the horn of ships that never managed to go to sea. After the water left, dust storms with salt and pesticides became more frequent — locals call it 'the revenge of the sea'.">
+        <div class="card-img" style="background-image:url('../img/blog/korabli')"></div>
+        <div class="card-content">
+          <span class="card-tag">LEGENDS</span>
+          <h3>Legends of the Aral Sea and the Ship Cemetery of Muynak</h3>
+        </div>
+      </article>
+
+      <article class="bento-card" data-cat="tips" data-desc="Although now in restaurants they eat with a spoon, at home many Uzbeks, as in the old days, eat pilaf only with their hands. Tradition: three ate from one large dish — a lagan — with their hands in absolute silence, and after that there was a prayer to the dastarkhan. Pilaf is laid out in a mound on a lagan, on top — garlic, kazy, quail eggs. They eat it without mixing it all at once — they take from the edge, where there is already rice, carrots, and meat. Be sure to have achik-chuchuk (tomatoes with onions), suzma with herbs, pomegranate seeds, and non flatbread. Pilaf is very fatty, but it is digested well because it is eaten with fresh vegetables. Morning pilaf — from 6 AM. This is a male tradition: only men cook it in the chaikhana on 'osh' Thursdays. It is impossible to refuse an invitation to pilaf. Tea — before, during, and after pilaf. This is a separate ceremony. The host pours tea for the guests himself — this is a sign of respect. The less he pours — the more he respects (so that you ask for more and stay longer). Green — necessarily and in unlimited quantities. Green tea or dried fruit compote is served with pilaf, less often black. Conversations begin only after pilaf — over tea. Therefore, the tea ceremony is the time for stories and communication.">
+        <div class="card-img" style="background-image:url('../img/blog/plov')"></div>
+        <div class="card-content">
+          <span class="card-tag">TIPS</span>
+          <h3>How to Properly Eat Uzbek Pilaf and Drink Tea</h3>
+        </div>
+      </article>
+
+      <article class="bento-card" data-cat="history" data-desc="The valley has been the heart of the Great Silk Road for centuries. Here is the climate for the silkworm and generations of craftsmen. Three main centers of crafts that are still alive: Margilan — the silk capital. A city where silk is made the same way as 1000 years ago. At the Yodgorlik factory, you can see the whole cycle: from the cocoon in the steam cauldron to the finished fabric. Margilan is famous for its rainbow khan-atlas, adras, bekasam, and ikat. The ikat technique is the magic of the knot. The secret of the pattern is abrband. The threads are dyed according to a given pattern BEFORE weaving, by tying knots. The ornament appears already on the loom. Main fabrics: khan-atlas — royal silk, adras — silk with cotton weft.
+      Rishtan — ceramics, Kokand — carving. Blue Rishtan ceramics, Kuvin knives, and Kokand wood carving have always gone alongside silk. All this is a single world of Fergana craftsmen.">
+        <div class="card-img" style="background-image:url('../img/blog/atlas')"></div>
+        <div class="card-content">
+          <span class="card-tag">STORIES</span>
+          <h3>Fergana Valley — The Cradle of Crafts and Silk</h3>
+        </div>
+      </article>
+
+      <!-- Большая карточка (встанет справа) -->
+      <article class="bento-card card-lg" data-cat="photo" data-desc="This is the classic Silk Road route, which is called exactly that — 'The Silk Road through the Ages': Tashkent – Samarkand – Gijduvan – Bukhara – Khiva – Urgench. Each city is a separate era:
+
+      1. Tashkent (2nd century BC — 21st century) — gates and contrast
+      Ancient Chach and a modern metropolis. Here the 1977 metro-palace, Chorsu bazaar, and towers meet. The starting point from which all of Uzbekistan is visible.
+      
+      2. Samarkand (8th century BC) — the capital of Timur
+      The pearl of the East. Registan, which was built without cranes, Ulugh Beg's observatory, Gur-Emir. The city where Timur wanted to show the power of the empire.
+      
+      3. Shahrisabz (Timur's homeland) — ambition
+      Timur's hometown. Ak-Saray is a palace that was supposed to be bigger than Samarkand. From here began the history of the Timurid empire.
+      
+      4. Bukhara (6th century BC) — the shrine
+      An open-air museum city. 140 monuments, Po-i-Kalyan, the Ark fortress. The center of Islam and trade, where every caravanserai remembers the Silk Road.
+      
+      5. Khiva — Itchan Kala — a city within a city
+      Inside the walls of Itchan Kala — 26 hectares of history, 60 monuments. The last oasis of the Silk Road before the desert, preserved in its entirety.
+      
+      6. Fergana, Termez, Muynak, Charvak — facets of Uzbekistan
+      Fergana — silk and ikat, Termez — Buddhist temples of the 1st century, from which Buddhism went to China, Muynak — the ship cemetery and the legend of the departed Aral, Charvak — the turquoise of the Tien Shan, created by man in 1970.
+      
+      7. Food as part of the journey
+      Pilaf, which is eaten with hands in silence, and green tea, which is poured a little at a time out of respect.">
+        <div class="card-img" style="background-image:url('../img/blog/Uzbekistan')"></div>
+        <div class="card-content">
+          <span class="card-tag">PHOTO STORIES</span>
+          <h3>Uzbekistan: A Journey Through the Ages and Cities</h3>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="show-more">
+      <button class="btn-dark" id="showMoreBtn">VIEW ALL STORIES →</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- Модалка для Bento Grid -->
+<div class="modal" id="bentoModal">
+  <div class="modal-content">
+    <button class="modal-close" id="bentoModalClose">✕</button>
+    <div class="modal-img" id="bentoModalImg"></div>
+    <div class="modal-body">
+      <div class="modal-region" id="bentoModalCategory"></div>
+      <h2 id="bentoModalTitle"></h2>
+      <div class="modal-desc" id="bentoModalDesc"></div>
+    </div>
+  </div>
+</div>
+
+
+  <footer class="footer">
+    <div class="container">
+  
+      <div class="footer-grid">
+  
+        <!-- КОЛОНКА 1 — ЛОГОТИП -->
+        <div>
+          <a href="#" class="footer-logo">
+            <span>Uzbek</span><span class="accent">Pulse</span>
+          </a>
+          <p class="footer-desc">
+            Premium travel from Bukhara. EST 2024. License No. 123. Honest, with care.
+          </p>
+  
+          <!-- Социальные иконки -->
+          <div class="socials">
+  
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/uzbekpulse?igsh=MTZmMTlyemE5M21kcw==" class="social-icon instagram" aria-label="Instagram" target="_blank">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          
+            <!-- Telegram -->
+            <a href="https://t.me/UzbekPulse" class="social-icon telegram" aria-label="Telegram" target="_blank">
+              <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            </a>
+          
+            <!-- YouTube -->
+            <a href="https://www.youtube.com/@UzbekPulse2026" class="social-icon youtube" aria-label="YouTube" target="_blank">
+              <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          
+            <!-- Facebook -->
+            <a href="#" class="social-icon facebook" aria-label="Facebook" target="_blank">
+              <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+          
+            <!-- WhatsApp -->
+            <a href="https://whatsapp.com/channel/0029VbDC3mLKGGGPmxRoi016" class="social-icon whatsapp" aria-label="WhatsApp" target="_blank">
+              <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            </a>
+          
+            <!-- X (Twitter) -->
+            <a href="#" class="social-icon x-twitter" aria-label="X" target="_blank">
+              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          
+            <!-- Max -->
+            <a href="#" class="social-icon max" aria-label="Max" target="_blank">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 5.94 2 10.8c0 2.485 1.094 4.727 2.859 6.328V22l3.734-2.05a11.31 11.31 0 003.407.525c5.523 0 10-3.94 10-8.8S17.523 2 12 2zm-4.5 9.6a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7zm4.5 0a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7zm4.5 0a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7z"/></svg>
+            </a>
+          
+          </div>
+        </div>
+  
+        <!-- КОЛОНКА 2 — ВЫЕЗД -->
+        <div class="footer-col">
+          <h4>Outbound</h4>
+          <ul>
+            <li><a href="#">All international tours</a></li>
+            <li><a href="#">Beach holidays</a></li>
+            <li><a href="#">Family tours</a></li>
+            <li><a href="#">Sightseeing tours</a></li>
+            <li><a href="#">Countries</a></li>
+            <li><a href="#">Custom selection</a></li>
+          </ul>
+        </div>
+  
+        <!-- КОЛОНКА 3 — УЗБЕКИСТАН -->
+        <div class="footer-col">
+          <h4>Uzbekistan</h4>
+          <ul>
+            <li><a href="#">All tours in Uzbekistan</a></li>
+            <li><a href="#">Bukhara</a></li>
+            <li><a href="#">Samarkand</a></li>
+            <li><a href="#">Khiva</a></li>
+            <li><a href="#">Tashkent</a></li>
+            <li><a href="#">Silk Road</a></li>
+            <li><a href="#">Historical</a></li>
+            <li><a href="#">Custom</a></li>
+            <li><a href="#">One-day</a></li>
+          </ul>
+        </div>
+  
+        <!-- КОЛОНКА 4 — КОНТАКТЫ -->
+        <div class="footer-col">
+          <h4>Contacts</h4>
+          <div class="contacts">
+            <div>Bukhara, Lyabi-Khauz St. 12</div>
+            <div><a href="tel:+998900000000">+998 90 000 00 00</a></div>
+            <div><a href="mailto:hello@uzbekpulse.uz">hello@uzbekpulse.uz</a></div>
+            <div class="schedule">
+              Mon-Sat 09:00-19:00<br>
+              Sun — by appointment
+            </div>
+          </div>
+        </div>
+  
+      </div>
+  
+      <!-- НИЖНЯЯ ПОЛОСА -->
+      <div class="footer-bottom">
+        <span>© 2026 UzbekPulse Travel. All rights reserved.</span>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Offer</a>
+        </div>
+      </div>
+  
+    </div>
+  </footer>
+
+  <script src="../../js/blog.js"></script>
+</body>
+</html>

@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BukharaPulse</title>
+<link rel="stylesheet" href="../../css/attraction.css">
+</head>
+<body>
+
+<!-- ============================================
+     HEADER
+============================================ -->
+<div class="header-wrap">
+  <header class="header">
+    <a href="#" class="logo">
+      <div class="logo-mark">B</div>
+      <div class="logo-text">
+        <span class="name">BukharaPulse</span>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+      <a href="../pages/tours.html">Tours</a>
+      <a href="../pages/hotels.html">Hotels</a>
+      <a href="../pages/blog.html">Blog</a>
+      <a href="../pages/about.html">About Us</a>
+    </nav>
+
+    <div style="display:flex; align-items:center; gap:10px;">
+
+      <!-- Переключатель языка -->
+      <div class="lang-dropdown" id="langDropdown">
+        <button class="lang-current" id="langBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <span id="currentLang">EN</span>
+          <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
+        </button>
+
+        <div class="lang-menu" id="langMenu">
+          <button data-lang="RU"><span class="name">Русский</span></button>
+          <button data-lang="EN" class="active"><span class="name">English</span></button>
+          <button data-lang="UZ"><span class="name">O‘zbek</span></button>
+        </div>
+      </div>
+
+      <a href="#" class="header-cta">Book Now</a>
+      <button class="burger" id="burgerBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 12h16M4 6h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#">Home</a>
+      <a href="#">Outbound Tourism</a>
+      <a href="#">Inbound Tourism</a>
+      <a href="#">Hotels</a>
+      <a href="#">Blog</a>
+      <a href="#">About Us</a>
+    </div>
+  </header>
+</div>
+
+<!-- ============================================
+     HERO VIDEO
+============================================ -->
+<section class="hero-video">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="#" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-text" id="heroContent">
+    <span class="hero-label">— 2500 YEARS OF HISTORY —</span>
+    <h1>BUKHARA</h1>
+    <p>The oldest city of the East. An open-air museum city where every stone keeps the history of the Silk Road.</p>
+  </div>
+</section>
+
+<!-- ============================================
+     HISTORY
+============================================ -->
+<section class="history">
+  <div class="container history-grid">
+    <div class="history-sticky">
+      <span class="section-label">History</span>
+      <div class="big-num">2500+</div>
+      <span class="big-num-label">years of history<br>140+ monuments<br>UNESCO</span>
+    </div>
+    <div class="history-content">
+      <h2>A Brief History of Bukhara</h2>
+      <p class="lead">Bukhara is one of the oldest cities in Central Asia, over <strong>2500 years</strong> old. The city was an important center on the Great Silk Road, connecting East and West.</p>
+      <p>Science, culture, religion, and crafts were formed here, and great scholars and thinkers glorified Bukhara throughout the world. Today, Bukhara is an open-air museum where more than 140 architectural monuments have been preserved since ancient times. The city is included in the UNESCO World Heritage List.</p>
+      <div class="history-stats">
+        <div><strong>XV</strong><span>centuries of the Ark</span></div>
+        <div><strong>47m</strong><span>Kalyan Minaret</span></div>
+        <div><strong>7</strong><span>holy Pirs</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     PLACES (45 достопримечательностей)
+============================================ -->
+<section class="places">
+  <div class="container">
+    <span class="section-label">Heritage</span>
+    <h2 class="section-title">Attractions of Bukhara</h2>
+    <p class="subtitle">45 pearls of the old city — from the Ark to tims and khanaqas.</p>
+
+    <div class="places-cards" id="placesCards">
+      <!-- Первые 6 видимые -->
+      <div class="place-card">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Ark.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">01</div>
+          <h3>Ark of Bukhara</h3>
+          <p>An ancient citadel and the residence of the Bukhara emirs, which served as the main fortification of the city for over 15 centuries.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%90%D1%80%D0%BA_(%D0%91%D1%83%D1%85%D0%B0%D1%80%D0%B0)" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Minaret-Kalyan.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">02</div>
+          <h3>Kalyan Minaret</h3>
+          <p>A majestic symbol of Bukhara, 47 meters high, built in the 12th century and surviving the invasion of Genghis Khan.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%B0%D1%80%D0%B5%D1%82_%D0%9A%D0%B0%D0%BB%D1%8F%D0%BD" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Lyabi-Hovuz.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">03</div>
+          <h3>Lyabi-Khauz</h3>
+          <p>A picturesque historical ensemble with a pond, surrounded by ancient madrasahs and khanaqas in the very center of the city.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9B%D1%8F%D0%B1%D0%B8-%D1%85%D0%B0%D1%83%D0%B7" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Ismail-Samani.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">04</div>
+          <h3>Samanid Mausoleum</h3>
+          <p>A unique brick mausoleum of the 9th–10th centuries, recognized as a masterpiece of Eastern architecture and the oldest monument in the city.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%A1%D0%B0%D0%BC%D0%B0%D0%BD%D0%B8%D0%B4%D0%BE%D0%B2" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Masjidi_Kalyan.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">05</div>
+          <h3>Kalyan Mosque</h3>
+          <p>A grandiose cathedral mosque of the 16th century, which is the main shrine and part of the famous Po-i-Kalyan ensemble.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%87%D0%B5%D1%82%D1%8C_%D0%9A%D0%B0%D0%BB%D1%8F%D0%BD" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Mir-Arab-medrese.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">06</div>
+          <h3>Mir-i-Arab Madrasah</h3>
+          <p>An active spiritual educational institution of the 16th century, remaining one of the most revered places of pilgrimage in Bukhara.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%80%D0%B5%D1%81%D0%B5_%D0%9C%D0%B8%D1%80%D0%B8_%D0%90%D1%80%D0%B0%D0%B1" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+
+      <!-- Остальные 39 скрытые -->
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Chor_Minor.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">07</div>
+          <h3>Chor-Minor</h3>
+          <p>A unique structure with four minarets and blue domes, which has become one of the most recognizable calling cards of Bukhara.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A7%D0%BE%D1%80-%D0%9C%D0%B8%D0%BD%D0%BE%D1%80" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Bolo-hovuz.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">08</div>
+          <h3>Bolo-Khauz Mosque</h3>
+          <p>An elegant mosque of the early 20th century, famous for its carved wooden colonnade and picturesque pond in front of the entrance.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%91%D0%BE%D0%BB%D0%BE-%D1%85%D0%B0%D1%83%D0%B7" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Moxi-xosa.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">09</div>
+          <h3>Sitorai Mokhi-Khosa</h3>
+          <p>The former country residence of the Bukhara emirs, striking with the luxury of palaces, gardens, and a unique mixture of styles.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D1%82%D0%BE%D1%80%D0%B0%D0%B8_%D0%9C%D0%BE%D1%85%D0%B8-%D1%85%D0%BE%D1%81%D0%B0" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Chashma_Ayubb.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">10</div>
+          <h3>Chashma-Ayub Mausoleum</h3>
+          <p>An ancient mausoleum-spring associated with the biblical legend of the prophet Job (Ayub), who healed people here.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%A7%D0%B0%D1%88%D0%BC%D0%B0-%D0%90%D0%B9%D1%8E%D0%B1" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Shukhov.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">11</div>
+          <h3>Shukhov Tower</h3>
+          <p>A unique engineering structure of the early 20th century, preserving traces of the region's industrial heritage and becoming a symbol of technical progress.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A8%D1%83%D1%85%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F_%D0%B1%D0%B0%D1%88%D0%BD%D1%8F_(%D0%91%D1%83%D1%85%D0%B0%D1%80%D0%B0)" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Tim_Abdullakhan.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">12</div>
+          <h3>Tim of Abdullah Khan</h3>
+          <p>An ancient covered bazaar of the 16th century, where today you can see and buy traditional fabrics, carpets, and handicrafts.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B8%D0%BC_%D0%90%D0%B1%D0%B4%D1%83%D0%BB%D0%BB%D0%B0-%D1%85%D0%B0%D0%BD%D0%B0" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Madrasah_of_Nadir_Devanbegi.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">13</div>
+          <h3>Khanaka of Nadir Divan-Begi</h3>
+          <p>A historical khanaka of the 17th century in the Lyabi-Khauz ensemble, built for dervishes and wandering Sufis.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A5%D0%B0%D0%BD%D0%B0%D0%BA%D0%B0_%D0%94%D0%B8%D0%B2%D0%B0%D0%BD-%D0%91%D0%B5%D0%B3%D0%B8" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Ulugbek_madrasa.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">14</div>
+          <h3>Ulugh Beg Madrasah</h3>
+          <p>The oldest surviving madrasah of the 15th century, built by the outstanding astronomer and ruler Mirzo Ulugh Beg.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%80%D0%B5%D1%81%D0%B5_%D0%A3%D0%BB%D1%83%D0%B3%D0%B1%D0%B5%D0%BA%D0%B0_(%D0%91%D1%83%D1%85%D0%B0%D1%80%D0%B0)" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Abdulazizxon_madrasasi.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">15</div>
+          <h3>Abdulaziz Khan Madrasah</h3>
+          <p>A majestic madrasah of the 17th century, striking tourists with the richness of patterns and unique decor preserved to this day.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%80%D0%B5%D1%81%D0%B5_%D0%90%D0%B1%D0%B4%D1%83%D0%BB%D0%B0%D0%B7%D0%B8%D0%B7-%D1%85%D0%B0%D0%BD%D0%B0" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Abdullaxon_madrasasi.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">16</div>
+          <h3>Abdullah Khan Madrasah</h3>
+          <p>A historical madrasah of the 16th century, built during the reign of Abdullah Khan II and serving as a center of education.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%80%D0%B5%D1%81%D0%B5_%D0%90%D0%B1%D0%B4%D1%83%D0%BB%D0%BB%D0%B0-%D1%85%D0%B0%D0%BD%D0%B0_(%D0%91%D1%83%D1%85%D0%B0%D1%80%D0%B0)" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Turkman-madrasasi.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">17</div>
+          <h3>Turkmen Madrasah</h3>
+          <p>A historical madrasah of Bukhara, associated with the cultural heritage of the Turkmen people and the traditions of Islamic architecture.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%80%D0%B5%D1%81%D0%B5_%D0%A2%D1%83%D1%80%D0%BA%D0%BC%D0%B5%D0%BD" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Xalifai_Xudoydot_mechet.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">18</div>
+          <h3>Khalifa Khudaydod Complex</h3>
+          <p>A historical architectural complex of the 18th century, combining a mosque, madrasah, and mausoleum into a single spiritual ensemble.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%D0%A5%D0%B0%D0%BB%D0%B8%D1%84%D0%B0_%D0%A5%D1%83%D0%B4%D0%BE%D0%B9%D0%B4%D0%BE%D0%B4" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Sayfiddin-Baxorziy-majmuasi.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">19</div>
+          <h3>Sayfiddin Bokharzi Mausoleum</h3>
+          <p>An ancient mausoleum of a famous Sufi scholar and spiritual mentor, one of the followers of Bahauddin Naqshband.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%A1%D0%B0%D0%B9%D1%84%D0%B5%D0%B4%D0%B4%D0%B8%D0%BD%D0%B0_%D0%91%D0%BE%D1%85%D0%B0%D1%80%D0%B7%D0%B8" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Boboyi-Poraduz.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">20</div>
+          <h3>Boboi Poraduz Mausoleum</h3>
+          <p>A historical mausoleum of a revered Bukhara saint, who, according to legend, was a master of leather dressing.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%91%D0%BE%D0%B1%D0%BE%D0%B8_%D0%9F%D0%BE%D1%80%D0%B0%D0%B4%D1%83%D0%B7" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Magok-i-Attari_Mosque.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">21</div>
+          <h3>Magoki-Attari Mosque</h3>
+          <p>An ancient mosque of Bukhara, preserving unique elements of medieval architecture and rooted in the 9th century.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%87%D0%B5%D1%82%D1%8C_%D0%9C%D0%B0%D0%B3%D0%BE%D0%BA%D0%B8-%D0%90%D1%82%D1%82%D0%B0%D1%80%D0%B8" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Zindon_Prison.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">22</div>
+          <h3>Bukhara Zindan</h3>
+          <p>An ancient prison of Bukhara, telling about the harsh history of the emirate.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%91%D1%83%D1%85%D0%B0%D1%80%D1%81%D0%BA%D0%B8%D0%B9_%D0%B7%D0%B8%D0%BD%D0%B4%D0%B0%D0%BD" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Turki_Jandiy_maqbarasi.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">23</div>
+          <h3>Turki Jandi Mausoleum</h3>
+          <p>A historical mausoleum dedicated to a revered Sufi saint, one of the spiritual mentors of Bukhara.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%A2%D1%83%D1%80%D0%BA%D0%B8_%D0%94%D0%B6%D0%B0%D0%BD%D0%B4%D0%B8" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Magok-i-Kurpa_Mosque.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">24</div>
+          <h3>Magoki-Kurpa Mosque</h3>
+          <p>An ancient mosque of Bukhara with unique architecture and historical appearance, harmoniously fitting into the urban development.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%87%D0%B5%D1%82%D1%8C_%D0%9A%D1%83%D1%80%D0%BF%D0%B0" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Madrasah_Modarikhan.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">25</div>
+          <h3>Modari-Khan Madrasah</h3>
+          <p>A historical madrasah of the 16th century, built in the Shaybanid era and named in honor of the mother of the powerful khan.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%80%D0%B5%D1%81%D0%B5_%D0%9C%D0%BE%D0%B4%D0%B0%D1%80%D0%B8%D1%85%D0%BE%D0%BD" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Gaukushon_madrasa.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">26</div>
+          <h3>Gaukushan Madrasah</h3>
+          <p>A historical madrasah of the 16th century, part of the Govkushon architectural ensemble and serving as a major educational center.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%80%D0%B5%D1%81%D0%B5_%D0%93%D0%B0%D1%83%D0%BA%D1%83%D1%88%D0%B0%D0%BD" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Chor-Bakr.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">27</div>
+          <h3>Chor-Bakr Complex</h3>
+          <p>An ancient memorial complex with mausoleums, a mosque, and a necropolis, serving as a place of pilgrimage for many generations.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A7%D0%BE%D1%80-%D0%91%D0%B0%D0%BA%D1%80" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Tim_Abdullakhan.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">28</div>
+          <h3>Toki Zargaron</h3>
+          <p>A historical trading dome of Bukhara, where in ancient times jewelers and metal craftsmen sold their products.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%BE%D0%BA%D0%B8_%D0%97%D0%B0%D1%80%D0%B3%D0%B0%D1%80%D0%BE%D0%BD" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Toqi_Telpak_Furushon.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">29</div>
+          <h3>Toki Telpakfurushon</h3>
+          <p>An ancient trading dome of Bukhara, which historically specialized in the trade of headwear and skullcaps.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%BE%D0%BA%D0%B8_%D0%A2%D0%B5%D0%BB%D1%8C%D0%BF%D0%B0%D0%BA%D1%84%D1%83%D1%80%D1%83%D1%88%D0%BE%D0%BD" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Toqi_Sarofon.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">30</div>
+          <h3>Toki Sarrafon</h3>
+          <p>A historical trading dome of Bukhara, where money changers and jewelers worked in ancient times.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%BE%D0%BA%D0%B8_%D0%A1%D0%B0%D1%80%D1%80%D0%BE%D1%84%D0%BE%D0%BD" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Buxoro_darvozasi.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">31</div>
+          <h3>Fortress Walls and Gates of Bukhara</h3>
+          <p>Ancient defensive structures of Bukhara, preserving traces of the city's former greatness and unique elements of fortification architecture.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%B5%D0%BF%D0%BE%D1%81%D1%82%D0%BD%D1%8B%D0%B5_%D1%81%D1%82%D0%B5%D0%BD%D1%8B_%D0%B8_%D0%B2%D0%BE%D1%80%D0%BE%D1%82%D0%B0_%D0%91%D1%83%D1%85%D0%B0%D1%80%D1%8B" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Мечеть_Балянд.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">32</div>
+          <h3>Balad Mosque</h3>
+          <p>A historical mosque of the early 16th century, reflecting the rich spiritual and architectural heritage of the city, decorated with tiles.</p>
+          <a href="https://en.wikipedia.org/wiki/Bukhara_Mosque" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Fayzobod.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">33</div>
+          <h3>Fayzabad Complex</h3>
+          <p>A historical spiritual complex of the 16th century with a mosque and khanaqa, serving as an important center of pilgrimage and education.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A5%D0%B0%D0%BD%D0%B0%D0%BA%D0%B0_%D0%B2_%D0%A4%D0%B0%D0%B9%D0%B7%D0%B0%D0%B1%D0%B0%D0%B4%D0%B5" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Juybori_Kalon_Madrasa.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">34</div>
+          <h3>Juybori Kalon Madrasah</h3>
+          <p>A historical madrasah of Bukhara, closely connected with the famous dynasty of Juybor sheikhs and their influence on the city.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%80%D0%B5%D1%81%D0%B5_%D0%94%D0%B6%D1%83%D0%B8%D0%B1%D0%BE%D1%80%D0%B8%D0%B9_%D0%9A%D0%B0%D0%BB%D0%BE%D0%BD" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Shoh-Axsi_Madrasa.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">35</div>
+          <h3>Shoh Aksaviy Madrasah</h3>
+          <p>A historical madrasah of Bukhara, preserving the centuries-old traditions of Islamic education and unique architecture.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%80%D0%B5%D1%81%D0%B5_%D0%A8%D0%BE%D1%85_%D0%90%D1%85%D1%81%D0%B0%D0%B2%D0%B8%D0%B9" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Abu_Hafs_Kabir_mausoleum.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">36</div>
+          <h3>Abu Hafs Kabir Bukhari Memorial Complex</h3>
+          <p>A shrine dedicated to the famous Bukhara theologian and scholar, who was a prominent figure in the Islamic world.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%BC%D0%BE%D1%80%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%D0%90%D0%B1%D1%83_%D0%A5%D0%B0%D1%84%D1%81%D0%B0_%D0%9A%D0%B0%D0%B1%D0%B8%D1%80%D0%B0_%D0%91%D1%83%D1%85%D0%B0%D1%80%D0%B8" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Kizbibi_complex.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">37</div>
+          <h3>Kyz Bibi Complex</h3>
+          <p>A historical spiritual complex associated with the veneration of Kyz Bibi, a legendary female mentor and saint.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9A%D1%8B%D0%B7-%D0%B1%D0%B8%D0%B1%D0%B8" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Khoja-Ubban_mausoleum.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">38</div>
+          <h3>Khoja Ubban Mausoleum</h3>
+          <p>A historical mausoleum associated with the spiritual heritage of Bukhara and the veneration of a local saint.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%A5%D0%BE%D0%B4%D0%B6%D0%B8_%D0%A3%D0%B1%D0%B1%D0%B0%D0%BD%D0%B0" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Tash_Saroyi_Madrassah.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">39</div>
+          <h3>Sarayi Tash Madrasah</h3>
+          <p>A historical madrasah of Bukhara, part of the rich architectural heritage of the city and decorated with stone carvings.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%80%D0%B5%D1%81%D0%B5_%D0%A1%D0%B0%D1%80%D0%BE%D0%B9%D0%B8_%D0%A2%D0%B0%D1%88" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Amir-Olimkhon_madrasah.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">40</div>
+          <h3>Amir Alim Khan Madrasah</h3>
+          <p>A historical madrasah of the early 20th century, associated with the name of the last Emir of Bukhara and his reform activities.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%80%D0%B5%D1%81%D0%B5_%D0%90%D0%BC%D0%B8%D1%80%D0%B0_%D0%90%D0%BB%D0%B8%D0%BC-%D1%85%D0%B0%D0%BD%D0%B0" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Ansamble_Gaukushon.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">41</div>
+          <h3>Khoja Gaukushan Ensemble</h3>
+          <p>A historical architectural ensemble of the 16th century with a mosque, minaret, and madrasah, named after a famous spiritual figure.</p>
+          <a href="https://en.wikipedia.org/wiki/Khoja_Gaukushan_Ensemble" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Vardonze.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">42</div>
+          <h3>Vardanze</h3>
+          <p>An ancient settlement preserving traces of the history and culture of the Bukhara oasis, existing even before our era.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D1%80%D0%B4%D0%B0%D0%BD%D0%B7%D0%B8" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Varaxsha.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">43</div>
+          <h3>Varakhsha</h3>
+          <p>An ancient settlement and the former capital of the Bukhara oasis, where archaeologists find unique frescoes and artifacts.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%92%D0%B0%D1%80%D0%B0%D1%85%D1%88%D0%B0" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Abdurakhmoni_Alam_madrase.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">44</div>
+          <h3>Abdurakhmani Alam Madrasah</h3>
+          <p>A historical madrasah of Bukhara, associated with the traditions of Islamic education and bearing the name of a famous scholar.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%80%D0%B5%D1%81%D0%B5_%D0%90%D0%B1%D0%B4%D1%83%D1%80%D0%B0%D1%85%D0%BC%D0%B0%D0%BD%D0%B8_%D0%90%D0%BB%D0%B0%D0%BC" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('/img/attraction/Bukhara/Asiriy_madrasasi.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">45</div>
+          <h3>Mawlana Asiri Madrasah</h3>
+          <p>A historical madrasah of Bukhara, preserving the architectural heritage of the city and unique elements of decor.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%80%D0%B5%D1%81%D0%B5_%D0%9C%D0%B0%D0%B2%D0%BB%D0%BE%D0%BD%D0%BE_%D0%90%D1%81%D0%B8%D1%80%D0%B8" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="show-more-container">
+      <button id="showMoreBtn">Show 39 more →</button>
+      <button id="hideBtn" style="display:none">Hide ↑</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOD
+============================================ -->
+<section class="food">
+  <div class="container">
+    <div class="food-header">
+      <span class="section-label">33 dishes</span>
+      <h2 class="food-title">Taste of Bukhara</h2>
+      <p class="food-subtitle">Bukhara cuisine is not just food, but a part of the great history of the Silk Road. Each dish is like a page from an ancient book that you can taste.</p>
+    </div>
+
+    <div class="tabs" id="foodTabs">
+      <button class="tab-btn active" data-category="all">All</button>
+      <button class="tab-btn" data-category="meaty">Meaty</button>
+      <button class="tab-btn" data-category="soups">Soups</button>
+      <button class="tab-btn" data-category="pastry">Pastry</button>
+      <button class="tab-btn" data-category="dairy">Dairy</button>
+      <button class="tab-btn" data-category="sweets">Sweets</button>
+    </div>
+
+    <div class="food-grid" id="foodGrid"></div>
+
+    <div class="show-more-container">
+      <button class="btn-show-more" id="showMoreFoodBtn">Show 27 more dishes →</button>
+      <button class="btn-hide" id="hideFoodBtn">Hide ↑</button>
+    </div>
+  </div>
+</section>
+
+<!-- Модалка -->
+<div class="modal" id="foodModal">
+  <div class="modal-content">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-img" id="modalImg"></div>
+    <div class="modal-body">
+      <h2 id="modalTitle"></h2>
+      <div class="modal-region" id="modalRegion"></div>
+      <div class="modal-desc" id="modalDesc"></div>
+      <div class="modal-tip" id="modalTip"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     7 PIRS
+============================================ -->
+<section class="seven-pirs">
+  <div class="container">
+    <span class="section-label">Spirituality</span>
+    <h2>7 Pirs (Awliya) of Bukhara</h2>
+    <p class="subtitle">Seven great Sufi mentors whose names illuminate the spiritual history of the city.</p>
+    <div class="pir-cards">
+      <div class="pir-card featured">
+        <div class="pir-img" style="background-image:url('/img/attraction/Bukhara/Abduxoliq-Gijduvoniy.webp')"></div>
+        <div class="pir-info"><span class="pir-num">01</span>
+          <h3><a href="https://en.wikipedia.org/wiki/Khoja_Abdulkhalik_Gijduvani_Complex" target="_blank">Khoja Abdulkhalik Gijduvani</a></h3>
+          <p>Founder of the Naqshbandi Sufi order. The doctrine of silent zikr and the 8 principles of the path.</p>
+        </div>
+      </div>
+      <div class="pir-card">
+        <div class="pir-img" style="background-image:url('/img/attraction/Bukhara/ar-Revgariy.webp')"></div>
+        <div class="pir-info"><span class="pir-num">02</span>
+          <h3><a href="https://en.wikipedia.org/wiki/Arif_Riwgari" target="_blank">Muhammad Arif ar-Riwgari</a></h3>
+          <p>A famous scholar and spiritual mentor of his time.</p>
+        </div>
+      </div>
+      <div class="pir-card">
+        <div class="pir-img" style="background-image:url('/img/attraction/Bukhara/Mahmud-Anjir-Fagnaviy.webp')"></div>
+        <div class="pir-info"><span class="pir-num">03</span>
+          <h3><a href="https://en.wikipedia.org/wiki/Mahmood_Anjir_Faghnawi" target="_blank">Mahmud Anjir Faghnawi</a></h3>
+          <p>Continuator of Sufi traditions and a student of Gijduvani.</p>
+        </div>
+      </div>
+      <div class="pir-card">
+        <div class="pir-img" style="background-image:url('/img/attraction/Bukhara/Ali-Romitaniy.webp')"></div>
+        <div class="pir-info"><span class="pir-num">04</span>
+          <h3><a href="https://en.wikipedia.org/wiki/Ali_Ramitani" target="_blank">Ali Ramitani</a></h3>
+          <p>A great religious thinker and mentor of spiritual leaders.</p>
+        </div>
+      </div>
+      <div class="pir-card">
+        <div class="pir-img" style="background-image:url('/img/attraction/Bukhara/Boboyi-Samosiy.webp')"></div>
+        <div class="pir-info"><span class="pir-num">05</span>
+          <h3><a href="https://en.wikipedia.org/wiki/Mohammad_Baba_As-Samasi" target="_blank">Muhammad Baba as-Sammasi</a></h3>
+          <p>One of the main masters of the spiritual path.</p>
+        </div>
+      </div>
+      <div class="pir-card">
+        <div class="pir-img" style="background-image:url('/img/attraction/Bukhara/Amir-Kulol.webp')"></div>
+        <div class="pir-info"><span class="pir-num">06</span>
+          <h3><a href="https://en.wikipedia.org/wiki/Amir_Kulal" target="_blank">Sayyid Amir Kulal</a></h3>
+          <p>Teacher of Bahauddin Naqshband.</p>
+        </div>
+      </div>
+      <div class="pir-card">
+        <div class="pir-img" style="background-image:url('/img/attraction/Bukhara/Bahauddin_Naqshband.webp')"></div>
+        <div class="pir-info"><span class="pir-num">07</span>
+          <h3><a href="https://en.wikipedia.org/wiki/Bahoutdin_Architectural_Complex" target="_blank">Bahauddin Naqshband</a></h3>
+          <p>A saint who played an important role in the spiritual history of Bukhara. A center of pilgrimage.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+============================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div>
+        <a href="#" class="footer-logo">
+          <span>Uzbek</span><span class="accent">Pulse</span>
+        </a>
+        <p class="footer-desc">Premium travel from Bukhara. EST 2024. License No. 123. Honest, with care.</p>
+
+        <div class="socials">
+          <a href="#" class="social-icon instagram" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="#" class="social-icon telegram" aria-label="Telegram">
+            <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          </a>
+          <a href="#" class="social-icon youtube" aria-label="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="#" class="social-icon facebook" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" class="social-icon whatsapp" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </a>
+          <a href="#" class="social-icon x-twitter" aria-label="X">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="social-icon max" aria-label="Max">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 5.94 2 10.8c0 2.485 1.094 4.727 2.859 6.328V22l3.734-2.05a11.31 11.31 0 003.407.525c5.523 0 10-3.94 10-8.8S17.523 2 12 2zm-4.5 9.6a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7zm4.5 0a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7zm4.5 0a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Outbound</h4>
+        <ul>
+          <li><a href="#">All international tours</a></li>
+          <li><a href="#">Beach holidays</a></li>
+          <li><a href="#">Family tours</a></li>
+          <li><a href="#">Sightseeing tours</a></li>
+          <li><a href="#">Countries</a></li>
+          <li><a href="#">Custom selection</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Uzbekistan</h4>
+        <ul>
+          <li><a href="#">All tours in Uzbekistan</a></li>
+          <li><a href="#">Bukhara</a></li>
+          <li><a href="#">Samarkand</a></li>
+          <li><a href="#">Khiva</a></li>
+          <li><a href="#">Tashkent</a></li>
+          <li><a href="#">Silk Road</a></li>
+          <li><a href="#">Historical</a></li>
+          <li><a href="#">Custom</a></li>
+          <li><a href="#">One-day</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacts</h4>
+        <div class="contacts">
+          <div>Bukhara, Lyabi-Khauz St. 12</div>
+          <div><a href="tel:+998900000000">+998 90 000 00 00</a></div>
+          <div><a href="mailto:hello@uzbekpulse.uz">hello@uzbekpulse.uz</a></div>
+          <div class="schedule">
+            Mon-Sat 09:00-19:00<br>
+            Sun — by appointment
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 UzbekPulse Travel. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Offer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="../../js/attraction.js"></script>
+
+</body>
+</html>

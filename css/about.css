@@ -1,0 +1,2053 @@
+:root {
+  --ink: #1A1A1A;
+  --accent: #F5C842;
+  --accent-warm: #E8A020;
+  --cream: #F5F0E8;
+  --muted: #6B6B6B;
+  --muted-light: #8B8B8B;
+  --line: rgba(26, 26, 26, 0.1);
+  --line-dark: rgba(255, 255, 255, 0.08);
+  --dark: #1C2333;
+  --white: #FFFFFF;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+h1, h2, h3, .serif {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+button { border: none; background: none; cursor: pointer; font: inherit; color: inherit; }
+img { max-width: 100%; display: block; }
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   1-SECTION HEADER
+============================================ */
+.header-wrap {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 0 24px;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+.header {
+  width: 100%;
+  max-width: 1280px;
+  background: var(--cream);
+  border-radius: 999px;
+  padding: 12px 12px 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  pointer-events: auto;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.logo-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.logo-text .name {
+  font-family: Georgia, serif;
+  font-size: 17px;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-size: 14px;
+}
+.nav a { transition: color 0.2s; white-space: nowrap; }
+.nav a:hover { color: var(--accent); }
+
+/* ============================================
+   ВЫПАДАЮЩИЙ ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКА
+============================================ */
+.lang-dropdown {
+  position: relative;
+}
+
+/* Кнопка с текущим языком */
+.lang-current {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(26, 26, 26, 0.04);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lang-current:hover {
+  background: rgba(26, 26, 26, 0.08);
+  border-color: rgba(26, 26, 26, 0.2);
+}
+
+.lang-current .chevron {
+  transition: transform 0.3s ease;
+  opacity: 0.6;
+}
+
+.lang-dropdown.open .lang-current .chevron {
+  transform: rotate(180deg);
+}
+
+.lang-dropdown.open .lang-current {
+  background: var(--ink);
+  color: var(--cream);
+  border-color: var(--ink);
+}
+
+/* Выпадающее меню */
+.lang-menu {
+  position: absolute;
+  top: calc(80% + 10px);
+  right: 0;
+  min-width: 100px;
+  background: var(--cream);
+  border-radius: 16px;
+  padding: 6px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 200;
+  border: 1px solid var(--line);
+}
+
+.lang-dropdown.open .lang-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Пункт меню */
+.lang-menu button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  text-align: left;
+  transition: background 0.2s ease;
+}
+
+.lang-menu button:hover {
+  background: rgba(26, 26, 26, 0.06);
+}
+
+.lang-menu button.active {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.lang-menu .flag {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.lang-menu .code {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  min-width: 24px;
+}
+
+.lang-menu .name {
+  font-weight: 400;
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.lang-menu button.active .name {
+  opacity: 1;
+}
+
+/* На мобильных — язык в бургер-меню */
+@media (max-width: 900px) {
+  .lang-dropdown {
+    display: none;
+  }
+}
+
+
+.header-cta {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+.header-cta:hover {
+  background: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+.burger {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--cream);
+  align-items: center;
+  justify-content: center;
+}
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: 0;
+  background: var(--cream);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  pointer-events: auto;
+}
+.mobile-menu.open { display: block; }
+.mobile-menu a {
+  display: block;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+}
+
+
+
+
+
+/* ============================================
+   ABOUT HERO — фон-фото на всю ширину
+============================================ */
+.about-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 120px 64px 80px;
+  overflow: hidden;
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+
+  /* Фон-фото */
+  background-image: url('../img/about/about-hero.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;   /* параллакс-эффект */
+}
+
+/* Тёмный оверлей для читаемости текста */
+.about-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(28, 35, 51, 0.92) 0%,
+    rgba(28, 35, 51, 0.75) 50%,
+    rgba(28, 35, 51, 0.55) 100%
+  );
+  z-index: 1;
+}
+
+/* Жёлтое свечение поверх оверлея */
+.about-hero::after {
+  content: '';
+  position: absolute;
+  top: -150px;
+  right: -150px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(
+    circle,
+    rgba(245, 200, 66, 0.15) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Контент поверх всего */
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Заголовок */
+.about-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(48px, 8vw, 120px);
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--cream);
+  margin-bottom: 8px;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Вторая строка — курсив, жёлтая */
+.about-title-italic {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(44px, 7.5vw, 110px);
+  line-height: 1;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.03em;
+  color: var(--accent);
+  margin-bottom: 40px;
+  display: block;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Описание */
+.about-desc {
+  font-size: clamp(14px, 1.2vw, 17px);
+  line-height: 1.75;
+  color: rgba(245, 240, 232, 0.85);
+  max-width: 620px;
+  margin-bottom: 100px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Нижняя подпись */
+.about-footer {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.5);
+  font-weight: 500;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================
+   АДАПТИВ
+============================================ */
+@media (max-width: 900px) {
+  .about-hero {
+    padding: 100px 40px 60px;
+    background-attachment: scroll;   /* на планшете отключаем параллакс */
+  }
+
+  .about-desc {
+    margin-bottom: 80px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-hero {
+    padding: 80px 24px 50px;
+    min-height: 90vh;
+  }
+
+  .about-title {
+    margin-bottom: 4px;
+  }
+
+  .about-title-italic {
+    margin-bottom: 28px;
+  }
+
+  .about-desc {
+    margin-bottom: 50px;
+    font-size: 14px;
+  }
+
+  .about-footer {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+  }
+}
+
+
+
+
+
+
+/* ============================================
+     2-Блок ВЕРХНЯЯ ЧАСТЬ — ЗАГОЛОВОК + ОПИСАНИЕ
+  ============================================ */
+  .about-stats-head {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: start;
+    margin-bottom: 48px;
+    margin-top: 48px;
+  }
+
+  .about-stats-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(40px, 6vw, 80px);
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .about-stats-title .italic {
+    font-style: italic;
+    color: var(--accent-warm);
+    font-weight: 400;
+  }
+
+  .about-stats-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 380px;
+    justify-self: end;
+    padding-top: 16px;
+  }
+
+  /* ============================================
+     БЕЙДЖ
+  ============================================ */
+  .stats-badge {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+
+  .stats-badge.yellow {
+    background: var(--accent);
+    color: var(--ink);
+  }
+
+  .stats-badge.dark {
+    background: var(--ink);
+    color: var(--cream);
+  }
+
+  /* ============================================
+     РЯД ЦИФР
+  ============================================ */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    padding: 40px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .stats-row:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Цифра */
+  .stat-num {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(48px, 6vw, 88px);
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    color: var(--accent-warm);
+  }
+
+  .stat-num.dark {
+    color: var(--ink);
+  }
+
+  /* Подпись */
+  .stat-label {
+    font-size: 10.5px;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    max-width: 240px;
+  }
+
+  /* Подпись после ряда */
+  .stats-note {
+    font-size: 10px;
+    line-height: 1.6;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted-light);
+    margin-top: 20px;
+    font-weight: 500;
+  }
+
+  /* Отступ для второго блока */
+  .stats-block-2 {
+    margin-top: 80px;
+  }
+
+  /* ============================================
+     АДАПТИВ
+  ============================================ */
+  @media (max-width: 1024px) {
+    .about-stats-head {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .about-stats-desc {
+      justify-self: start;
+      padding-top: 0;
+    }
+
+    .stats-row {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 50px 20px; }
+
+    .about-stats-title {
+      font-size: 36px;
+    }
+
+    .stats-row {
+      grid-template-columns: 1fr;
+      gap: 28px;
+      padding: 28px 0;
+    }
+
+    .stat-num {
+      font-size: 56px;
+    }
+
+    .stats-block-2 {
+      margin-top: 48px;
+    }
+  }
+
+
+
+
+
+/* ============================================
+     3-Блок ЗАГОЛОВОК
+  ============================================ */
+
+  .principles-label {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-top: 48px;
+  }
+
+  .principles-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(40px, 6vw, 80px);
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 56px;
+    max-width: 900px;
+  }
+
+  /* ============================================
+     СЕТКА КАРТОЧЕК — 4 колонки
+  ============================================ */
+  .principles-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  /* ============================================
+     КАРТОЧКА
+  ============================================ */
+  .principle-card {
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 32px 28px 36px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    cursor: pointer;
+  }
+
+  .principle-card:hover {
+    background: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+    border-color: transparent;
+  }
+
+  /* Иконка в кружке */
+  .principle-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(245, 200, 66, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink);
+    margin-bottom: 28px;
+    transition: background 0.4s ease;
+  }
+
+  .principle-card:hover .principle-icon {
+    background: var(--accent);
+  }
+
+  .principle-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--ink);
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* Заголовок карточки */
+  .principle-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+
+  /* Описание */
+  .principle-desc {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: var(--muted);
+  }
+
+  /* ============================================
+     АДАПТИВ
+  ============================================ */
+  @media (max-width: 1024px) {
+    .principles-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 50px 20px; }
+
+    .principles-title {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    .principles-grid {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .principle-card {
+      padding: 28px 24px 32px;
+    }
+  }
+
+
+
+
+
+
+/* ============================================
+     4-БЛОК ЗАГОЛОВОК
+  ============================================ */
+  .why-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(40px, 6vw, 80px);
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+
+  .why-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 520px;
+    margin-bottom: 48px;
+  }
+
+  /* ============================================
+     СЕТКА — 2 КАРТОЧКИ
+  ============================================ */
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  /* ============================================
+     КАРТОЧКА
+  ============================================ */
+  .why-card {
+    border-radius: 24px;
+    padding: 40px 36px 36px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .why-card:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Светлая карточка */
+  .why-card.others {
+    background: #fff;
+    border: 1px solid var(--line);
+  }
+
+  /* Тёмная карточка */
+  .why-card.us {
+    background: var(--dark);
+    color: var(--cream);
+  }
+
+  /* Заголовок карточки */
+  .why-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 36px;
+    gap: 16px;
+  }
+
+  .why-card-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+  }
+
+  .why-card.others .why-card-label {
+    color: var(--ink);
+  }
+
+  .why-card.us .why-card-label {
+    color: var(--accent);
+  }
+
+  .why-card-note {
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: var(--muted-light);
+    font-weight: 400;
+  }
+
+  .why-card.us .why-card-note {
+    color: rgba(245, 240, 232, 0.5);
+  }
+
+  /* ============================================
+     СПИСОК
+  ============================================ */
+  .why-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+  }
+
+  .why-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  /* Иконка */
+  .why-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+
+  /* Крестик — другие */
+  .why-card.others .why-icon {
+    background: rgba(26, 26, 26, 0.06);
+    color: var(--muted);
+  }
+
+  /* Галочка — мы */
+  .why-card.us .why-icon {
+    background: var(--accent);
+    color: var(--dark);
+  }
+
+  .why-icon svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* Текст пункта */
+  .why-item-text {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--ink);
+    flex: 1;
+  }
+
+  .why-card.us .why-item-text {
+    color: rgba(245, 240, 232, 0.9);
+  }
+
+  /* ============================================
+     НИЖНЯЯ ЧАСТЬ — ТОЛЬКО У "МЫ"
+  ============================================ */
+  .why-footer {
+    margin-top: auto;
+    padding-top: 36px;
+    border-top: 1px solid var(--line-dark);
+    font-size: 12px;
+    line-height: 1.6;
+    color: rgba(245, 240, 232, 0.55);
+  }
+
+  .why-footer strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* ============================================
+     АДАПТИВ
+  ============================================ */
+  @media (max-width: 900px) {
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 50px 20px; }
+
+    .why-title {
+      font-size: 36px;
+    }
+
+    .why-card {
+      padding: 28px 24px 28px;
+    }
+
+    .why-card-head {
+      margin-bottom: 28px;
+    }
+
+    .why-item-text {
+      font-size: 13.5px;
+    }
+
+    .why-footer {
+      padding-top: 28px;
+    }
+  }
+
+
+
+
+
+/* ============================================
+     5-БЛОК ВЕРХНЯЯ МЕТКА
+  ============================================ */
+  .partners-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink);
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 40px;
+    margin-top: 48px;
+  }
+
+  /* ============================================
+     БЕГУЩАЯ СТРОКА — ЛОГОТИПЫ
+  ============================================ */
+  .marquee {
+    position: relative;
+    overflow: hidden;
+    padding: 32px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 40px;
+
+    /* Затемнение по краям */
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 8%,
+      #000 92%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 8%,
+      #000 92%,
+      transparent 100%
+    );
+  }
+
+  /* Дорожка с логотипами */
+  .marquee-track {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    width: max-content;
+    animation: marquee 40s linear infinite;
+    will-change: transform;
+  }
+
+  /* Пауза при наведении */
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  /* Логотип */
+  .marquee-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: color 0.3s ease, opacity 0.3s ease;
+    opacity: 0.85;
+  }
+
+  .marquee-item:hover {
+    color: var(--accent-warm);
+    opacity: 1;
+  }
+
+  /* Точка-разделитель между логотипами */
+  .marquee-item .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-warm);
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+
+  /* Анимация бегущей строки */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* ============================================
+     НИЖНЯЯ СТРОКА — ЛИЦЕНЗИИ
+  ============================================ */
+  .licenses {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    margin-bottom: 48px;
+  }
+
+  .licenses-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Точка между блоками */
+  .licenses-item::after {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--muted-light);
+    display: inline-block;
+    margin-left: 16px;
+  }
+
+  .licenses-item:last-child::after {
+    display: none;
+  }
+
+  /* Ссылка "Проверьте нас" */
+  .licenses-link {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 2px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+  }
+
+  .licenses-link:hover {
+    color: var(--accent-warm);
+    border-color: var(--accent-warm);
+  }
+
+  /* ============================================
+     АДАПТИВ
+  ============================================ */
+  @media (max-width: 900px) {
+    .marquee-track {
+      gap: 40px;
+      animation-duration: 30s;
+    }
+
+    .marquee-item {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 50px 20px; }
+
+    .marquee {
+      padding: 24px 0;
+    }
+
+    .marquee-track {
+      gap: 32px;
+      animation-duration: 25s;
+    }
+
+    .marquee-item {
+      font-size: 16px;
+      gap: 12px;
+    }
+
+    .licenses {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .licenses-item::after {
+      display: none;
+    }
+  }
+
+
+
+/* ============================================
+     6-БЛОК ЗАГОЛОВОК
+  ============================================ */
+  .stories-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.05;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 20px;
+    max-width: 700px;
+  }
+
+  .stories-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 520px;
+    margin-bottom: 48px;
+  }
+
+  /* ============================================
+     СЕТКА — 3 КАРТОЧКИ
+  ============================================ */
+  .stories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  /* ============================================
+     КАРТОЧКА
+  ============================================ */
+  .story-card {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    background: #fff;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .story-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Фон-картинка */
+  .story-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .story-card:hover .story-bg {
+    transform: scale(1.06);
+  }
+
+  /* Затемнение для читаемости */
+  .story-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(0, 0, 0, 0.05) 40%,
+      rgba(0, 0, 0, 0.25) 100%
+    );
+  }
+
+  /* ============================================
+     ВЕРХНЯЯ ЧАСТЬ — БЕЙДЖ + СТРЕЛКА
+  ============================================ */
+  .story-top {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .story-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 999px;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .story-arrow {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink);
+    flex-shrink: 0;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .story-card:hover .story-arrow {
+    background: var(--accent);
+    transform: rotate(45deg);
+  }
+
+  .story-arrow svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* ============================================
+     НИЖНЯЯ ЧАСТЬ — ТЕКСТ В БЕЛОЙ ПЛАШКЕ
+  ============================================ */
+  .story-info {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 18px;
+    padding: 22px 22px 20px;
+    margin-top: auto;
+  }
+
+  .story-text {
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+
+  /* Мета: имя + длительность */
+  .story-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(26, 26, 26, 0.1);
+  }
+
+  .story-author {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .story-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .story-tour {
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .story-duration {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  /* ============================================
+     АДАПТИВ
+  ============================================ */
+  @media (max-width: 1024px) {
+    .stories-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 700px) {
+    body { padding: 50px 20px; }
+
+    .stories-title {
+      font-size: 32px;
+    }
+
+    .stories-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .story-card {
+      min-height: 460px;
+    }
+
+    .story-text {
+      font-size: 13.5px;
+    }
+  }
+
+
+
+
+/* ============================================
+     7-БЛОК ЗАГОЛОВОК
+  ============================================ */
+  .change-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(40px, 6vw, 80px);
+    line-height: 1.05;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-top: 48px;
+    margin-bottom: 48px;
+  }
+
+  .change-title .italic {
+    font-style: italic;
+    color: var(--accent-warm);
+    font-weight: 400;
+  }
+
+  /* ============================================
+     СЕТКА — 2 КАРТОЧКИ + СТРЕЛКА МЕЖДУ
+  ============================================ */
+  .change-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 24px;
+    align-items: center;
+  }
+
+  /* ============================================
+     КАРТОЧКА
+  ============================================ */
+  .change-card {
+    border-radius: 28px;
+    padding: 48px 44px 44px;
+    min-height: 440px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    margin-bottom: 24px;
+  }
+
+  .change-card:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Светлая карточка — "До" */
+  .change-card.before {
+    background: #fff;
+    border: 1px solid var(--line);
+  }
+
+  /* Тёмная карточка — "После" */
+  .change-card.after {
+    background: var(--dark);
+    color: var(--cream);
+  }
+
+  /* Заголовок карточки */
+  .change-card-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.1;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 36px;
+  }
+
+  .change-card.before .change-card-title {
+    color: var(--ink);
+  }
+
+  .change-card.after .change-card-title {
+    color: var(--cream);
+  }
+
+  .change-card-title .italic {
+    font-style: italic;
+    color: var(--accent-warm);
+    font-weight: 400;
+  }
+
+  /* ============================================
+     СПИСОК
+  ============================================ */
+  .change-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    list-style: none;
+    margin-bottom: auto;
+  }
+
+  .change-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    font-size: 14.5px;
+    line-height: 1.55;
+  }
+
+  /* Тире для "До" */
+  .change-item.dash::before {
+    content: '—';
+    color: var(--muted-light);
+    font-weight: 400;
+    flex-shrink: 0;
+    width: 20px;
+  }
+
+  /* Галочка для "После" */
+  .change-item.check::before {
+    content: '✓';
+    color: var(--accent);
+    font-weight: 600;
+    flex-shrink: 0;
+    width: 20px;
+    font-size: 15px;
+  }
+
+  .change-card.before .change-item {
+    color: var(--muted);
+  }
+
+  .change-card.after .change-item {
+    color: rgba(245, 240, 232, 0.9);
+  }
+
+  /* ============================================
+     ПОДПИСЬ ВНИЗУ
+  ============================================ */
+  .change-footer {
+    margin-top: 40px;
+    padding-top: 24px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .change-card.before .change-footer {
+    color: var(--muted-light);
+    border-top: 1px solid var(--line);
+  }
+
+  .change-card.after .change-footer {
+    color: rgba(245, 240, 232, 0.5);
+    border-top: 1px solid var(--line-dark);
+  }
+
+  /* ============================================
+     СТРЕЛКА МЕЖДУ КАРТОЧКАМИ
+  ============================================ */
+  .change-arrow {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    flex-shrink: 0;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .change-arrow:hover {
+    transform: scale(1.1) rotate(0deg);
+    background: var(--accent);
+  }
+
+  .change-arrow svg {
+    width: 22px;
+    height: 22px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* ============================================
+     АДАПТИВ
+  ============================================ */
+  @media (max-width: 1024px) {
+    .change-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .change-arrow {
+      transform: rotate(90deg);
+      margin: 0 auto;
+    }
+
+    .change-arrow:hover {
+      transform: rotate(90deg) scale(1.1);
+    }
+
+    .change-card {
+      min-height: auto;
+    }
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 50px 20px; }
+
+    .change-title {
+      font-size: 32px;
+      margin-bottom: 32px;
+    }
+
+    .change-card {
+      padding: 32px 24px 32px;
+      border-radius: 22px;
+    }
+
+    .change-card-title {
+      margin-bottom: 28px;
+    }
+
+    .change-item {
+      font-size: 13.5px;
+    }
+
+    .change-footer {
+      margin-top: 32px;
+      padding-top: 20px;
+    }
+  }
+
+
+
+
+/* ============================================
+     8-БЛОК CTA-КАРТОЧКА
+  ============================================ */
+  .cta-card {
+    position: relative;
+    background: var(--dark);
+    border-radius: 28px;
+    padding: 72px 64px;
+    overflow: hidden;
+    color: var(--cream);
+    margin-top: 24px;
+  }
+
+  /* Мягкое свечение */
+  .cta-card::before {
+    content: '';
+    position: absolute;
+    top: -150px;
+    right: -150px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(
+      circle,
+      rgba(245, 200, 66, 0.1) 0%,
+      transparent 65%
+    );
+    pointer-events: none;
+  }
+
+  /* ============================================
+     СЕТКА — 2 КОЛОНКИ
+  ============================================ */
+  .cta-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  /* ============================================
+     ЗАГОЛОВОК СЛЕВА
+  ============================================ */
+  .cta-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(36px, 4.5vw, 64px);
+    line-height: 1.05;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: var(--cream);
+  }
+
+  .cta-title .italic {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+  }
+
+  /* ============================================
+     ПРАВАЯ ЧАСТЬ — ФОРМА
+  ============================================ */
+  .cta-right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 8px;
+  }
+
+  /* Описание */
+  .cta-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(245, 240, 232, 0.7);
+    max-width: 420px;
+  }
+
+  /* Строка формы */
+  .cta-form {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  /* Поле ввода */
+  .cta-input {
+    flex: 1;
+    min-width: 220px;
+    padding: 16px 24px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+    font-family: inherit;
+  }
+
+  .cta-input::placeholder {
+    color: var(--muted-light);
+    font-weight: 400;
+  }
+
+  .cta-input:focus {
+    box-shadow: 0 0 0 3px rgba(245, 200, 66, 0.4);
+  }
+
+  /* Кнопка WhatsApp */
+  .cta-btn {
+    padding: 16px 32px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    white-space: nowrap;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+  }
+
+  .cta-btn:hover {
+    background: #FBBF24;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(245, 200, 66, 0.35);
+  }
+
+  /* Вторая кнопка — контурная */
+  .cta-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--cream);
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    white-space: nowrap;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    font-family: inherit;
+    text-decoration: none;
+  }
+
+  .cta-btn-outline:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+  }
+
+  /* Мелкий текст */
+  .cta-note {
+    font-size: 11px;
+    line-height: 1.6;
+    color: rgba(245, 240, 232, 0.4);
+    max-width: 420px;
+  }
+
+  .cta-note strong {
+    color: rgba(245, 240, 232, 0.6);
+    font-weight: 500;
+  }
+
+  /* ============================================
+     АДАПТИВ
+  ============================================ */
+  @media (max-width: 1024px) {
+    .cta-grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+
+    .cta-right {
+      padding-top: 0;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .cta-card {
+      padding: 56px 40px;
+      border-radius: 24px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 50px 20px; }
+
+    .cta-card {
+      padding: 44px 24px;
+      border-radius: 20px;
+    }
+
+    .cta-title {
+      font-size: 32px;
+    }
+
+    .cta-form {
+      flex-direction: column;
+    }
+
+    .cta-input,
+    .cta-btn,
+    .cta-btn-outline {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+/* ============================================
+     ФУТЕР
+  ============================================ */
+  .footer {
+    padding: 60px 0 40px;
+    background: var(--cream);
+  }
+
+  /* Сетка колонок */
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+
+  /* ============================================
+     КОЛОНКА 1 — ЛОГОТИП И ОПИСАНИЕ
+  ============================================ */
+  .footer-logo {
+    display: inline-flex;
+    align-items: baseline;
+    font-family: Georgia, serif;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  .footer-logo .accent {
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  .footer-desc {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 280px;
+    margin-bottom: 24px;
+  }
+
+  /* Социальные иконки */
+  .socials {
+    display: flex;
+    gap: 10px;
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    background: transparent;
+    color: #fff;
+  }
+  .social-icon:hover {
+    background: var(--ink);
+    color: var(--cream);
+    border-color: var(--ink);
+    transform: translateY(-2px);
+  }
+  .social-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    transition: fill 0.3s ease;
+  }
+
+  /* -------- Instagram -------- */
+.social-icon.instagram {
+  background: linear-gradient(45deg, #F09433 0%, #E6683C 25%, #DC2743 50%, #CC2366 75%, #BC1888 100%);
+}
+.social-icon.instagram:hover {
+  box-shadow: 0 10px 25px rgba(220, 39, 67, 0.5);
+}
+
+/* -------- Telegram -------- */
+.social-icon.telegram {
+  background: #229ED9;
+}
+.social-icon.telegram:hover {
+  box-shadow: 0 10px 25px rgba(34, 158, 217, 0.5);
+}
+
+/* -------- YouTube -------- */
+.social-icon.youtube {
+  background: #FF0000;
+}
+.social-icon.youtube:hover {
+  box-shadow: 0 10px 25px rgba(255, 0, 0, 0.5);
+}
+
+/* -------- Facebook -------- */
+.social-icon.facebook {
+  background: #1877F2;
+}
+.social-icon.facebook:hover {
+  box-shadow: 0 10px 25px rgba(24, 119, 242, 0.5);
+}
+
+/* -------- WhatsApp -------- */
+.social-icon.whatsapp {
+  background: #25D366;
+}
+.social-icon.whatsapp:hover {
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+}
+
+/* -------- X (Twitter) -------- */
+.social-icon.x-twitter {
+  background: #000000;
+}
+.social-icon.x-twitter:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* -------- Max -------- */
+.social-icon.max {
+  background: #7B61FF;
+}
+.social-icon.max:hover {
+  box-shadow: 0 10px 25px rgba(123, 97, 255, 0.5);
+}
+
+  /* ============================================
+     КОЛОНКИ 2, 3, 4 — ССЫЛКИ
+  ============================================ */
+  .footer-col h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-col ul a {
+    font-size: 13.5px;
+    color: var(--ink);
+    transition: color 0.3s ease;
+    display: inline-block;
+  }
+  .footer-col ul a:hover {
+    color: var(--accent);
+  }
+
+  /* ============================================
+     КОЛОНКА 4 — КОНТАКТЫ
+  ============================================ */
+  .contacts {
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: var(--ink);
+  }
+  .contacts a {
+    transition: color 0.3s ease;
+  }
+  .contacts a:hover {
+    color: var(--accent);
+  }
+  .contacts .schedule {
+    margin-top: 16px;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ============================================
+     НИЖНЯЯ ПОЛОСА
+  ============================================ */
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    border-top: 1px solid var(--line);
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 28px;
+  }
+  .footer-links a {
+    transition: color 0.3s ease;
+  }
+  .footer-links a:hover {
+    color: var(--ink);
+  }
+
+  /* ============================================
+     АДАПТИВ
+  ============================================ */
+  @media (max-width: 900px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer {
+      padding: 40px 0 30px;
+    }
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .footer-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }

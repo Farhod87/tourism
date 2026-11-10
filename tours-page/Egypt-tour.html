@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BukharaPulse</title>
+  <link rel="stylesheet" href="../css/tourCties.css">
+</head>
+<body>
+<!-- ============================================
+     HEADER
+============================================ -->
+<div class="header-wrap">
+  <header class="header">
+    <a href="#" class="logo">
+      <div class="logo-mark">B</div>
+      <div class="logo-text">
+        <span class="name">BukharaPulse</span>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="../index.html">Главная</a>
+      <a href="../pages/tours.html">Туры</a>
+      <a href="../pages/hotels.html">Отели</a>
+      <a href="../pages/blog.html">Блог</a>
+      <a href="../pages/about.html">О нас</a>
+    </nav>
+
+    <div style="display:flex; align-items:center; gap:10px;">
+
+      <!-- Выпадающий переключатель языка -->
+<div class="lang-dropdown" id="langDropdown">
+  <button class="lang-current" id="langBtn">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+    </svg>
+    <span id="currentLang">RU</span>
+    <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="m6 9 6 6 6-6"/>
+    </svg>
+  </button>
+
+  <div class="lang-menu" id="langMenu">
+    <button data-lang="RU" class="active">
+      <span class="name">Русский</span>
+    </button>
+    <button data-lang="EN">
+      <span class="name">English</span>
+    </button>
+    <button data-lang="UZ">
+      <span class="name">O‘zbek</span>
+    </button>
+  </div>
+</div>
+      <a href="#booking" class="header-cta">Забронировать</a>
+      <button class="burger" id="burgerBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16M4 6h16M4 18h16"/></svg>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="../index.html">Главная</a>
+      <a href="../pages/tours.html">Туры</a>
+      <a href="../pages/hotels.html">Отели</a>
+      <a href="../pages/blog.html">Блог</a>
+      <a href="../pages/about.html">О нас</a>
+      <a href="#booking" style="background:var(--ink); color:var(--cream); border-radius:999px; text-align:center; padding:14px; margin-top:12px; border:none;">Забронировать</a>
+    </div>
+  </header>
+</div>
+
+
+
+<div class="container">
+
+  <!-- Заголовок и Рейтинг -->
+  <header class="page-header">
+    <h1 class="serif">Египет — Красное море и пирамиды</h1>
+    <div class="rating-line" style="margin-top: 10px; display: flex; align-items: center; gap: 8px; font-size: 15px; color: var(--muted);">
+      <span class="star" style="color: #F59E0B; font-size: 18px;">★</span>
+      <strong style="color: var(--ink); font-size: 16px;">4.7</strong> (168 отзывов) · Египет, Хургада
+    </div>
+  </header>
+
+  <!-- Галерея -->
+<div class="gallery-grid">
+  <div class="gallery-main" onclick="openLightbox(this)">
+    <img src="https://images.unsplash.com/photo-1539768942893-daf53e448371?q=80&w=1200&auto=format&fit=crop" alt="Египет">
+    <div class="price-badge">
+      <span>от</span>
+      <strong>₽ 49 900</strong>
+    </div>
+    <button class="all-photos-btn" onclick="openLightbox(this.closest('.gallery-main')); event.stopPropagation();">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+      Все фото
+    </button>
+  </div>
+  
+  <div class="gallery-thumb" onclick="openLightbox(this)">
+    <img src="https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?q=80&w=600&auto=format&fit=crop" alt="Египет 2">
+  </div>
+  <div class="gallery-thumb" onclick="openLightbox(this)">
+    <img src="https://images.unsplash.com/photo-1568322445389-f64ac2515020?q=80&w=600&auto=format&fit=crop" alt="Египет 3">
+  </div>
+  <div class="gallery-thumb" onclick="openLightbox(this)">
+    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=600&auto=format&fit=crop" alt="Египет 4">
+  </div>
+  <div class="gallery-thumb" onclick="openLightbox(this)" style="position: relative;">
+    <img src="https://images.unsplash.com/photo-1553913861-c0fddf2619ee?q=80&w=600&auto=format&fit=crop" alt="Египет 5">
+    <div class="thumb-overlay">+78</div>
+  </div>
+</div>
+
+<!-- МОДАЛЬНОЕ ОКНО -->
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+  <button class="lightbox-prev" onclick="changeImage(-1); event.stopPropagation();">&#10094;</button>
+  <img id="lightbox-img" src="" alt="Фото" onclick="event.stopPropagation();">
+  <button class="lightbox-next" onclick="changeImage(1); event.stopPropagation();">&#10095;</button>
+</div>
+
+  <!-- Навигация -->
+  <nav class="tabs-nav">
+    <a href="#program" class="active">Программа</a>
+    <a href="#included">Включено / Не включено</a>
+    <a href="#prices">Цены</a>
+    <a href="#hotel">Гостиница</a>
+    <a href="#booking">Забронировать</a>
+  </nav>
+
+  <!-- Описание -->
+  <section class="content-block">
+    <h2>Описание тура</h2>
+    <p>Египет — это колыбель одной из древнейших цивилизаций мира и одновременно один из лучших курортов Красного моря. Здесь вы сможете прикоснуться к тайнам пирамид и фараонов, а затем расслабиться на белоснежных пляжах с кристально чистой водой и яркими коралловыми рифами. Тур идеально подходит для тех, кто хочет совместить пляжный отдых с насыщенной экскурсионной программой.</p>
+  </section>
+
+  <!-- Программа -->
+  <section class="content-block" id="program">
+    <h2>Программа</h2>
+    <h3>Программа тура</h3>
+    <p>Начните отдых на курорте <a href="#">Хургада</a> — жемчужине Красного моря.</p>
+    <p>Пляжный отдых и экскурсии с русскоговорящим гидом:</p>
+    
+    <ul class="program-list">
+      <li>Пляжный отдых и снорклинг на <a href="#">коралловых рифах Красного моря</a> — яркие рыбки и кораллы в шаге от берега.</li>
+      <li>Экскурсия в <a href="#">Луксор</a> — древние Фивы, Карнакский храм и Долина царей.</li>
+      <li>Поездка к <a href="#">пирамидам Гизы</a> и Сфинксу — единственное сохранившееся чудо света.</li>
+      <li>Морская прогулка на яхте к <a href="#">острову Гифтун</a> с купанием и обедом на борту.</li>
+      <li>Сафари по <a href="#">пустыне</a> на квадроциклах с ужином и шоу бедуинов.</li>
+      <li>Прогулка по <a href="#">набережной Хургады</a> и восточному базару.</li>
+    </ul>
+    <p class="duration-text">Продолжительность тура: 7 дней / 6 ночей</p>
+  </section>
+
+<!-- Блок Включено / Не включено -->
+<div class="content-block" id="included">
+  
+  <!-- ВКЛЮЧЕНО -->
+  <div class="included-block included">
+    <h3>Включено</h3>
+    <ul class="included-list">
+      <li>Размещение в отеле 4*–5* с системой «всё включено» (All Inclusive);</li>
+      <li>Групповой трансфер аэропорт — отель — аэропорт;</li>
+      <li>Питание: завтрак, обед и ужин по системе «шведский стол»;</li>
+      <li>Услуги русскоговорящего гида на связи 24/7;</li>
+      <li>Медицинская страховка на весь период тура;</li>
+      <li>Бесплатный доступ к пляжу, бассейнам и коралловому рифу отеля;</li>
+    </ul>
+  </div>
+
+  <!-- НЕ ВКЛЮЧЕНО -->
+  <div class="included-block not-included" style="margin-top: 32px;">
+    <h3>Не включено</h3>
+    <ul class="not-included-list">
+      <li>Авиа билеты на международные перелеты;</li>
+      <li>Экскурсии в Луксор и к пирамидам Гизы (по желанию, оплата на месте);</li>
+      <li>Виза Египта (оформляется по прибытии);</li>
+      <li>Алкогольные напитки премиум-класса;</li>
+      <li>Личные расходы и сувениры;</li>
+    </ul>
+  </div>
+</div>
+
+  <!-- Цены -->
+  <section class="content-block" id="prices">
+    <h2>Цены</h2>
+    <table class="price-table">
+      <thead>
+        <tr>
+          <th>Человек</th>
+          <th>Стандарт</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1 человек</td>
+          <td>₽ 69 900</td>
+        </tr>
+        <tr>
+          <td>2 человека</td>
+          <td>₽ 49 900</td>
+        </tr>
+        <tr>
+          <td>3 человека</td>
+          <td>₽ 45 800</td>
+        </tr>
+        <tr>
+          <td>4 человека</td>
+          <td>₽ 42 900</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="price-note">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+      за человека, при двухместном размещении
+    </div>
+  </section>
+
+</div>
+
+<section class="container" id="hotel">
+  <!-- Блок Гостиницы -->
+<div class="hotel-section">
+  <h3>Гостиница:</h3>
+  
+  <table class="hotel-table">
+    <tbody>
+      <tr>
+        <th colspan="2">Хургада</th>
+      </tr>
+      <tr>
+        <td colspan="2">
+          Стандарт 4*–5*: <span style="color: #E85D25;">Sunrise Aqua Joy Resort</span>, <span style="color: #E85D25;">Steigenberger Aqua Magic</span>, <span style="color: #E85D25;">Jaz Aquaviva</span>, <span style="color: #E85D25;">Desert Rose Resort</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</section>
+
+<section class="container" id="booking">
+  <!-- Форма бронирования -->
+<div class="booking-section">
+  <h2>Забронировать</h2>
+  
+  <div class="booking-alert">
+    <em>Чтобы отправить нам запрос на тур, пожалуйста, заполните и отправьте форму бронирования. Пожалуйста, заполните все обязательные поля, отмеченные звездочкой (*)</em>
+  </div>
+
+  <div class="booking-form-container">
+    <form id="tourBookingForm">
+      <!-- Контактные данные -->
+      <div class="form-grid">
+        <input type="text" class="form-input" name="fullname" placeholder="* Ваше имя" required>
+        <input type="tel" class="form-input" name="phone" placeholder="* Телефон / WhatsApp" required>
+      </div>
+  
+      <!-- Детали поездки -->
+      <div class="form-grid">
+        <input type="number" class="form-input input-count" name="guests" placeholder="Путешественников" min="1">
+        <input type="date" class="form-input input-date" name="date_from">
+        <input type="date" class="form-input input-date" name="date_to">
+      </div>
+  
+      <!-- Комментарий -->
+      <textarea class="form-textarea" name="message" placeholder="Ваши пожелания (необязательно)"></textarea>
+  
+      <!-- Кнопка -->
+      <button type="submit" class="btn-submit-booking">Отправить запрос</button>
+    </form>
+  </div>
+</div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <!-- КОЛОНКА 1 — ЛОГОТИП -->
+      <div>
+        <a href="#" class="footer-logo">
+          <span>Uzbek</span><span class="accent">Pulse</span>
+        </a>
+        <p class="footer-desc">
+          Премиальные путешествия из Ташкента. EST 2024. Лицензия № 123. Честно, с заботой.
+        </p>
+
+        <!-- Социальные иконки -->
+        <div class="socials">
+          <a href="https://www.instagram.com/uzbekpulse?igsh=MTZmMTlyemE5M21kcw==" class="social-icon instagram" aria-label="Instagram" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://t.me/UzbekPulse" class="social-icon telegram" aria-label="Telegram" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@UzbekPulse2026" class="social-icon youtube" aria-label="YouTube" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="#" class="social-icon facebook" aria-label="Facebook" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://whatsapp.com/channel/0029VbDC3mLKGGGPmxRoi016" class="social-icon whatsapp" aria-label="WhatsApp" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </a>
+          <a href="#" class="social-icon x-twitter" aria-label="X" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="social-icon max" aria-label="Max" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 5.94 2 10.8c0 2.485 1.094 4.727 2.859 6.328V22l3.734-2.05a11.31 11.31 0 003.407.525c5.523 0 10-3.94 10-8.8S17.523 2 12 2zm-4.5 9.6a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7zm4.5 0a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7zm4.5 0a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- КОЛОНКА 2 — ВЫЕЗД -->
+      <div class="footer-col">
+        <h4>Выезд</h4>
+        <ul>
+          <li><a href="#">Все зарубежные туры</a></li>
+          <li><a href="#">Пляжный отдых</a></li>
+          <li><a href="#">Семейные туры</a></li>
+          <li><a href="#">Экскурсионные</a></li>
+          <li><a href="#">Страны</a></li>
+          <li><a href="#">Индивидуальный подбор</a></li>
+        </ul>
+      </div>
+
+      <!-- КОЛОНКА 3 — УЗБЕКИСТАН -->
+      <div class="footer-col">
+        <h4>Узбекистан</h4>
+        <ul>
+          <li><a href="#">Все туры по Узбекистану</a></li>
+          <li><a href="#">Бухара</a></li>
+          <li><a href="#">Самарканд</a></li>
+          <li><a href="#">Хива</a></li>
+          <li><a href="#">Ташкент</a></li>
+          <li><a href="#">Шелковый путь</a></li>
+          <li><a href="#">Исторические</a></li>
+          <li><a href="#">Индивидуальные</a></li>
+          <li><a href="#">Однодневные</a></li>
+        </ul>
+      </div>
+
+      <!-- КОЛОНКА 4 — КОНТАКТЫ -->
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <div class="contacts">
+          <div>Ташкент, ул. Амира Темура 12</div>
+          <div><a href="tel:+998900000000">+998 90 000 00 00</a></div>
+          <div><a href="mailto:hello@uzbekpulse.uz">hello@uzbekpulse.uz</a></div>
+          <div class="schedule">
+            Пн-Сб 09:00-19:00<br>
+            Вс — по записи
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- НИЖНЯЯ ПОЛОСА -->
+    <div class="footer-bottom">
+      <span>© 2024 UzbekPulse Travel. Все права защищены.</span>
+      <div class="footer-links">
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Договор оферты</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+  
+  <script src="../js/tours.js"></script>
+</body>
+</html>

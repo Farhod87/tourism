@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BukharaPulse</title>
+<link rel="stylesheet" href="../../css/attraction.css">
+</head>
+<body>
+
+<!-- ============================================
+     HEADER
+============================================ -->
+<div class="header-wrap">
+  <header class="header">
+    <a href="#" class="logo">
+      <div class="logo-mark">B</div>
+      <div class="logo-text">
+        <span class="name">BukharaPulse</span>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="../index.html">Asosiy sahifa</a>
+      <a href="#">Turlar</a>
+      <a href="#">Mehmonxonalar</a>
+      <a href="./blog.html">Blog</a>
+      <a href="./about.html">Biz haqimizda</a>
+    </nav>
+
+    <div style="display:flex; align-items:center; gap:10px;">
+
+      <!-- Переключатель языка -->
+      <div class="lang-dropdown" id="langDropdown">
+        <button class="lang-current" id="langBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <span id="currentLang">UZ</span>
+          <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
+        </button>
+
+        <div class="lang-menu" id="langMenu">
+          <button data-lang="RU"><span class="name">Русский</span></button>
+          <button data-lang="EN"><span class="name">English</span></button>
+          <button data-lang="UZ" class="active"><span class="name">O‘zbek</span></button>
+        </div>
+      </div>
+
+      <a href="#" class="header-cta">Band qilish</a>
+      <button class="burger" id="burgerBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 12h16M4 6h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#">Asosiy sahifa</a>
+      <a href="#">Chiquvchi turizm</a>
+      <a href="#">Kiruvchi turizm</a>
+      <a href="#">Mehmonxonalar</a>
+      <a href="#">Blog</a>
+      <a href="#">Biz haqimizda</a>
+    </div>
+  </header>
+</div>
+
+<!-- ============================================
+     HERO VIDEO
+============================================ -->
+<section class="hero-video">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="#" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-text" id="heroContent">
+    <span class="hero-label">— 2200 YILLIK TARIX —</span>
+    <h1>TOSHKENT</h1>
+    <p>O'zbekiston poytaxti. Qadimiy madrasalar zamonaviy osmono'par binolar bilan, sharq bozorlari esa Yevropa bog'lari bilan yonma-yon joylashgan shahar.</p>
+  </div>
+</section>
+
+<!-- ============================================
+     HISTORY
+============================================ -->
+<section class="history">
+  <div class="container history-grid">
+    <div class="history-sticky">
+      <span class="section-label">Tarix</span>
+      <div class="big-num">2200+</div>
+      <span class="big-num-label">yillik tarix<br>ko'plab yodgorliklar<br>madaniy meros</span>
+    </div>
+    <div class="history-content">
+      <h2>Toshkent tarixiga qisqacha nazar</h2>
+      <p class="lead">Toshkent — O'zbekiston poytaxti va Markaziy Osiyodagi eng qadimiy shaharlardan biri bo'lib, yoshi <strong>2200 yildan</strong> oshadi. Shahar Buyuk ipak yo'lidagi muhim markaz bo'lgan.</p>
+      <p>O'z tarixi davomida Toshkent ko'plab davrlarni boshdan kechirgan: qadimiy davlatlardan tortib Temuriylar imperiyasigacha, Qo'qon xonligidan zamonaviy megapolisgacha. Bugungi kunda u mamlakatning eng yirik madaniy, ilmiy va iqtisodiy markazi bo'lib, unda qadimiylik va zamonaviylik uyg'unlashgan.</p>
+      <div class="history-stats">
+        <div><strong>XVI</strong><span>asr Ko'kaldosh madrasasi</span></div>
+        <div><strong>2</strong><span>ming yillik tarix</span></div>
+        <div><strong>+</strong><span>zamonaviy megapolis</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     PLACES (32 достопримечательности)
+============================================ -->
+<section class="places">
+  <div class="container">
+    <span class="section-label">Meros</span>
+    <h2 class="section-title">Toshkent diqqatga sazovor joylari</h2>
+    <p class="subtitle">Poytaxtning 32 ta durdonasi — teleminoradan tortib qadimiy madrasalar va zamonaviy bog'largacha.</p>
+
+    <div class="places-cards" id="placesCards">
+      <!-- Первые 6 видимые -->
+      <div class="place-card">
+        <div class="place-img" style="background-image:url('../img/attraction/Tashkent_TV_Tower.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">01</div>
+          <h3>Toshkent teleminorasi</h3>
+          <p>Markaziy Osiyodagi eng baland inshootlardan biri, zamonaviy Toshkent ramzi va panorama manzarali kuzatuv maydoni.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82%D1%81%D0%BA%D0%B0%D1%8F_%D1%82%D0%B5%D0%BB%D0%B5%D0%B1%D0%B0%D1%88%D0%BD%D1%8F" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-img" style="background-image:url('../img/attraction/Timurids_Museum.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">02</div>
+          <h3>Temuriylar tarixi davlat muzeyi</h3>
+          <p>Temuriylar davriga bag'ishlangan, noyob eksponatlar va boy kolleksiyaga ega muzey.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D1%83%D0%B7%D0%B5%D0%B9_%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D0%B8_%D0%A2%D0%B8%D0%BC%D1%83%D1%80%D0%B8%D0%B4%D0%BE%D0%B2" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-img" style="background-image:url('../img/attraction/Repression_Museum.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">03</div>
+          <h3>Qatag'on qurbonlari xotirasi muzeyi</h3>
+          <p>Siyosiy qatag'on qurbonlari xotirasiga bag'ishlangan memorial muzey.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D1%83%D0%B7%D0%B5%D0%B9_%D0%BF%D0%B0%D0%BC%D1%8F%D1%82%D0%B8_%D0%B6%D0%B5%D1%80%D1%82%D0%B2_%D1%80%D0%B5%D0%BF%D1%80%D0%B5%D1%81%D1%81%D0%B8%D0%B9" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-img" style="background-image:url('../img/attraction/Tashkent_Zoo.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">04</div>
+          <h3>Toshkent hayvonot bog'i</h3>
+          <p>Markaziy Osiyodagi eng qadimiy va yirik hayvonot bog'laridan biri bo'lib, unda yuzlab hayvon turlari yashaydi.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82%D1%81%D0%BA%D0%B8%D0%B9_%D0%B7%D0%BE%D0%BE%D0%BF%D0%B0%D1%80%D0%BA" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-img" style="background-image:url('../img/attraction/Tashkent_Kuranty.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">05</div>
+          <h3>Toshkent kuranti</h3>
+          <p>Shahar ramziga va sevimli uchrashuv joyiga aylangan kuranli tarixiy soat.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82%D1%81%D0%BA%D0%B8%D0%B5_%D0%BA%D1%83%D1%80%D0%B0%D0%BD%D1%82%D1%8B" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-img" style="background-image:url('../img/attraction/Minguruk.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">06</div>
+          <h3>Ming'o'rik</h3>
+          <p>Noyob me'morchilik va sharq shahri muhitiga ega Toshkentning go'zal tumani.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%B3%D1%83%D1%80%D1%8E%D0%BA" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+
+      <!-- Остальные 26 скрытые -->
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Navoi_Park.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">07</div>
+          <h3>Alisher Navoiy nomidagi milliy bog'</h3>
+          <p>Buyuk shoir va mutafakkir sharafiga nomlangan Toshkentning eng yirik bog'laridan biri.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BF%D0%B0%D1%80%D0%BA_%D0%A3%D0%B7%D0%B1%D0%B5%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD%D0%B0_%D0%B8%D0%BC%D0%B5%D0%BD%D0%B8_%D0%90%D0%BB%D0%B8%D1%88%D0%B5%D1%80%D0%B0_%D0%9D%D0%B0%D0%B2%D0%BE%D0%B8" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/New_Uzbekistan_Park.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">08</div>
+          <h3>Yangi O'zbekiston bog'i</h3>
+          <p>2021 yilda ochilgan, favvoralar, attraksionlar va dam olish zonalariga ega zamonaviy bog'.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9D%D0%BE%D0%B2%D1%8B%D0%B9_%D0%A3%D0%B7%D0%B1%D0%B5%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD_(%D0%BF%D0%B0%D1%80%D0%BA)" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Victory_Park.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">09</div>
+          <h3>G'alaba bog'i</h3>
+          <p>Ikkinchi jahon urushidagi g'alabaga bag'ishlangan, yodgorliklar va muzeyga ega memorial bog'.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%BA_%D0%9F%D0%BE%D0%B1%D0%B5%D0%B4%D1%8B_(%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82)" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Botanical_Garden.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">10</div>
+          <h3>Toshkent botanika bog'i</h3>
+          <p>Markaziy Osiyodagi eng qadimiy botanika bog'laridan biri bo'lib, boy o'simliklar kolleksiyasiga ega.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82%D1%81%D0%BA%D0%B8%D0%B9_%D0%B1%D0%BE%D1%82%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%B0%D0%B4" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Aquapark_Lake.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">11</div>
+          <h3>Toshkent akvaparki ko'li</h3>
+          <p>Akvapark hududidagi go'zal ko'l bo'lib, shaharliklar va sayyohlar uchun mashhur dam olish joyi.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9E%D0%B7%D0%B5%D1%80%D0%BE_%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%B0%D0%BA%D0%B2%D0%B0%D0%BF%D0%B0%D1%80%D0%BA%D0%B0" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Telman_Park.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">12</div>
+          <h3>Telman nomidagi bog'</h3>
+          <p>Toshkent markazidagi tarixiy bog' bo'lib, sayr qilish va dam olish uchun sevimli joy.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%B0%D1%80%D0%BA_%D0%B8%D0%BC%D0%B5%D0%BD%D0%B8_%D0%A2%D0%B5%D0%BB%D1%8C%D0%BC%D0%B0%D0%BD%D0%B0" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Tashkent_City_Park.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">13</div>
+          <h3>Tashkent City Park</h3>
+          <p>Toshkent markazidagi favvoralar, attraksionlar va dam olish zonalariga ega zamonaviy bog'.</p>
+          <a href="https://ru.wikipedia.org/wiki/Tashkent_City_Park" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Anhor.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">14</div>
+          <h3>Anhor</h3>
+          <p>Toshkentdagi go'zal kanal bo'lib, uning atrofida bog'lar va dam olish zonalari joylashgan.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D1%85%D0%BE%D1%80" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Chorsu_Bazaar.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">15</div>
+          <h3>Chorsu bozori</h3>
+          <p>Toshkentning eng qadimiy va yirik bozorlaridan biri bo'lib, bu yerda ziravorlardan tortib an'anaviy buyumlargacha hamma narsani sotib olish mumkin.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A7%D0%BE%D1%80%D1%81%D1%83_(%D0%B1%D0%B0%D0%B7%D0%B0%D1%80,_%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82)" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Kukeldash.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">16</div>
+          <h3>Ko'kaldosh madrasasi</h3>
+          <p>Toshkentning XVI asrga oid eng qadimiy saqlanib qolgan madrasasi, ma'naviy va ta'lim markazi.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%80%D0%B5%D1%81%D0%B5_%D0%9A%D1%83%D0%BA%D0%B5%D0%BB%D1%8C%D0%B4%D0%B0%D1%88_(%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82)" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Humo_Arena.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">17</div>
+          <h3>Humo Arena</h3>
+          <p>Zamonaviy muz saroyi va sport majmuasi bo'lib, Markaziy Osiyodagi eng yiriklaridan biri.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A5%D1%83%D0%BC%D0%BE_%D0%90%D1%80%D0%B5%D0%BD%D0%B0" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Charvak.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">18</div>
+          <h3>Chorvoq suv ombori</h3>
+          <p>Tyanshan tog'laridagi go'zal suv ombori bo'lib, dam olish va turizm uchun mashhur joy.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A7%D0%B0%D1%80%D0%B2%D0%B0%D0%BA%D1%81%D0%BA%D0%BE%D0%B5_%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D1%80%D0%B0%D0%BD%D0%B8%D0%BB%D0%B8%D1%89%D0%B5" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Amirsoy.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">19</div>
+          <h3>Amirsoy (tog'-chang'i kurorti)</h3>
+          <p>Chatqol tizmasidagi tog'larda joylashgan zamonaviy tog'-chang'i kurorti, qishda va yozda mashhur.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BC%D0%B8%D1%80%D1%81%D0%BE%D0%B9_(%D0%B3%D0%BE%D1%80%D0%BD%D0%BE%D0%BB%D1%8B%D0%B6%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81)" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Chimgan.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">20</div>
+          <h3>Chimyon</h3>
+          <p>Toshkent yaqinidagi tog' kurorti bo'lib, faol dam olish va tabiatni sevuvchilar orasida mashhur.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A7%D0%B8%D0%BC%D0%B3%D0%B0%D0%BD" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Hazrati_Imam.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">21</div>
+          <h3>Hazrati Imom ansambli</h3>
+          <p>Toshkentdagi madrasa, masjid va maqbarani o'z ichiga olgan ma'naviy majmua, asosiy ziyorat markazlaridan biri.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D1%81%D0%B0%D0%BC%D0%B1%D0%BB%D1%8C_%D0%A5%D0%B0%D0%B7%D1%80%D0%B0%D1%82%D0%B8_%D0%98%D0%BC%D0%B0%D0%BC" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Minor_Mosque.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">22</div>
+          <h3>Minor masjidi</h3>
+          <p>XX asr oxirida qurilgan Toshkentning eng yirik masjidlaridan biri, noyob me'morchilikka ega.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B8%D0%BD%D0%BE%D1%80_(%D0%BC%D0%B5%D1%87%D0%B5%D1%82%D1%8C)" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Sacred_Heart.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">23</div>
+          <h3>Muqaddas Iso yuragi sobori</h3>
+          <p>XX asr boshlarida qurilgan Toshkentdagi katolik sobori, me'morchilik yodgorligi.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%B1%D0%BE%D1%80_%D0%A1%D0%B2%D1%8F%D1%82%D0%B5%D0%B9%D1%88%D0%B5%D0%B3%D0%BE_%D0%A1%D0%B5%D1%80%D0%B4%D1%86%D0%B0_%D0%98%D0%B8%D1%81%D1%83%D1%81%D0%B0_(%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82)" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Kaffal_Shashi.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">24</div>
+          <h3>Kaffol Shoshiy maqbarasi</h3>
+          <p>E'zozli islom avliyosi va olimi Kaffol Shoshiyning qadimiy maqbarasi.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%9A%D0%B0%D1%84%D1%84%D0%B0%D0%BB%D1%8F_%D0%A8%D0%B0%D1%88%D0%B8" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Barak_Khana.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">25</div>
+          <h3>Baroqxon madrasasi</h3>
+          <p>XVI asrga oid tarixiy madrasa, Toshkentdagi eng qadimiylaridan biri.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%80%D0%B5%D1%81%D0%B5_%D0%91%D0%B0%D1%80%D0%B0%D0%BA%D1%85%D0%B0%D0%BD%D0%B0" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Yunus_Khan.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">26</div>
+          <h3>Yunusxon maqbarasi</h3>
+          <p>Mo'g'uliston hukmdorlaridan biri Yunusxon nomi bilan bog'liq XV asrga oid maqbara.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%AE%D0%BD%D1%83%D1%81-%D1%85%D0%B0%D0%BD%D0%B0_(%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82)" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Sheikhantaur.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">27</div>
+          <h3>Shayxontohur majmuasi</h3>
+          <p>Maqbaralar va masjidni o'z ichiga olgan qadimiy ma'naviy majmua, asosiy ziyorat markazlaridan biri.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D1%81%D0%B0%D0%BC%D0%B1%D0%BB%D1%8C_%D0%A8%D0%B5%D0%B9%D1%85%D0%B0%D0%BD%D1%82%D0%B0%D1%83%D1%80" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Zangiota.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">28</div>
+          <h3>Zangiota maqbarasi</h3>
+          <p>E'zozli so'fiy avliyo Zangiotaning qadimiy maqbarasi, muhim ziyoratgoh.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%97%D0%B0%D0%BD%D0%B3%D0%B8%D0%B0%D1%82%D0%B0" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Nikolay_Palace.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">29</div>
+          <h3>Nikolay Konstantinovich saroyi</h3>
+          <p>Buyuk knyaz Nikolay Konstantinovich uchun qurilgan XIX asrga oid tarixiy saroy.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%94%D0%B2%D0%BE%D1%80%D0%B5%D1%86_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D1%8F_%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D0%B0%D0%BD%D1%82%D0%B8%D0%BD%D0%BE%D0%B2%D0%B8%D1%87%D0%B0" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Tashkent_Circus.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">30</div>
+          <h3>Toshkent davlat sirki</h3>
+          <p>Markaziy Osiyodagi eng qadimiy sirk bo'lib, oilaviy dam olish uchun mashhur joy.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82%D1%81%D0%BA%D0%B8%D0%B9_%D0%B3%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D1%86%D0%B8%D1%80%D0%BA" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Railway_Museum.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">31</div>
+          <h3>Toshkent temir yo'l texnikasi muzeyi</h3>
+          <p>Tarixiy lokomotivlar va vagonlar namoyish etilgan ochiq osmon ostidagi muzey.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82%D1%81%D0%BA%D0%B8%D0%B9_%D0%BC%D1%83%D0%B7%D0%B5%D0%B9_%D0%B6%D0%B5%D0%BB%D0%B5%D0%B7%D0%BD%D0%BE%D0%B4%D0%BE%D1%80%D0%BE%D0%B6%D0%BD%D0%BE%D0%B9_%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B8" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Applied_Arts_Museum.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">32</div>
+          <h3>O'zbekiston amaliy san'at davlat muzeyi</h3>
+          <p>O'zbek dekorativ-amaliy san'atining noyob namunalari namoyish etilgan muzey.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D1%81%D1%83%D0%B4%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D1%83%D0%B7%D0%B5%D0%B9_%D0%BF%D1%80%D0%B8%D0%BA%D0%BB%D0%B0%D0%B4%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B8%D1%81%D0%BA%D1%83%D1%81%D1%81%D1%82%D0%B2%D0%B0_%D0%A3%D0%B7%D0%B1%D0%B5%D0%BA%D0%B8%D1%81%D1%82%D0%B0%D0%BD%D0%B0" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="show-more-container">
+      <button id="showMoreBtn">Yana 26 tasini ko'rsatish →</button>
+      <button id="hideBtn" style="display:none">Yashirish ↑</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOD
+============================================ -->
+<section class="food">
+  <div class="container">
+    <div class="food-header">
+      <span class="section-label">33 ta taom</span>
+      <h2 class="food-title">Toshkent ta'mi</h2>
+      <p class="food-subtitle">Toshkent oshxonasi — bu shunchaki ovqat emas, balki Buyuk ipak yo'lining buyuk tarixining bir qismi. Har bir taom qadimiy kitobning bir sahifasiga o'xshaydi, uni tatib ko'rish mumkin.</p>
+    </div>
+
+    <div class="tabs" id="foodTabs">
+      <button class="tab-btn active" data-category="all">Barchasi</button>
+      <button class="tab-btn" data-category="meaty">Go'shtli</button>
+      <button class="tab-btn" data-category="soups">Sho'rvalar</button>
+      <button class="tab-btn" data-category="pastry">Xamirdan</button>
+      <button class="tab-btn" data-category="dairy">Sutli</button>
+      <button class="tab-btn" data-category="sweets">Shirinliklar</button>
+    </div>
+
+    <div class="food-grid" id="foodGrid"></div>
+
+    <div class="show-more-container">
+      <button class="btn-show-more" id="showMoreFoodBtn">Yana 27 ta taomni ko'rsatish →</button>
+      <button class="btn-hide" id="hideFoodBtn">Yashirish ↑</button>
+    </div>
+  </div>
+</section>
+
+<!-- Модалка -->
+<div class="modal" id="foodModal">
+  <div class="modal-content">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-img" id="modalImg"></div>
+    <div class="modal-body">
+      <h2 id="modalTitle"></h2>
+      <div class="modal-region" id="modalRegion"></div>
+      <div class="modal-desc" id="modalDesc"></div>
+      <div class="modal-tip" id="modalTip"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     SPIRITUALITY
+============================================ -->
+<section class="seven-pirs">
+  <div class="container">
+    <span class="section-label">Ma'naviyat</span>
+    <h2>Toshkentning ma'naviy ziyoratgohlari</h2>
+    <p class="subtitle">Shaharning ma'naviy tarixini yoritib turuvchi buyuk so'fiy ustozlar va ziyoratgohlar.</p>
+    <div class="pir-cards">
+      <div class="pir-card featured">
+        <div class="pir-img" style="background-image:url('../img/attraction/Hazrati_Imam.webp')"></div>
+        <div class="pir-info"><span class="pir-num">01</span>
+          <h3><a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D1%81%D0%B0%D0%BC%D0%B1%D0%BB%D1%8C_%D0%A5%D0%B0%D0%B7%D1%80%D0%B0%D1%82%D0%B8_%D0%98%D0%BC%D0%B0%D0%BC" target="_blank">Hazrati Imom ansambli</a></h3>
+          <p>Toshkentdagi madrasa, masjid va maqbarani o'z ichiga olgan ma'naviy majmua, asosiy ziyorat markazlaridan biri.</p>
+        </div>
+      </div>
+      <div class="pir-card">
+        <div class="pir-img" style="background-image:url('../img/attraction/Kaffal_Shashi.webp')"></div>
+        <div class="pir-info"><span class="pir-num">02</span>
+          <h3><a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%9A%D0%B0%D1%84%D1%84%D0%B0%D0%BB%D1%8F_%D0%A8%D0%B0%D1%88%D0%B8" target="_blank">Kaffol Shoshiy maqbarasi</a></h3>
+          <p>E'zozli islom avliyosi va olimi Kaffol Shoshiyning qadimiy maqbarasi.</p>
+        </div>
+      </div>
+      <div class="pir-card">
+        <div class="pir-img" style="background-image:url('../img/attraction/Sheikhantaur.webp')"></div>
+        <div class="pir-info"><span class="pir-num">03</span>
+          <h3><a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D1%81%D0%B0%D0%BC%D0%B1%D0%BB%D1%8C_%D0%A8%D0%B5%D0%B9%D1%85%D0%B0%D0%BD%D1%82%D0%B0%D1%83%D1%80" target="_blank">Shayxontohur majmuasi</a></h3>
+          <p>Maqbaralar va masjidni o'z ichiga olgan qadimiy ma'naviy majmua, asosiy ziyorat markazlaridan biri.</p>
+        </div>
+      </div>
+      <div class="pir-card">
+        <div class="pir-img" style="background-image:url('../img/attraction/Zangiota.webp')"></div>
+        <div class="pir-info"><span class="pir-num">04</span>
+          <h3><a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%97%D0%B0%D0%BD%D0%B3%D0%B8%D0%B0%D1%82%D0%B0" target="_blank">Zangiota maqbarasi</a></h3>
+          <p>E'zozli so'fiy avliyo Zangiotaning qadimiy maqbarasi, muhim ziyoratgoh.</p>
+        </div>
+      </div>
+      <div class="pir-card">
+        <div class="pir-img" style="background-image:url('../img/attraction/Yunus_Khan.webp')"></div>
+        <div class="pir-info"><span class="pir-num">05</span>
+          <h3><a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%AE%D0%BD%D1%83%D1%81-%D1%85%D0%B0%D0%BD%D0%B0_(%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82)" target="_blank">Yunusxon maqbarasi</a></h3>
+          <p>Mo'g'uliston hukmdorlaridan biri Yunusxon nomi bilan bog'liq XV asrga oid maqbara.</p>
+        </div>
+      </div>
+      <div class="pir-card">
+        <div class="pir-img" style="background-image:url('../img/attraction/Kukeldash.webp')"></div>
+        <div class="pir-info"><span class="pir-num">06</span>
+          <h3><a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%80%D0%B5%D1%81%D0%B5_%D0%9A%D1%83%D0%BA%D0%B5%D0%BB%D1%8C%D0%B4%D0%B0%D1%88_(%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82)" target="_blank">Ko'kaldosh madrasasi</a></h3>
+          <p>Toshkentning XVI asrga oid eng qadimiy saqlanib qolgan madrasasi, ma'naviy va ta'lim markazi.</p>
+        </div>
+      </div>
+      <div class="pir-card">
+        <div class="pir-img" style="background-image:url('../img/attraction/Barak_Khana.webp')"></div>
+        <div class="pir-info"><span class="pir-num">07</span>
+          <h3><a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%80%D0%B5%D1%81%D0%B5_%D0%91%D0%B0%D1%80%D0%B0%D0%BA%D1%85%D0%B0%D0%BD%D0%B0" target="_blank">Baroqxon madrasasi</a></h3>
+          <p>XVI asrga oid tarixiy madrasa, Toshkentdagi eng qadimiylaridan biri.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+============================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div>
+        <a href="#" class="footer-logo">
+          <span>Uzbek</span><span class="accent">Pulse</span>
+        </a>
+        <p class="footer-desc">Toshkentdan premium sayohatlar. EST 2024. Litsenziya № 123. Halol, g'amxo'rlik bilan.</p>
+
+        <div class="socials">
+          <a href="#" class="social-icon instagram" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="#" class="social-icon telegram" aria-label="Telegram">
+            <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          </a>
+          <a href="#" class="social-icon youtube" aria-label="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="#" class="social-icon facebook" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" class="social-icon whatsapp" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </a>
+          <a href="#" class="social-icon x-twitter" aria-label="X">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="social-icon max" aria-label="Max">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 5.94 2 10.8c0 2.485 1.094 4.727 2.859 6.328V22l3.734-2.05a11.31 11.31 0 003.407.525c5.523 0 10-3.94 10-8.8S17.523 2 12 2zm-4.5 9.6a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7zm4.5 0a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7zm4.5 0a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Chiqish</h4>
+        <ul>
+          <li><a href="#">Barcha xorijiy turlar</a></li>
+          <li><a href="#">Plyaj dam olish</a></li>
+          <li><a href="#">Oilaviy turlar</a></li>
+          <li><a href="#">Ekskursiya turlari</a></li>
+          <li><a href="#">Mamlakatlar</a></li>
+          <li><a href="#">Individual tanlov</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>O'zbekiston</h4>
+        <ul>
+          <li><a href="#">O'zbekiston bo'ylab barcha turlar</a></li>
+          <li><a href="#">Buxoro</a></li>
+          <li><a href="#">Samarqand</a></li>
+          <li><a href="#">Xiva</a></li>
+          <li><a href="#">Toshkent</a></li>
+          <li><a href="#">Buyuk ipak yo'li</a></li>
+          <li><a href="#">Tarixiy</a></li>
+          <li><a href="#">Individual</a></li>
+          <li><a href="#">Bir kunlik</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Kontaktlar</h4>
+        <div class="contacts">
+          <div>Toshkent, Amir Temur ko'chasi, 12</div>
+          <div><a href="tel:+998900000000">+998 90 000 00 00</a></div>
+          <div><a href="mailto:hello@uzbekpulse.uz">hello@uzbekpulse.uz</a></div>
+          <div class="schedule">
+            Du-Sha 09:00-19:00<br>
+            Yak — kelishilgan holda
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 UzbekPulse Travel. Barcha huquqlar himoyalangan.</span>
+      <div class="footer-links">
+        <a href="#">Maxfiylik siyosati</a>
+        <a href="#">Ommaviy oferta shartnomasi</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="../../js/attraction.js"></script>
+
+</body>
+</html>

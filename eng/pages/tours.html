@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BukharaPulse</title>
+  <link rel="stylesheet" href="../../css/tours.css">
+</head>
+<body>
+  <!-- ============================================
+     HEADER
+============================================ -->
+<div class="header-wrap">
+  <header class="header">
+    <a href="#" class="logo">
+      <div class="logo-mark">B</div>
+      <div class="logo-text">
+        <span class="name">BukharaPulse</span>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+      <a href="../pages/tours.html">Tours</a>
+      <a href="../pages/hotels.html">Hotels</a>
+      <a href="../pages/blog.html">Blog</a>
+      <a href="../pages/about.html">About us</a>
+    </nav>
+
+    <div style="display:flex; align-items:center; gap:10px;">
+
+      <!-- Language dropdown -->
+<div class="lang-dropdown" id="langDropdown">
+  <button class="lang-current" id="langBtn">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+    </svg>
+    <span id="currentLang">RU</span>
+    <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="m6 9 6 6 6-6"/>
+    </svg>
+  </button>
+
+  <div class="lang-menu" id="langMenu">
+    <button data-lang="RU" class="active">
+      <span class="name">Русский</span>
+    </button>
+    <button data-lang="EN">
+      <span class="name">English</span>
+    </button>
+    <button data-lang="UZ">
+      <span class="name">O‘zbek</span>
+    </button>
+  </div>
+</div>
+      <a href="#" class="header-cta">Book now</a>
+      <button class="burger" id="burgerBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16M4 6h16M4 18h16"/></svg>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#">Home</a>
+      <a href="#">Outbound tourism</a>
+      <a href="#">Inbound tourism</a>
+      <a href="#">Hotels</a>
+      <a href="#">Blog</a>
+      <a href="#">About us</a>
+      <a href="#" style="background:var(--ink); color:var(--cream); border-radius:999px; text-align:center; padding:14px; margin-top:12px; border:none;">Book now</a>
+    </div>
+  </header>
+</div>
+
+
+<section class="hero-section">
+  <div class="container">
+
+
+      <!-- Title -->
+      <h1 class="main-title">
+          Travel where <span class="highlight">everything is already planned</span> — from breakfast to sunset
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="subtitle">
+          Small groups, local guides and no rushing through attractions. Only what you remember.
+      </p>
+
+      <!-- Toggle -->
+      <div class="toggle-switch">
+          <button class="toggle-btn">Domestic</button>
+          <button class="toggle-btn">International</button>
+          <button class="toggle-btn active">Both</button>
+      </div>
+  </div>
+</section>
+
+
+<section class="tours-section" id="block-tours-list">
+        
+  <!-- FILTER PANEL -->
+  <div class="tours-toolbar">
+      <!-- Left part: counter and text -->
+      <div class="toolbar-info">
+          <div class="count-badge">8</div>
+          <div class="info-text">
+              <h3>8 tours found</h3>
+              <p>Everywhere • updated today</p>
+          </div>
+      </div>
+
+      <!-- Right part: filters and sorting -->
+      <div class="toolbar-filters">
+          <div class="filter-pills">
+              <button class="pill active">All</button>
+              <button class="pill">Up to 3 days</button>
+              <button class="pill">Family</button>
+              <button class="pill">Beach</button>
+              <button class="pill">Historical</button>
+          </div>
+          
+          <div class="filter-divider"></div>
+          
+          <!-- Sort button -->
+          <button class="sort-btn">
+              Popular
+              <svg width="12" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 15l5 5 5-5M7 9l5-5 5 5"/>
+              </svg>
+          </button>
+      </div>
+  </div>
+  <!-- END OF FILTER PANEL -->
+
+  <main class="tours-grid">
+
+    <!-- ================= CARD 1 ================= -->
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://media.istockphoto.com/id/1184019772/photo/bukhara-uzbekistan-kalyan-minaret-and-madressa-sunset-twilight.webp?b=1&s=612x612&w=0&k=20&c=Ua3MEkq4nlJXYea3ftEYygMYRPygLPESzmpdMToYGOs=" alt="Bukhara">
+        <span class="badge-type">Sightseeing</span>
+        <button class="fav-btn" aria-label="Add to favorites">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−5%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.7</strong> (64 reviews) · Uzbekistan, Bukhara
+        </div>
+        <h3 class="tour-title">Bukhara — an open-air museum city</h3>
+        <p class="tour-desc">Lyabi-Hauz, Poi-Kalon and the Ark Fortress. A walk through the trading domes.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 16 900</span>
+          <span class="price-old">₽ 17 800</span>
+          <span class="price-per">/ 2 days</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">May 10–11</span>
+          <span class="date-tag">+88 dates</span>
+        </div>
+        <a class="more-link" href="../tours-page/Bukhara-tour.html" target="_blank">
+          Learn more
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= CARD 2 ================= -->    
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://media.istockphoto.com/id/1249451586/photo/panorama-samarkand-uzbekistan-registan-square-sher-dor-madrasah.webp?b=1&s=612x612&w=0&k=20&c=wjf5CW6AqvPhSuTHIadDy-a3bdDXflnzPbHxrwr0Y1Y=" alt="Samarkand">
+        <span class="badge-type">Sightseeing</span>
+        <button class="fav-btn" aria-label="Add to favorites">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−7%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.9</strong> (128 reviews) · Uzbekistan, Samarkand
+        </div>
+        <h3 class="tour-title">Samarkand — the pearl of the Great Silk Road</h3>
+        <p class="tour-desc">Registan, Gur-Emir, Shah-i-Zinda. An evening walk through the ancient city.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 18 500</span>
+          <span class="price-old">₽ 19 900</span>
+          <span class="price-per">/ 3 days</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">May 15–17</span>
+          <span class="date-tag">+72 dates</span>
+        </div>
+        <a class="more-link" href="../tours-page/Samarkand-tour.html" target="_blank">
+          Learn more
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= CARD 3 ================= -->
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAbM702FzZn-PzpVerjvTZdttq4hTaKR2BAY9fHVSyYQ&s=10" alt="Khiva">
+        <span class="badge-type">Sightseeing</span>
+        <button class="fav-btn" aria-label="Add to favorites">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−4%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.8</strong> (41 reviews) · Uzbekistan, Khiva
+        </div>
+        <h3 class="tour-title">Khiva — the fortress city of Itchan Kala</h3>
+        <p class="tour-desc">Itchan Kala, the Islam Khodja minaret and Tash-Khauli Palace. The atmosphere of the ancient East.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 15 700</span>
+          <span class="price-old">₽ 16 400</span>
+          <span class="price-per">/ 2 days</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">June 5–6</span>
+          <span class="date-tag">+45 dates</span>
+        </div>
+        <a class="more-link" href="../tours-page/Xiva-tour.html" target="_blank">
+          Learn more
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= CARD 4 ================= -->    
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFUl4RUEqSAKVKLrdECZ6m_7YBIuoWzv_KavckR0NfJg&s=10" alt="Tashkent">
+        <span class="badge-type">City</span>
+        <button class="fav-btn" aria-label="Add to favorites">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−6%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.6</strong> (95 reviews) · Uzbekistan, Tashkent
+        </div>
+        <h3 class="tour-title">Tashkent — the modern capital of Uzbekistan</h3>
+        <p class="tour-desc">Amir Temur Square, Tashkent metro and Chorsu Market. A contrast of history and modernity.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 12 900</span>
+          <span class="price-old">₽ 13 800</span>
+          <span class="price-per">/ 2 days</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">June 1–2</span>
+          <span class="date-tag">+120 dates</span>
+        </div>
+        <a class="more-link" href="../tours-page/Tashkent-tour.html" target="_blank">
+          Learn more
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= CARD 5 ================= -->
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://viasun.ru/blog/wp-content/uploads/2023/06/Kir.jpg" alt="Turkey">
+        <span class="badge-type">Beach</span>
+        <button class="fav-btn" aria-label="Add to favorites">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−15%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.8</strong> (312 reviews) · Turkey, Antalya
+        </div>
+        <h3 class="tour-title">Turkey — all inclusive on the Mediterranean</h3>
+        <p class="tour-desc">5★ hotels, sandy beaches, water parks and Turkish cuisine. Perfect for families.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 54 900</span>
+          <span class="price-old">₽ 64 900</span>
+          <span class="price-per">/ 7 nights</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">June 20–27</span>
+          <span class="date-tag">+200 dates</span>
+        </div>
+        <a class="more-link" href="../tours-page/Turkey-tour.html" target="_blank">
+          Learn more
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= CARD 6 ================= -->    
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2v-8jx7r2FLPXjSep7jtfC1uPt76-Ce-ff0yQlIhlbA&s=10" alt="UAE">
+        <span class="badge-type">Beach</span>
+        <button class="fav-btn" aria-label="Add to favorites">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−10%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.9</strong> (204 reviews) · UAE, Dubai
+        </div>
+        <h3 class="tour-title">UAE — luxury and sun of the Persian Gulf</h3>
+        <p class="tour-desc">Burj Khalifa, Jumeirah beaches and shopping at Dubai Mall. Premium-class holidays.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 79 900</span>
+          <span class="price-old">₽ 88 800</span>
+          <span class="price-per">/ 7 nights</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">July 12–19</span>
+          <span class="date-tag">+150 dates</span>
+        </div>
+        <a class="more-link" href="../tours-page/UAE-tour.html" target="_blank">
+          Learn more
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= CARD 7 ================= -->    
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRzDtZt2oGJaYl4zlPA-zwUfXSqgSoHpbRLytvShMDbw&s=10" alt="Egypt">
+        <span class="badge-type">Beach</span>
+        <button class="fav-btn" aria-label="Add to favorites">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−12%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.7</strong> (276 reviews) · Egypt, Hurghada
+        </div>
+        <h3 class="tour-title">Egypt — the Red Sea and the pyramids</h3>
+        <p class="tour-desc">Coral reefs, diving and excursions to the Giza pyramids. All inclusive.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 42 900</span>
+          <span class="price-old">₽ 48 800</span>
+          <span class="price-per">/ 7 nights</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">June 18–25</span>
+          <span class="date-tag">+180 dates</span>
+        </div>
+        <a class="more-link" href="../tours-page/Egypt-tour.html" target="_blank">
+          Learn more
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= CARD 8 ================= -->    
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7PEDwU8lbrt3IDFBmbHCsFhXI8e_Aj_Sh7M7HeUUuMQ&s=10" alt="Malaysia">
+        <span class="badge-type">Sightseeing</span>
+        <button class="fav-btn" aria-label="Add to favorites">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−8%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.8</strong> (88 reviews) · Malaysia, Kuala Lumpur
+        </div>
+        <h3 class="tour-title">Malaysia — tropics and skyscrapers</h3>
+        <p class="tour-desc">Petronas Towers, Batu Caves and Penang Island. Eastern exoticism.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 89 900</span>
+          <span class="price-old">₽ 97 800</span>
+          <span class="price-per">/ 9 nights</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">August 3–12</span>
+          <span class="date-tag">+60 dates</span>
+        </div>
+        <a class="more-link" href="../tours-page/Malayziya-tour.html" target="_blank">
+          Learn more
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= CARD 9 ================= -->    
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsC5DY8r0zDbyfTCIuh_Ontmy2bJuAt1i0heBVfNp84g&s=10" alt="China">
+        <span class="badge-type">Sightseeing</span>
+        <button class="fav-btn" aria-label="Add to favorites">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−9%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.6</strong> (142 reviews) · China, Beijing
+        </div>
+        <h3 class="tour-title">China — from the Great Wall to Shanghai</h3>
+        <p class="tour-desc">The Forbidden City, the Great Wall of China and the Bund embankment. Deep immersion.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 94 900</span>
+          <span class="price-old">₽ 104 900</span>
+          <span class="price-per">/ 8 nights</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">September 5–13</span>
+          <span class="date-tag">+40 dates</span>
+        </div>
+        <a class="more-link" href="../tours-page/China-tour.html" target="_blank">
+          Learn more
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= CARD 10 ================= -->    
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxtEhDpT-2mrMho4WxVrkmDqhLUjZZSlBzgD7djWvJug&s=10" alt="Azerbaijan">
+        <span class="badge-type">Sightseeing</span>
+        <button class="fav-btn" aria-label="Add to favorites">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−6%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.7</strong> (73 reviews) · Azerbaijan, Baku
+        </div>
+        <h3 class="tour-title">Azerbaijan — the lights of Baku and the Caucasus mountains</h3>
+        <p class="tour-desc">The old city of Icherisheher, the Maiden Tower and Gobustan. Eastern hospitality.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 38 900</span>
+          <span class="price-old">₽ 41 400</span>
+          <span class="price-per">/ 4 days</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">June 8–11</span>
+          <span class="date-tag">+55 dates</span>
+        </div>
+        <a class="more-link" href="../tours-page/Azerbaijan-tour.html" target="_blank">
+          Learn more
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= CARD 11 ================= -->    
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMxQBmc_A0kfOFfCD7-NvsOeUmGNG0-g0ptpzTdcSMfQ&s=10" alt="Georgia">
+        <span class="badge-type">Sightseeing</span>
+        <button class="fav-btn" aria-label="Add to favorites">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−8%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.9</strong> (187 reviews) · Georgia, Tbilisi
+        </div>
+        <h3 class="tour-title">Georgia — wine, mountains and hospitality</h3>
+        <p class="tour-desc">Tbilisi, Mtskheta and Kazbegi. Wine tastings and Georgian cuisine.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 34 900</span>
+          <span class="price-old">₽ 37 900</span>
+          <span class="price-per">/ 5 days</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">June 14–18</span>
+          <span class="date-tag">+90 dates</span>
+        </div>
+        <a class="more-link" href="../tours-page/Georgia-tour.html" target="_blank">
+          Learn more
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= CARD 12 ================= -->    
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRFjuNocqDOovkFrK6xB1e4dMKNkD-H3kWahw1LedNZg&s=10" alt="Kyrgyzstan">
+        <span class="badge-type">Adventure</span>
+        <button class="fav-btn" aria-label="Add to favorites">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−5%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.8</strong> (52 reviews) · Kyrgyzstan, Bishkek
+        </div>
+        <h3 class="tour-title">Kyrgyzstan — lakes and mountains of the Tien Shan</h3>
+        <p class="tour-desc">Issyk-Kul, Ala-Archa Gorge and nomad yurts. Wild nature and trekking.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 29 900</span>
+          <span class="price-old">₽ 31 500</span>
+          <span class="price-per">/ 5 days</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">July 22–26</span>
+          <span class="date-tag">+35 dates</span>
+        </div>
+        <a class="more-link" href="../tours-page/Kyrgyzstan-tour.html" target="_blank">
+          Learn more
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= CARD 13 ================= -->
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiINjO1zMtanXCzOeB4GGW_sG1bWWdXpvIjzzpU1K89A&s=10" alt="Indonesia, Bali">
+        <span class="badge-type">Beach</span>
+        <button class="fav-btn" aria-label="Add to favorites">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−11%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.9</strong> (231 reviews) · Indonesia, Bali
+        </div>
+        <h3 class="tour-title">Bali — the island of gods and ocean sunsets</h3>
+        <p class="tour-desc">Uluwatu temples, Ubud rice terraces and Nusa Dua beaches. Surfing and spa.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 84 900</span>
+          <span class="price-old">₽ 95 400</span>
+          <span class="price-per">/ 8 nights</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">July 10–18</span>
+          <span class="date-tag">+110 dates</span>
+        </div>
+        <a class="more-link" href="../tours-page/Indonesia-tour.html" target="_blank">
+          Learn more
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= CARD 14 ================= -->    
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcG1ZUFsihUd5WdIMVDrnF24P4iXBO95ODRadBBUPfOQ&s=10" alt="Thailand, Phuket">
+        <span class="badge-type">Beach</span>
+        <button class="fav-btn" aria-label="Add to favorites">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−13%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.8</strong> (264 reviews) · Thailand, Phuket
+        </div>
+        <h3 class="tour-title">Phuket — a tropical paradise of the Andaman Sea</h3>
+        <p class="tour-desc">Patong Beach, Phi Phi Islands and Phang Nga Bay. Thai massage and street food.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 67 900</span>
+          <span class="price-old">₽ 77 800</span>
+          <span class="price-per">/ 7 nights</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">July 16–23</span>
+          <span class="date-tag">+130 dates</span>
+        </div>
+        <a class="more-link" href="../tours-page/Phuket-tour.html" target="_blank">
+          Learn more
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= CARD 15 ================= -->
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFaKqnrtj88qxaZOoNYoymscA5TTcWK2nylw-1QBJgSQ&s=10" alt="Singapore">
+        <span class="badge-type">Sightseeing</span>
+        <button class="fav-btn" aria-label="Add to favorites">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−7%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.9</strong> (118 reviews) · Singapore
+        </div>
+        <h3 class="tour-title">Singapore — a city of the future and tropical greenery</h3>
+        <p class="tour-desc">Marina Bay Sands, Gardens by the Bay and Sentosa Island. Shopping and gastronomy.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 98 900</span>
+          <span class="price-old">₽ 106 400</span>
+          <span class="price-per">/ 6 nights</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">August 6–12</span>
+          <span class="date-tag">+75 dates</span>
+        </div>
+        <a class="more-link" href="../tours-page/Singapore-tour.html" target="_blank">
+          Learn more
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= CARD 16 ================= -->
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsXv6JUxEoUnB0Ie_FvGlXEWZcIl4KWbVvoDUj-BB6fg&s=10" alt="Vietnam, Phu Quoc">
+        <span class="badge-type">Beach</span>
+        <button class="fav-btn" aria-label="Add to favorites">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−12%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.8</strong> (156 reviews) · Vietnam, Phu Quoc
+        </div>
+        <h3 class="tour-title">Phu Quoc — the pearl of Vietnam</h3>
+        <p class="tour-desc">White beaches, the Hon Thom cable car and the night market. A tropical holiday without a visa.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 72 900</span>
+          <span class="price-old">₽ 82 800</span>
+          <span class="price-per">/ 8 nights</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">July 14–22</span>
+          <span class="date-tag">+95 dates</span>
+        </div>
+        <a class="more-link" href="../tours-page/PhuQuoc-tour.html" target="_blank">
+          Learn more
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= CARD 17 ================= -->    
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtld-fh12a-odWLjRGkMNB9L2ydCWn47cXMQV04es_Rg&s=10" alt="Maldives">
+        <span class="badge-type">Beach</span>
+        <button class="fav-btn" aria-label="Add to favorites">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−10%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>5.0</strong> (96 reviews) · Maldives, Male
+        </div>
+        <h3 class="tour-title">Maldives — paradise islands and a turquoise lagoon</h3>
+        <p class="tour-desc">Overwater villas, snorkeling with turtles and sunsets over the Indian Ocean. All inclusive.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 149 900</span>
+          <span class="price-old">₽ 166 500</span>
+          <span class="price-per">/ 7 nights</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">August 20–27</span>
+          <span class="date-tag">+85 dates</span>
+        </div>
+        <a class="more-link" href="../tours-page/Maldives-tour.html" target="_blank">
+          Learn more
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+    <!-- ================= CARD 18 ================= -->    
+    <article class="tour-card">
+      <div class="tour-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk-E4viQqyqocGJX75x8cZS0MPnx0J0YU6if3BCcIWBQ&s=10" alt="Qatar">
+        <span class="badge-type">Sightseeing</span>
+        <button class="fav-btn" aria-label="Add to favorites">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+        <div class="discount">−6%</div>
+      </div>
+      <div class="tour-content">
+        <div class="rating-line">
+          <span class="star">★</span>
+          <strong>4.7</strong> (64 reviews) · Qatar, Doha
+        </div>
+        <h3 class="tour-title">Qatar — modern luxury and Eastern traditions</h3>
+        <p class="tour-desc">The Museum of Islamic Art, Souq Waqif market and the Corniche promenade. An Arabian tale.</p>
+        <div class="price-line">
+          <span class="price-now">₽ 68 900</span>
+          <span class="price-old">₽ 73 300</span>
+          <span class="price-per">/ 5 nights</span>
+        </div>
+        <div class="date-tags">
+          <span class="date-tag">June 9–14</span>
+          <span class="date-tag">+60 dates</span>
+        </div>
+        <a class="more-link" href="../tours-page/Qatar-tour.html" target="_blank">
+          Learn more
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+      
+  </main>
+</section>
+
+
+
+<!-- Custom selection block -->
+<section class="custom-selection-section">
+  <div class="custom-selection-wrapper">
+      
+      <!-- Left part (Form) -->
+      <div class="selection-form-side">
+          <div class="badge">
+              <span class="badge-dot"></span> HAND-PICKED SELECTION
+          </div>
+          
+          <h2 class="selection-title">
+              Didn't find it? We'll pick something for you in <span class="highlight-text">15 minutes</span>
+          </h2>
+          
+          <p class="selection-desc">
+              Tell us where you want to go and who you're travelling with. We'll send 2–3 options without spam — only what really fits.
+          </p>
+
+          <div class="manager-info">
+              <!-- Avatar placeholders, as in the screenshot -->
+              <div class="avatars">
+                  <div class="avatar-placeholder"></div>
+                  <div class="avatar-placeholder"></div>
+              </div>
+              <div class="manager-text">
+                  <strong>Madina and the team</strong>
+                  <span>We reply in about 7 minutes</span>
+              </div>
+          </div>
+
+          <form class="selection-form">
+              <div class="input-row">
+                  <input type="text" placeholder="Your name" class="form-input">
+                  <input type="tel" placeholder="+998 — phone" class="form-input">
+              </div>
+              <div class="input-row">
+                  <input type="text" placeholder="Where would you like to go and when? (e.g. Samarkand, with kids, 3 days)" class="form-input full-width">
+              </div>
+              
+              <div class="form-footer">
+                  <button type="submit" class="submit-btn">Get a selection</button>
+                  <p class="privacy-text">
+                      By clicking, you agree to data processing. No spam.
+                  </p>
+              </div>
+          </form>
+      </div>
+
+      <!-- Right part (Photo and review) -->
+      <div class="selection-image-side">
+          <!-- Replace the link with the desired photo -->
+          <img src="https://images.unsplash.com/photo-1542385151-efd9000785a0?q=80&w=800&auto=format&fit=crop" alt="Travel">
+          
+          <div class="review-overlay">
+              <div class="review-badge">
+                  <span class="dot"></span> Honest reviews • no photoshop
+              </div>
+              <p class="review-text">
+                  "We asked for a quiet tour without crowds — they made it perfect. The kids slept, we drank tea not on the roof of Bukhara."
+              </p>
+              <span class="review-author">— The Azizov family, Bukhara 3 days</span>
+          </div>
+      </div>
+
+  </div>
+</section>
+
+
+<section class="reviews-section">
+        
+  <!-- Section header -->
+  <div class="reviews-header">
+      <div class="reviews-title-wrap">
+          <h2>Guest stories</h2>
+          <p>Not about the service, but about courtyards, breakfasts and rooftops. Three real reviews from the last month.</p>
+      </div>
+      
+      <!-- Navigation buttons (arrows) -->
+      <div class="reviews-nav">
+          <button class="nav-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="nav-btn nav-btn-dark">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+      </div>
+  </div>
+
+  <!-- Grid with cards -->
+  <div class="reviews-grid">
+
+      <!-- Card 1 -->
+      <article class="review-card">
+          <div class="review-top">
+              <div class="user-info">
+                  <div class="avatar avatar-beige">A</div>
+                  <div class="user-details">
+                      <span class="user-name">Anya, designer</span>
+                      <span class="user-date">Oct 12 • Bukhara</span>
+                  </div>
+              </div>
+              <div class="stars">★★★★★</div>
+          </div>
+          
+          <p class="review-text">
+              "I woke up to the smell of flatbread. The host showed me how ganch is cut, then we drank mint tea on the veranda. In the evening — the roof, pilaf and the silence of Lyabi-Hauz. No lobby, only a courtyard."
+          </p>
+
+          <div class="hotel-info-card">
+              <div class="hotel-thumb thumb-blue"></div>
+              <div class="hotel-text">
+                  <span class="hotel-label">WHERE WE STAYED</span>
+                  <strong class="hotel-name">Lyabi & Mint</strong>
+                  <span class="hotel-tags">Courtyard • Breakfast • Roof</span>
+              </div>
+          </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="review-card">
+          <div class="review-top">
+              <div class="user-info">
+                  <div class="avatar avatar-green">M</div>
+                  <div class="user-details">
+                      <span class="user-name">Misha and Lera</span>
+                      <span class="user-date">Oct 3 • Samarkand</span>
+                  </div>
+              </div>
+              <div class="stars">★★★★★</div>
+          </div>
+          
+          <p class="review-text">
+              "We came for the Registan, but stayed because of the courtyard. Pomegranates fell right onto the breakfast table. The kids made paper at Konigil and came back with sheets. The host — a former archaeologist — told us about Afrasiab until midnight."
+          </p>
+
+          <div class="hotel-info-card">
+              <div class="hotel-thumb thumb-beige"></div>
+              <div class="hotel-text">
+                  <span class="hotel-label">WHERE WE STAYED</span>
+                  <strong class="hotel-name">Meros Courtyard</strong>
+                  <span class="hotel-tags">Courtyard • Breakfast • Roof</span>
+              </div>
+          </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="review-card">
+          <div class="review-top">
+              <div class="user-info">
+                  <div class="avatar avatar-pink">D</div>
+                  <div class="user-details">
+                      <span class="user-name">Dasha, photographer</span>
+                      <span class="user-date">Sep 28 • Khiva</span>
+                  </div>
+              </div>
+              <div class="stars">★★★★★</div>
+          </div>
+          
+          <p class="review-text">
+              "Khiva at sunset — that's a rooftop pool and a minaret in gold. During the day the clay is scorching, but in the evening you sit in a white courtyard, drink tea with melon. The hotel is small, only 6 rooms, everyone knows each other by morning."
+          </p>
+
+          <div class="hotel-info-card">
+              <div class="hotel-thumb thumb-yellow"></div>
+              <div class="hotel-text">
+                  <span class="hotel-label">WHERE WE STAYED</span>
+                  <strong class="hotel-name">Itchan Kala Roof</strong>
+                  <span class="hotel-tags">Courtyard • Breakfast • Roof</span>
+              </div>
+          </div>
+      </article>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <!-- COLUMN 1 — LOGO -->
+      <div>
+        <a href="#" class="footer-logo">
+          <span>Uzbek</span><span class="accent">Pulse</span>
+        </a>
+        <p class="footer-desc">
+          Premium travels from Bukhara. EST 2024. License No. 123. Honest, with care.
+        </p>
+
+        <!-- Social icons -->
+        <div class="socials">
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/uzbekpulse?igsh=MTZmMTlyemE5M21kcw==" class="social-icon instagram" aria-label="Instagram" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        
+          <!-- Telegram -->
+          <a href="https://t.me/UzbekPulse" class="social-icon telegram" aria-label="Telegram" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          </a>
+        
+          <!-- YouTube -->
+          <a href="https://www.youtube.com/@UzbekPulse2026" class="social-icon youtube" aria-label="YouTube" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        
+          <!-- Facebook -->
+          <a href="#" class="social-icon facebook" aria-label="Facebook" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        
+          <!-- WhatsApp -->
+          <a href="https://whatsapp.com/channel/0029VbDC3mLKGGGPmxRoi016" class="social-icon whatsapp" aria-label="WhatsApp" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </a>
+        
+          <!-- X (Twitter) -->
+          <a href="#" class="social-icon x-twitter" aria-label="X" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        
+          <!-- Max -->
+          <a href="#" class="social-icon max" aria-label="Max" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 5.94 2 10.8c0 2.485 1.094 4.727 2.859 6.328V22l3.734-2.05a11.31 11.31 0 003.407.525c5.523 0 10-3.94 10-8.8S17.523 2 12 2zm-4.5 9.6a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7zm4.5 0a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7zm4.5 0a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7z"/></svg>
+          </a>
+        
+        </div>
+      </div>
+
+      <!-- COLUMN 2 — OUTBOUND -->
+      <div class="footer-col">
+        <h4>Outbound</h4>
+        <ul>
+          <li><a href="#">All international tours</a></li>
+          <li><a href="#">Beach holidays</a></li>
+          <li><a href="#">Family tours</a></li>
+          <li><a href="#">Sightseeing tours</a></li>
+          <li><a href="#">Countries</a></li>
+          <li><a href="#">Custom selection</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUMN 3 — UZBEKISTAN -->
+      <div class="footer-col">
+        <h4>Uzbekistan</h4>
+        <ul>
+          <li><a href="#">All tours in Uzbekistan</a></li>
+          <li><a href="#">Bukhara</a></li>
+          <li><a href="#">Samarkand</a></li>
+          <li><a href="#">Khiva</a></li>
+          <li><a href="#">Tashkent</a></li>
+          <li><a href="#">Silk Road</a></li>
+          <li><a href="#">Historical</a></li>
+          <li><a href="#">Individual</a></li>
+          <li><a href="#">One-day</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUMN 4 — CONTACTS -->
+      <div class="footer-col">
+        <h4>Contacts</h4>
+        <div class="contacts">
+          <div>Bukhara, Lyabi-Hauz St. 12</div>
+          <div><a href="tel:+998900000000">+998 90 000 00 00</a></div>
+          <div><a href="mailto:hello@uzbekpulse.uz">hello@uzbekpulse.uz</a></div>
+          <div class="schedule">
+            Mon–Sat 09:00–19:00<br>
+            Sun — by appointment
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="footer-bottom">
+      <span>© 2026 UzbekPulse Travel. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Offer</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+  <script src="../../js/tours.js"></script>
+</body>
+</html>

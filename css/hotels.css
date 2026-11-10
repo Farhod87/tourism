@@ -1,0 +1,1921 @@
+:root {
+  --ink: #1A1A1A;
+  --accent: #F5C842;
+  --accent-warm: #E8A020;
+  --cream: #F5F0E8;
+  --muted: #6B6B6B;
+  --muted-light: #8B8B8B;
+  --line: rgba(26, 26, 26, 0.1);
+  --line-dark: rgba(255, 255, 255, 0.08);
+  --dark: #1C2333;
+  --white: #FFFFFF;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+h1, h2, h3, .serif {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+button { border: none; background: none; cursor: pointer; font: inherit; color: inherit; }
+img { max-width: 100%; display: block; }
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   1-SECTION HEADER
+============================================ */
+.header-wrap {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 0 24px;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+.header {
+  width: 100%;
+  max-width: 1280px;
+  background: var(--cream);
+  border-radius: 999px;
+  padding: 12px 12px 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  pointer-events: auto;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.logo-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.logo-text .name {
+  font-family: Georgia, serif;
+  font-size: 17px;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-size: 14px;
+}
+.nav a { transition: color 0.2s; white-space: nowrap; }
+.nav a:hover { color: var(--accent); }
+
+/* ============================================
+   ВЫПАДАЮЩИЙ ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКА
+============================================ */
+.lang-dropdown {
+  position: relative;
+}
+
+/* Кнопка с текущим языком */
+.lang-current {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(26, 26, 26, 0.04);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lang-current:hover {
+  background: rgba(26, 26, 26, 0.08);
+  border-color: rgba(26, 26, 26, 0.2);
+}
+
+.lang-current .chevron {
+  transition: transform 0.3s ease;
+  opacity: 0.6;
+}
+
+.lang-dropdown.open .lang-current .chevron {
+  transform: rotate(180deg);
+}
+
+.lang-dropdown.open .lang-current {
+  background: var(--ink);
+  color: var(--cream);
+  border-color: var(--ink);
+}
+
+/* Выпадающее меню */
+.lang-menu {
+  position: absolute;
+  top: calc(80% + 10px);
+  right: 0;
+  min-width: 100px;
+  background: var(--cream);
+  border-radius: 16px;
+  padding: 6px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 200;
+  border: 1px solid var(--line);
+}
+
+.lang-dropdown.open .lang-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Пункт меню */
+.lang-menu button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  text-align: left;
+  transition: background 0.2s ease;
+}
+
+.lang-menu button:hover {
+  background: rgba(26, 26, 26, 0.06);
+}
+
+.lang-menu button.active {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.lang-menu .flag {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.lang-menu .code {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  min-width: 24px;
+}
+
+.lang-menu .name {
+  font-weight: 400;
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.lang-menu button.active .name {
+  opacity: 1;
+}
+
+/* На мобильных — язык в бургер-меню */
+@media (max-width: 900px) {
+  .lang-dropdown {
+    display: none;
+  }
+}
+
+
+.header-cta {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+.header-cta:hover {
+  background: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+.burger {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--cream);
+  align-items: center;
+  justify-content: center;
+}
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: 0;
+  background: var(--cream);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  pointer-events: auto;
+}
+.mobile-menu.open { display: block; }
+.mobile-menu a {
+  display: block;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+}
+
+
+
+
+/* ==========================================================================
+   Секция с фоном
+   ========================================================================== */
+   .search-hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* Растягиваем на весь экран */
+    display: flex;
+    align-items: center;
+    padding: 60px 20px;
+    overflow: hidden;
+}
+
+/* Фоновое изображение с эффектом */
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    
+    /* ЗДЕСЬ ВАША КАРТИНКА */
+    /* Замените URL на ссылку к вашему фото */
+    background-image: url('https://images.unsplash.com/photo-1542385151-efd9000785a0?q=80&w=2070&auto=format&fit=crop');
+    
+    background-size: cover;
+    background-position: center;
+    
+    /* Легкое размытие фона, как на скриншоте */
+    filter: blur(3px) brightness(0.8); 
+    transform: scale(1.05); /* Увеличиваем, чтобы не было белых краев от размытия */
+}
+
+/* Затемняющий градиент поверх фото */
+.search-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(30, 20, 15, 0.7) 0%, rgba(30, 20, 15, 0.3) 50%, rgba(30, 20, 15, 0.1) 100%);
+    z-index: 0;
+}
+
+/* Контейнер для контента */
+.hero-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   Текст
+   ========================================================================== */
+.hero-text {
+    margin-bottom: 40px;
+}
+
+.hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(48px, 8vw, 80px); /* Адаптивный размер шрифта */
+    line-height: 1.05;
+    font-weight: 400;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.hero-text p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 600px;
+    font-weight: 400;
+}
+
+/* ==========================================================================
+   Панель поиска (Glassmorphism)
+   ========================================================================== */
+.search-panel {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон */
+    backdrop-filter: blur(15px); /* Эффект размытия стекла */
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 8px;
+    width: 100%;
+    max-width: 850px;
+    margin-bottom: 24px;
+}
+
+.search-fields {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    padding: 8px 16px;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background 0.2s;
+}
+
+.field-group:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.field-group label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.field-group label .dot {
+    width: 4px;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+}
+
+.field-value {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.field-value svg {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.field-divider {
+    width: 1px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px;
+}
+
+/* Кнопка "Найти" */
+.search-btn {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    border: none;
+    padding: 18px 32px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+}
+
+.search-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.search-btn .arrow {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+/* ==========================================================================
+   Теги городов
+   ========================================================================== */
+.city-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.city-tag {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s;
+}
+
+.city-tag:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.city-tag.active {
+    background: #ffffff;
+    color: #1a1a1a;
+    border-color: #ffffff;
+}
+
+/* ==========================================================================
+   Статус "Смотрят сейчас"
+   ========================================================================== */
+.live-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #2e7d32; /* Зеленая точка */
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
+}
+
+/* ==========================================================================
+   Адаптивность
+   ========================================================================== */
+@media (max-width: 800px) {
+    .search-panel {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .search-fields {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0;
+        gap: 8px;
+    }
+
+    .field-group {
+        padding: 12px;
+    }
+
+    .field-divider {
+        width: 100%;
+        height: 1px;
+        margin: 4px 0;
+    }
+
+    .search-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero-text h1 {
+        font-size: 40px;
+    }
+    
+    .city-tags {
+        /* На мобильных можно сделать скролл для кнопок */
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .city-tags::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Секция и панель фильтров
+   ========================================================================== */
+   .hotels-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    width: 100%;
+}
+
+.hotels-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1100px;
+    margin-bottom: 24px;
+}
+
+.hotels-count {
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hotels-count .dot {
+    width: 4px;
+    height: 4px;
+    background-color: #2e7d32; /* Зеленая точка */
+    border-radius: 50%;
+}
+
+.hotels-count .updated {
+    font-weight: 400;
+    color: #888;
+}
+
+.hotels-sort {
+    display: flex;
+    gap: 8px;
+}
+
+.sort-pill {
+    background-color: transparent;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #555;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s;
+}
+
+.sort-pill:hover {
+    background-color: #eaeaea;
+}
+
+.sort-pill.active {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+/* ==========================================================================
+   Список и Карточка отеля
+   ========================================================================== */
+.hotels-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.hotel-card {
+    display: grid;
+    /* Фото (240px) | Инфо (оставшееся место) | Цена (300px) */
+    grid-template-columns: 240px 1fr 300px; 
+    background-color: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #eaeaea;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+/* --- Левая часть (Фото) --- */
+.hotel-image {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    color: #fff;
+}
+
+.image-top-badges {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.stars-badge {
+    background-color: #fff;
+    color: #1a1a1a;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.stars-badge::before, .stars-badge::after {
+    content: '★';
+    color: #f1c40f;
+}
+
+.favorite-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.2s;
+}
+
+.favorite-btn:hover {
+    color: #e74c3c;
+}
+
+.image-bottom-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.image-date {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
+    text-transform: uppercase;
+}
+
+.image-title-line {
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    opacity: 0.5;
+}
+
+.image-title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* --- Центральная часть (Инфо) --- */
+.hotel-info {
+    padding: 20px 24px;
+    border-right: 1px solid #eaeaea;
+    display: flex;
+    flex-direction: column;
+}
+
+.hotel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.title-rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.title-rating h2 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.hotel-stars {
+    color: #f1c40f;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.reviews-count {
+    font-size: 11px;
+    color: #888;
+    text-align: right;
+    line-height: 1.3;
+}
+
+.hotel-location {
+    font-size: 13px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.dot-sep {
+    color: #ccc;
+}
+
+.map-link {
+    color: #888;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    margin-left: 6px;
+    font-size: 12px;
+}
+
+.hotel-amenities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.amenity {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    font-size: 11px;
+    color: #555;
+}
+
+.amenity svg {
+    color: #888;
+}
+
+.hotel-highlight {
+    display: inline-block;
+    background-color: #e3f2fd; /* Светло-голубой */
+    color: #1565c0;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    width: fit-content;
+    margin-bottom: 16px;
+}
+
+.hotel-highlight.highlight-blue {
+    background-color: #e3f2fd;
+    color: #1565c0;
+}
+
+.hotel-desc {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #666;
+    margin-top: auto;
+}
+
+/* --- Правая часть (Цена) --- */
+.hotel-price-side {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.rating-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #1a1a1a;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.price-block {
+    margin-top: 24px; /* Отступ от рейтинга */
+    margin-bottom: 16px;
+}
+
+.price-tag {
+    font-size: 11px;
+    color: #2e7d32; /* Зеленый */
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 6px;
+}
+
+.old-price {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+    margin-bottom: 2px;
+}
+
+.price-main {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.1;
+}
+
+.price-main .currency {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.price-main .per-night {
+    font-size: 12px;
+    color: #888;
+    font-weight: 400;
+}
+
+.price-desc {
+    font-size: 11px;
+    color: #888;
+    margin-top: 4px;
+    line-height: 1.4;
+}
+
+.price-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.btn-primary {
+    background-color: #1a73e8; /* Синяя кнопка */
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #1557b0;
+}
+
+.btn-secondary {
+    background-color: #fff;
+    color: #1a1a1a;
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+    background-color: #f9f9f9;
+}
+
+.booking-note {
+    font-size: 11px;
+    color: #888;
+    text-align: center;
+    margin-top: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+/* ==========================================================================
+   Кнопка "Показать еще" (в самом низу)
+   ========================================================================== */
+   .load-more-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 40px 20px;
+    background-color: var(--cream);; /* Светло-бежевый фон, как на скрине */
+    border-radius: 16px; /* Если нужно скругление самого контейнера */
+    margin-top: 20px;
+}
+
+.btn-load-more {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #e3dcd3; /* Тонкая бежевая/серая обводка */
+    padding: 16px 40px;
+    border-radius: 50px; /* Максимальное скругление (форма таблетки) */
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Эффект при наведении */
+.btn-load-more:hover {
+    background-color: #faf8f5;
+    border-color: #d1c7b8;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); /* Легкая тень */
+}
+
+/* Эффект при нажатии */
+.btn-load-more:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   Адаптивность
+   ========================================================================== */
+@media (max-width: 1050px) {
+    .hotel-card {
+        grid-template-columns: 200px 1fr 260px;
+    }
+}
+
+@media (max-width: 900px) {
+    .hotel-card {
+        grid-template-columns: 1fr; /* Все в одну колонку */
+    }
+
+    .hotel-image {
+        height: 200px;
+        padding: 20px;
+    }
+
+    .hotel-info {
+        border-right: none;
+        border-bottom: 1px solid #eaeaea;
+        padding: 20px;
+    }
+
+    .hotel-price-side {
+        padding: 20px;
+    }
+    
+    .rating-badge {
+        top: 20px;
+        right: 20px;
+    }
+    
+    .price-block {
+        margin-top: 0;
+        padding-right: 50px; /* Чтобы текст не наезжал на рейтинг */
+    }
+
+    .price-actions {
+        flex-direction: row;
+        margin-top: 16px;
+    }
+    
+    .btn-primary, .btn-secondary {
+        flex: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .hotels-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    
+    .hotels-sort {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 5px;
+    }
+    
+    .title-rating {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .hotel-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .reviews-count {
+        text-align: left;
+    }
+
+    .price-actions {
+        flex-direction: column;
+    }
+}
+
+
+/* ==========================================================================
+   Секция
+   ========================================================================== */
+   .map-features-section {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    width: 100%;
+}
+
+.map-features-wrapper {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* ==========================================================================
+   Левая часть: Карта
+   ========================================================================== */
+.map-card {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #eaeaea;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+.map-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 30px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.map-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.live-prices {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #555;
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #3b82f6; /* Синяя точка */
+    border-radius: 50%;
+}
+
+.map-body {
+    position: relative;
+    flex: 1;
+    min-height: 300px;
+    background-color: #f8fafc;
+    overflow: hidden;
+}
+
+/* Имитация сетки карты */
+.map-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(to right, #edf2f7 1px, transparent 1px),
+        linear-gradient(to bottom, #edf2f7 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* Изогнутая линия маршрута */
+.map-route {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Метки на карте */
+.map-pin {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translate(-50%, -50%);
+}
+
+.pin-price {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    margin-bottom: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.pin-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #3b82f6;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+/* Плашка маршрута */
+.route-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    background-color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 3;
+}
+
+.route-badge svg {
+    color: #3b82f6;
+}
+
+/* Нижние плашки */
+.map-footer {
+    display: flex;
+    gap: 10px;
+    padding: 20px 30px;
+    flex-wrap: wrap;
+    border-top: 1px solid #eaeaea;
+    background-color: #ffffff;
+}
+
+.city-price-tag {
+    padding: 8px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #555;
+    white-space: nowrap;
+}
+
+/* ==========================================================================
+   Правая часть: Преимущества
+   ========================================================================== */
+.features-card {
+    width: 380px;
+    background-color: #0f172a; /* Темно-синий фон */
+    border-radius: 16px;
+    padding: 30px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.features-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.features-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.features-title em {
+    color: #94a3b8; /* Серо-голубой оттенок для второй строки */
+    font-style: italic;
+}
+
+.features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+.feature-item {
+    display: flex;
+    gap: 16px;
+}
+
+.feature-icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    color: #cbd5e1;
+}
+
+.feature-text h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.feature-text p {
+    font-size: 13px;
+    line-height: 1.4;
+    color: #94a3b8;
+}
+
+/* Блок рейтинга внизу */
+.rating-footer {
+    margin-top: auto; /* Прижимаем к низу */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.rating-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.rating-label {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-bottom: 4px;
+}
+
+.rating-score {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.rating-max {
+    font-size: 14px;
+    font-weight: 400;
+    color: #94a3b8;
+}
+
+.rating-reviews {
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+.rating-avatars {
+    display: flex;
+}
+
+.avatar-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #0f172a;
+}
+
+.avatar-circle:not(:first-child) {
+    margin-left: -8px;
+}
+
+.bg-blue { background-color: #60a5fa; }
+.bg-purple { background-color: #a78bfa; }
+.bg-pink { background-color: #f472b6; }
+
+/* ==========================================================================
+   Адаптивность
+   ========================================================================== */
+@media (max-width: 1000px) {
+    .map-features-wrapper {
+        flex-direction: column;
+    }
+
+    .features-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .map-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .map-footer {
+        padding: 15px 20px;
+    }
+
+    .features-card {
+        padding: 20px;
+    }
+    
+    .features-title {
+        font-size: 24px;
+    }
+
+    .rating-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+
+
+
+
+/* ==========================================================================
+   Секция
+   ========================================================================== */
+   .reviews-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    width: 100%;
+}
+
+/* Шапка секции */
+.reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1100px;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+.reviews-title-wrap {
+    max-width: 600px;
+}
+
+.reviews-title-wrap h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+}
+
+.reviews-title-wrap p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666;
+}
+
+/* Кнопки навигации */
+.reviews-nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #e0e0e0;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #888;
+    transition: all 0.2s;
+}
+
+.nav-btn:hover {
+    border-color: #ccc;
+    color: #1a1a1a;
+}
+
+.nav-btn-dark {
+    background-color: #1a1a1a;
+    border-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.nav-btn-dark:hover {
+    background-color: #333;
+    border-color: #333;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   Сетка карточек
+   ========================================================================== */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+/* Карточка отзыва */
+.review-card {
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+/* Верхняя часть (Аватар + Имя + Звезды) */
+.review-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 16px;
+    color: #1a1a1a;
+}
+
+/* Цвета аватарок */
+.avatar-beige { background-color: #f5ebe1; }
+.avatar-green { background-color: #e6f4ea; }
+.avatar-pink  { background-color: #fce7f3; }
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.user-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.user-date {
+    font-size: 12px;
+    color: #888;
+}
+
+/* Звезды */
+.stars {
+    color: #1a1a1a;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+/* Текст отзыва */
+.review-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 24px;
+    flex-grow: 1; /* Чтобы блок с отелем всегда был прижат к низу */
+}
+
+/* Блок с информацией об отеле */
+.hotel-info-card {
+    display: flex;
+    background-color: #fcfcfc;
+    border: 1px solid #f0f0f0;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 90px;
+}
+
+/* Заглушка вместо фото отеля */
+.hotel-thumb {
+    width: 100px;
+    flex-shrink: 0;
+    background-color: #e0e0e0;
+}
+
+/* Разные цвета для заглушек, как на скрине */
+.thumb-blue { background-color: #dceaf5; }
+.thumb-beige { background-color: #e8dfd3; }
+.thumb-yellow { background-color: #f5ebc8; }
+
+.hotel-text {
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hotel-label {
+    font-size: 10px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.hotel-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+}
+
+.hotel-tags {
+    font-size: 11px;
+    color: #888;
+}
+
+/* ==========================================================================
+   Адаптивность
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews-header {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr; /* На мобильных в одну колонку */
+    }
+    
+    .review-text {
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================
+     ФУТЕР
+  ============================================ */
+  .footer {
+    padding: 60px 0 40px;
+    background: var(--cream);
+  }
+
+  /* Сетка колонок */
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+
+  /* ============================================
+     КОЛОНКА 1 — ЛОГОТИП И ОПИСАНИЕ
+  ============================================ */
+  .footer-logo {
+    display: inline-flex;
+    align-items: baseline;
+    font-family: Georgia, serif;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  .footer-logo .accent {
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  .footer-desc {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 280px;
+    margin-bottom: 24px;
+  }
+
+  /* Социальные иконки */
+  .socials {
+    display: flex;
+    gap: 10px;
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    background: transparent;
+    color: #fff;
+  }
+  .social-icon:hover {
+    background: var(--ink);
+    color: var(--cream);
+    border-color: var(--ink);
+    transform: translateY(-2px);
+  }
+  .social-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    transition: fill 0.3s ease;
+  }
+
+  /* -------- Instagram -------- */
+.social-icon.instagram {
+  background: linear-gradient(45deg, #F09433 0%, #E6683C 25%, #DC2743 50%, #CC2366 75%, #BC1888 100%);
+}
+.social-icon.instagram:hover {
+  box-shadow: 0 10px 25px rgba(220, 39, 67, 0.5);
+}
+
+/* -------- Telegram -------- */
+.social-icon.telegram {
+  background: #229ED9;
+}
+.social-icon.telegram:hover {
+  box-shadow: 0 10px 25px rgba(34, 158, 217, 0.5);
+}
+
+/* -------- YouTube -------- */
+.social-icon.youtube {
+  background: #FF0000;
+}
+.social-icon.youtube:hover {
+  box-shadow: 0 10px 25px rgba(255, 0, 0, 0.5);
+}
+
+/* -------- Facebook -------- */
+.social-icon.facebook {
+  background: #1877F2;
+}
+.social-icon.facebook:hover {
+  box-shadow: 0 10px 25px rgba(24, 119, 242, 0.5);
+}
+
+/* -------- WhatsApp -------- */
+.social-icon.whatsapp {
+  background: #25D366;
+}
+.social-icon.whatsapp:hover {
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+}
+
+/* -------- X (Twitter) -------- */
+.social-icon.x-twitter {
+  background: #000000;
+}
+.social-icon.x-twitter:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* -------- Max -------- */
+.social-icon.max {
+  background: #7B61FF;
+}
+.social-icon.max:hover {
+  box-shadow: 0 10px 25px rgba(123, 97, 255, 0.5);
+}
+
+  /* ============================================
+     КОЛОНКИ 2, 3, 4 — ССЫЛКИ
+  ============================================ */
+  .footer-col h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-col ul a {
+    font-size: 13.5px;
+    color: var(--ink);
+    transition: color 0.3s ease;
+    display: inline-block;
+  }
+  .footer-col ul a:hover {
+    color: var(--accent);
+  }
+
+  /* ============================================
+     КОЛОНКА 4 — КОНТАКТЫ
+  ============================================ */
+  .contacts {
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: var(--ink);
+  }
+  .contacts a {
+    transition: color 0.3s ease;
+  }
+  .contacts a:hover {
+    color: var(--accent);
+  }
+  .contacts .schedule {
+    margin-top: 16px;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ============================================
+     НИЖНЯЯ ПОЛОСА
+  ============================================ */
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    border-top: 1px solid var(--line);
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 28px;
+  }
+  .footer-links a {
+    transition: color 0.3s ease;
+  }
+  .footer-links a:hover {
+    color: var(--ink);
+  }
+
+  /* ============================================
+     АДАПТИВ
+  ============================================ */
+  @media (max-width: 900px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer {
+      padding: 40px 0 30px;
+    }
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .footer-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }

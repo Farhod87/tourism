@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BukharaPulse</title>
+  <link rel="stylesheet" href="../../css/hotels.css">
+</head>
+<body>
+  
+  <!-- ============================================
+     HEADER
+============================================ -->
+<div class="header-wrap">
+  <header class="header">
+    <a href="#" class="logo">
+      <div class="logo-mark">B</div>
+      <div class="logo-text">
+        <span class="name">BukharaPulse</span>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="../index.html">Asosiy sahifa</a>
+      <a href="../pages/tours.html">Turlar</a>
+      <a href="../pages/hotels.html">Mehmonxonalar</a>
+      <a href="../pages/blog.html">Blog</a>
+      <a href="../pages/about.html">Biz haqimizda</a>
+    </nav>
+
+    <div style="display:flex; align-items:center; gap:10px;">
+
+      <!-- Выпадающий переключатель языка -->
+<div class="lang-dropdown" id="langDropdown">
+  <button class="lang-current" id="langBtn">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+    </svg>
+    <span id="currentLang">UZ</span>
+    <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="m6 9 6 6 6-6"/>
+    </svg>
+  </button>
+
+  <div class="lang-menu" id="langMenu">
+    <button data-lang="RU">
+      <span class="name">Русский</span>
+    </button>
+    <button data-lang="EN">
+      <span class="name">English</span>
+    </button>
+    <button data-lang="UZ" class="active">
+      <span class="name">O‘zbek</span>
+    </button>
+  </div>
+</div>
+      <a href="#" class="header-cta">Band qilish</a>
+      <button class="burger" id="burgerBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16M4 6h16M4 18h16"/></svg>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#">Asosiy sahifa</a>
+      <a href="#">Chiquvchi turizm</a>
+      <a href="#">Kiruvchi turizm</a>
+      <a href="#">Mehmonxonalar</a>
+      <a href="#">Blog</a>
+      <a href="#">Biz haqimizda</a>
+      <a href="#" style="background:var(--ink); color:var(--cream); border-radius:999px; text-align:center; padding:14px; margin-top:12px; border:none;">Band qilish</a>
+    </div>
+  </header>
+</div>
+
+
+<section class="search-hero">
+  <!-- Фоновое изображение -->
+  <div class="hero-bg"></div>
+  
+  <div class="hero-container">
+      <!-- Текстовый блок -->
+      <div class="hero-text">
+          <h1>Qayerda<br>to'xtaymiz?</h1>
+          <p>Butik mehmonxonalar, anorli hovlilar va tomdagi basseynlar —<br>Toshkentdan Xivagacha. Qo'shimcha to'lovlar va yashirin shartlarsiz.</p>
+      </div>
+
+      <!-- Панель поиска (Стекло) -->
+      <div class="search-panel">
+          <div class="search-fields">
+              <!-- Поле дат -->
+              <div class="field-group">
+                  <label>QACHON BORAMIZ? <span class="dot"></span> sanalarni tanlang</label>
+                  <div class="field-value">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                      <span>24 avg — 30 avg</span>
+                  </div>
+              </div>
+              
+              <!-- Разделитель -->
+              <div class="field-divider"></div>
+
+              <!-- Поле гостей -->
+              <div class="field-group">
+                  <label>NECHTA MEHMON?</label>
+                  <div class="field-value">
+                      <span>2 mehmon • 1 xona</span>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Кнопка поиска -->
+          <button class="search-btn">
+              Qidirish <span class="arrow">→</span>
+          </button>
+      </div>
+
+      <!-- Города -->
+      <div class="city-tags">
+          <button class="city-tag active">Barchasi</button>
+          <button class="city-tag">Toshkent</button>
+          <button class="city-tag">Samarqand</button>
+          <button class="city-tag">Buxoro</button>
+          <button class="city-tag">Xiva</button>
+          <button class="city-tag">Farg'ona</button>
+      </div>
+
+      <!-- Статус (Смотрят сейчас) -->
+      <div class="live-status">
+          <span class="live-dot"></span>
+          Hozir tanlashmoqda: 12 kishi Buxoroni ko'rmoqda
+      </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="hotels-section">
+        
+  <!-- Верхняя панель -->
+  <div class="hotels-toolbar">
+      <div class="hotels-count">
+          <span>8 ta mehmonxona topildi</span>
+          <span class="dot"></span>
+          <span class="updated">bugun yangilandi</span>
+      </div>
+      <div class="hotels-sort">
+          <button class="sort-pill active">Mashhur</button>
+          <button class="sort-pill">Arzonroq</button>
+          <button class="sort-pill">Qimmatroq</button>
+          <button class="sort-pill">Reyting</button>
+      </div>
+  </div>
+
+  <div class="hotels-list">
+
+      <!-- КАРТОЧКА 1 -->
+      <article class="hotel-card">
+          <!-- Левая часть: Фото -->
+          <div class="hotel-image" style="background: linear-gradient(135deg, #4b3b9e 0%, #2a2a72 100%);">
+              <!-- Верхние бейджи -->
+              <div class="image-top-badges">
+                  <div class="stars-badge">★ 5 ★</div>
+                  <button class="favorite-btn">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                  </button>
+              </div>
+              <!-- Нижний текст -->
+              <div class="image-bottom-text">
+                  <span class="image-date">01 / 03 — XIVA</span>
+                  <div class="image-title-line"></div>
+                  <span class="image-title">Sahrai Khiva</span>
+              </div>
+          </div>
+
+          <!-- Центральная часть: Инфо -->
+          <div class="hotel-info">
+              <div class="hotel-header">
+                  <div class="title-rating">
+                      <h2>Sahrai Khiva</h2>
+                      <span class="hotel-stars">★★★★★</span>
+                  </div>
+                  <div class="reviews-count">Nafis<br>412 ta sharh</div>
+              </div>
+
+              <div class="hotel-location">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  Xiva <span class="dot-sep">•</span> Ichan-Qal'agacha 50 m 
+                  <a href="#" class="map-link">Xaritada</a>
+              </div>
+
+              <div class="hotel-amenities">
+                  <span class="amenity"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg> Wi-Fi</span>
+                  <span class="amenity"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg> Nonushta</span>
+                  <span class="amenity"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20"></path><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6"></path><path d="M4 12V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6"></path></svg> Basseyn</span>
+                  <span class="amenity"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg> Spa</span>
+                  <span class="amenity"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg> Avtoturargoh</span>
+              </div>
+
+              <div class="hotel-highlight">Shohona Lyuks</div>
+
+              <p class="hotel-desc">
+                  Qal'a ichidagi yangi lyuks mehmonxona. Xususiy basseyn, marmar hammom va mualliflik o'zbek taomlari restorani.
+              </p>
+          </div>
+
+          <!-- Правая часть: Цена -->
+          <div class="hotel-price-side">
+              <div class="rating-badge">9.6</div>
+              
+              <div class="price-block">
+                  <div class="price-tag">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+                      FAQAT 2 TA XONA
+                  </div>
+                  <div class="price-main">22 700 <span class="currency">so'm</span> <span class="per-night">/ kecha • UZS</span></div>
+                  <div class="price-desc">3 kecha uchun • soliqlar kiritilgan • eng yaxshi narx</div>
+              </div>
+
+              <div class="price-actions">
+                  <button class="btn-primary">Xonalarni ko'rish ↗</button>
+                  <button class="btn-secondary">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                      Batafsil
+                  </button>
+                  <div class="booking-note">Bir kunda 12 marta band qilingan</div>
+              </div>
+          </div>
+      </article>
+
+      <!-- КАРТОЧКА 2 -->
+      <article class="hotel-card">
+          <!-- Левая часть: Фото -->
+          <div class="hotel-image" style="background: linear-gradient(135deg, #2b88d8 0%, #1e4f8a 100%);">
+              <div class="image-top-badges">
+                  <div class="stars-badge">★ 5 ★</div>
+                  <button class="favorite-btn">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                  </button>
+              </div>
+              <div class="image-bottom-text">
+                  <span class="image-date">TAHRIRIYAT TANLOVI</span>
+              </div>
+          </div>
+
+          <!-- Центральная часть: Инфо -->
+          <div class="hotel-info">
+              <div class="hotel-header">
+                  <div class="title-rating">
+                      <h2>Hyatt Regency Tashkent</h2>
+                      <span class="hotel-stars">★★★★★</span>
+                  </div>
+                  <div class="reviews-count">Ajoyib<br>1 314 ta sharh</div>
+              </div>
+
+              <div class="hotel-location">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  Toshkent <span class="dot-sep">•</span> Markazgacha 0.8 km 
+                  <a href="#" class="map-link">Xaritada</a>
+              </div>
+
+              <div class="hotel-amenities">
+                  <span class="amenity"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg> Wi-Fi</span>
+                  <span class="amenity"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg> Nonushta</span>
+                  <span class="amenity"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20"></path><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6"></path><path d="M4 12V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6"></path></svg> Basseyn</span>
+                  <span class="amenity"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg> Avtoturargoh</span>
+                  <span class="amenity"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg> Spa</span>
+              </div>
+
+              <div class="hotel-highlight highlight-blue">Shahar manzarali Delux</div>
+
+              <p class="hotel-desc">
+                  Panoramik oynalar, tomdagi ochiq basseyn va spa-markazga ega zamonaviy biznes-mehmonxona. 5 yulduzli xizmatni qadrlaydiganlar uchun ideal.
+              </p>
+          </div>
+
+          <!-- Правая часть: Цена -->
+          <div class="hotel-price-side">
+              <div class="rating-badge">9.4</div>
+              
+              <div class="price-block">
+                  <div class="price-tag">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                      BEPUL BEKOR QILISH
+                  </div>
+                  <div class="old-price">22 100 so'm</div>
+                  <div class="price-main">18 400 <span class="currency">so'm</span></div>
+                  <div class="price-desc">/ kecha • UZS<br>3 kecha uchun • soliqlar kiritilgan • 3 700 so'm tejash</div>
+              </div>
+
+              <div class="price-actions">
+                  <button class="btn-primary">Xonalarni ko'rish ↗</button>
+                  <!-- Вторая кнопка обрезана на скрине, но она там есть -->
+                  <button class="btn-secondary" style="visibility: hidden;">Batafsil</button> 
+              </div>
+          </div>
+      </article>
+
+  </div>
+
+
+  <div class="load-more-container">
+    <button class="btn-load-more">
+        Yana 6 ta mehmonxonani ko'rsatish
+    </button>
+</div>
+</section>
+
+
+
+<section class="map-features-section">
+  <div class="map-features-wrapper">
+      
+      <!-- ЛЕВАЯ ЧАСТЬ: Карта -->
+      <div class="map-card">
+          <div class="map-header">
+              <h2>Mehmonxonalar xaritasi</h2>
+              <div class="live-prices">
+                  <span class="live-dot"></span> jonli narxlar
+              </div>
+          </div>
+          
+          <div class="map-body">
+              <!-- Имитация фона карты (сетка) -->
+              <div class="map-background"></div>
+              
+              <!-- Имитация маршрута (изогнутая линия) -->
+              <svg class="map-route" viewBox="0 0 1000 300" preserveAspectRatio="none">
+                  <path d="M 0 150 C 250 100, 400 250, 600 200 S 800 100, 1000 200" fill="none" stroke="#bfdbfe" stroke-width="25" stroke-linecap="round"/>
+              </svg>
+
+              <!-- Метки с ценами -->
+              <div class="map-pin" style="top: 30%; left: 12%;">
+                  <div class="pin-price">18 400 so'm</div>
+                  <div class="pin-dot"></div>
+              </div>
+              <div class="map-pin" style="top: 60%; left: 22%;">
+                  <div class="pin-price">22 700 so'm</div>
+                  <div class="pin-dot"></div>
+              </div>
+              <div class="map-pin" style="top: 45%; left: 28%;">
+                  <div class="pin-price">4 700 so'm</div>
+                  <div class="pin-dot"></div>
+              </div>
+              <div class="map-pin" style="top: 25%; left: 35%;">
+                  <div class="pin-price">8 900 so'm</div>
+                  <div class="pin-dot"></div>
+              </div>
+              <div class="map-pin" style="top: 55%; left: 43%;">
+                  <div class="pin-price">5 200 so'm</div>
+                  <div class="pin-dot"></div>
+              </div>
+              <div class="map-pin" style="top: 75%; left: 38%;">
+                  <div class="pin-price">3 100 so'm</div>
+                  <div class="pin-dot"></div>
+              </div>
+
+              <!-- Маршрут-плашка -->
+              <div class="route-badge">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  Toshkent — Samarqand — Buxoro
+              </div>
+          </div>
+
+          <!-- Нижние плашки с ценами по городам -->
+          <div class="map-footer">
+              <span class="city-price-tag">Toshkent: 18 400 so'mdan</span>
+              <span class="city-price-tag">Samarqand: 8 900 so'mdan</span>
+              <span class="city-price-tag">Buxoro: 5 200 so'mdan</span>
+              <span class="city-price-tag">Xiva: 22 700 so'mdan</span>
+          </div>
+      </div>
+
+      <!-- ПРАВАЯ ЧАСТЬ: Преимущества -->
+      <div class="features-card">
+          <div class="features-header">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
+              NEGA BIZDA BAND QILISHADI
+          </div>
+          
+          <h2 class="features-title">
+              Vositachilarsiz.<br>
+              <em>Faqat tekshirilgan uylar.</em>
+          </h2>
+
+          <div class="features-list">
+              <!-- Преимущество 1 -->
+              <div class="feature-item">
+                  <div class="feature-icon">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                  </div>
+                  <div class="feature-text">
+                      <h4>Qo'lda tanlov</h4>
+                      <p>Har bir mehmonxonaga shaxsan tashrif buyurganmiz. Filtersiz suratlar, halol sharhlar.</p>
+                  </div>
+              </div>
+
+              <!-- Преимущество 2 -->
+              <div class="feature-item">
+                  <div class="feature-icon">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4l3 3"></path></svg>
+                  </div>
+                  <div class="feature-text">
+                      <h4>Qabulxonadagi kabi narx</h4>
+                      <p>Yashirin komissiyalar yo'q. To'g'ridan-to'g'ri mehmonxonaga to'lang, biz faqat yordam beramiz.</p>
+                  </div>
+              </div>
+
+              <!-- Преимущество 3 -->
+              <div class="feature-item">
+                  <div class="feature-icon">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                  </div>
+                  <div class="feature-text">
+                      <h4>Telegramda 24/7 qo'llab-quvvatlash</h4>
+                      <p>Kechasi joylashasizmi? Yukingiz yo'qoldimi? 3 daqiqada javob beramiz.</p>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Нижний блок с рейтингом -->
+          <div class="rating-footer">
+              <div class="rating-info">
+                  <span class="rating-label">Mehmonlarning o'rtacha bahosi</span>
+                  <div class="rating-score">9.2 <span class="rating-max">/ 10</span></div>
+                  <span class="rating-reviews">4,812 ta sharhga asoslangan</span>
+              </div>
+              <div class="rating-avatars">
+                  <div class="avatar-circle bg-blue"></div>
+                  <div class="avatar-circle bg-purple"></div>
+                  <div class="avatar-circle bg-pink"></div>
+              </div>
+          </div>
+      </div>
+
+  </div>
+</section>
+
+
+
+
+
+<section class="reviews-section">
+        
+  <!-- Шапка секции -->
+  <div class="reviews-header">
+      <div class="reviews-title-wrap">
+          <h2>Mehmonlar hikoyalari</h2>
+          <p>Xizmat haqida emas, balki hovlilar, nonushtalar va tomlar haqida. So'nggi oydagi uchta haqiqiy sharh.</p>
+      </div>
+      
+      <!-- Кнопки навигации (стрелки) -->
+      <div class="reviews-nav">
+          <button class="nav-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="nav-btn nav-btn-dark">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+      </div>
+  </div>
+
+  <!-- Сетка с карточками -->
+  <div class="reviews-grid">
+
+      <!-- Карточка 1 -->
+      <article class="review-card">
+          <div class="review-top">
+              <div class="user-info">
+                  <div class="avatar avatar-beige">А</div>
+                  <div class="user-details">
+                      <span class="user-name">Anya, dizayner</span>
+                      <span class="user-date">12 okt • Buxoro</span>
+                  </div>
+              </div>
+              <div class="stars">★★★★★</div>
+          </div>
+          
+          <p class="review-text">
+              "Nonning hididan uyg'ondim. Xo'jayin ganchni qanday kesishni ko'rsatdi, keyin ayvonda yalpizli choy ichdik. Kechqurun — tom, palov va Labi Hovuz sukunati. Hech qanday qabulxona yo'q, faqat hovli."
+          </p>
+
+          <div class="hotel-info-card">
+              <div class="hotel-thumb thumb-blue"></div>
+              <div class="hotel-text">
+                  <span class="hotel-label">QAYERDA TURDIK</span>
+                  <strong class="hotel-name">Lyabi & Mint</strong>
+                  <span class="hotel-tags">Hovli • Nonushta • Tom</span>
+              </div>
+          </div>
+      </article>
+
+      <!-- Карточка 2 -->
+      <article class="review-card">
+          <div class="review-top">
+              <div class="user-info">
+                  <div class="avatar avatar-green">М</div>
+                  <div class="user-details">
+                      <span class="user-name">Misha va Lera</span>
+                      <span class="user-date">3 okt • Samarqand</span>
+                  </div>
+              </div>
+              <div class="stars">★★★★★</div>
+          </div>
+          
+          <p class="review-text">
+              "Registon uchun keldik, hovli uchun qoldik. Anorlar to'g'ridan-to'g'ri nonushta stoliga tushdi. Bolalar Konigilda qog'oz yasashdi, varaqlar bilan qaytishdi. Xo'jayin sobiq arxeolog, yarim tungacha Afrosiyob haqida gapirib berdi."
+          </p>
+
+          <div class="hotel-info-card">
+              <div class="hotel-thumb thumb-beige"></div>
+              <div class="hotel-text">
+                  <span class="hotel-label">QAYERDA TURDIK</span>
+                  <strong class="hotel-name">Meros Courtyard</strong>
+                  <span class="hotel-tags">Hovli • Nonushta • Tom</span>
+              </div>
+          </div>
+      </article>
+
+      <!-- Карточка 3 -->
+      <article class="review-card">
+          <div class="review-top">
+              <div class="user-info">
+                  <div class="avatar avatar-pink">Д</div>
+                  <div class="user-details">
+                      <span class="user-name">Dasha, fotosuratchi</span>
+                      <span class="user-date">28 sen • Xiva</span>
+                  </div>
+              </div>
+              <div class="stars">★★★★★</div>
+          </div>
+          
+          <p class="review-text">
+              "Quyosh botayotgan Xiva — bu tomdagi basseyn va tilla rangdagi minora. Kunduzi loy qizib ketadi, kechqurun esa oq hovlida o'tirib, qovunli choy ichasiz. Mehmonxona kichkina, jami 6 ta xona, ertalabgacha hamma bir-birini taniydi."
+          </p>
+
+          <div class="hotel-info-card">
+              <div class="hotel-thumb thumb-yellow"></div>
+              <div class="hotel-text">
+                  <span class="hotel-label">QAYERDA TURDIK</span>
+                  <strong class="hotel-name">Itchan Kala Roof</strong>
+                  <span class="hotel-tags">Hovli • Nonushta • Tom</span>
+              </div>
+          </div>
+      </article>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <!-- КОЛОНКА 1 — ЛОГОТИП -->
+      <div>
+        <a href="#" class="footer-logo">
+          <span>Uzbek</span><span class="accent">Pulse</span>
+        </a>
+        <p class="footer-desc">
+          Buxorodan premium sayohatlar. EST 2024. Litsenziya № 123. Halol, g'amxo'rlik bilan.
+        </p>
+
+        <!-- Социальные иконки -->
+        <div class="socials">
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/uzbekpulse?igsh=MTZmMTlyemE5M21kcw==" class="social-icon instagram" aria-label="Instagram" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        
+          <!-- Telegram -->
+          <a href="https://t.me/UzbekPulse" class="social-icon telegram" aria-label="Telegram" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          </a>
+        
+          <!-- YouTube -->
+          <a href="https://www.youtube.com/@UzbekPulse2026" class="social-icon youtube" aria-label="YouTube" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        
+          <!-- Facebook -->
+          <a href="#" class="social-icon facebook" aria-label="Facebook" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        
+          <!-- WhatsApp -->
+          <a href="https://whatsapp.com/channel/0029VbDC3mLKGGGPmxRoi016" class="social-icon whatsapp" aria-label="WhatsApp" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </a>
+        
+          <!-- X (Twitter) -->
+          <a href="#" class="social-icon x-twitter" aria-label="X" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        
+          <!-- Max -->
+          <a href="#" class="social-icon max" aria-label="Max" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 5.94 2 10.8c0 2.485 1.094 4.727 2.859 6.328V22l3.734-2.05a11.31 11.31 0 003.407.525c5.523 0 10-3.94 10-8.8S17.523 2 12 2zm-4.5 9.6a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7zm4.5 0a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7zm4.5 0a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7z"/></svg>
+          </a>
+        
+        </div>
+      </div>
+
+      <!-- КОЛОНКА 2 — ВЫЕЗД -->
+      <div class="footer-col">
+        <h4>Chiqish</h4>
+        <ul>
+          <li><a href="#">Barcha xorijiy turlar</a></li>
+          <li><a href="#">Plyaj dam olish</a></li>
+          <li><a href="#">Oilaviy turlar</a></li>
+          <li><a href="#">Ekskursiya turlari</a></li>
+          <li><a href="#">Mamlakatlar</a></li>
+          <li><a href="#">Individual tanlov</a></li>
+        </ul>
+      </div>
+
+      <!-- КОЛОНКА 3 — УЗБЕКИСТАН -->
+      <div class="footer-col">
+        <h4>O'zbekiston</h4>
+        <ul>
+          <li><a href="#">O'zbekiston bo'ylab barcha turlar</a></li>
+          <li><a href="#">Buxoro</a></li>
+          <li><a href="#">Samarqand</a></li>
+          <li><a href="#">Xiva</a></li>
+          <li><a href="#">Toshkent</a></li>
+          <li><a href="#">Buyuk ipak yo'li</a></li>
+          <li><a href="#">Tarixiy</a></li>
+          <li><a href="#">Individual</a></li>
+          <li><a href="#">Bir kunlik</a></li>
+        </ul>
+      </div>
+
+      <!-- КОЛОНКА 4 — КОНТАКТЫ -->
+      <div class="footer-col">
+        <h4>Kontaktlar</h4>
+        <div class="contacts">
+          <div>Buxoro, Labi Hovuz ko'chasi, 12</div>
+          <div><a href="tel:+998900000000">+998 90 000 00 00</a></div>
+          <div><a href="mailto:hello@uzbekpulse.uz">hello@uzbekpulse.uz</a></div>
+          <div class="schedule">
+            Du-Sha 09:00-19:00<br>
+            Yak — kelishilgan holda
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- НИЖНЯЯ ПОЛОСА -->
+    <div class="footer-bottom">
+      <span>© 2026 UzbekPulse Travel. Barcha huquqlar himoyalangan.</span>
+      <div class="footer-links">
+        <a href="#">Maxfiylik siyosati</a>
+        <a href="#">Ommaviy oferta shartnomasi</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+  <script src="../../js/hotels.js"></script>
+</body>
+</html>

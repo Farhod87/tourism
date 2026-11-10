@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BukharaPulse</title>
+  <link rel="stylesheet" href="../css/about.css">
+</head>
+<body>
+  <!-- ============================================
+     HEADER
+============================================ -->
+<div class="header-wrap">
+  <header class="header">
+    <a href="#" class="logo">
+      <div class="logo-mark">B</div>
+      <div class="logo-text">
+        <span class="name">BukharaPulse</span>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="../index.html">Главная</a>
+      <a href="./tours.html">Туры</a>
+      <a href="./hotels.html">Отели</a>
+      <a href="./blog.html">Блог</a>
+      <a href="./about.html">О нас</a>
+    </nav>
+
+    <div style="display:flex; align-items:center; gap:10px;">
+
+      <!-- Выпадающий переключатель языка -->
+<div class="lang-dropdown" id="langDropdown">
+  <button class="lang-current" id="langBtn">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+    </svg>
+    <span id="currentLang">RU</span>
+    <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="m6 9 6 6 6-6"/>
+    </svg>
+  </button>
+
+  <div class="lang-menu" id="langMenu">
+    <button data-lang="RU" class="active">
+      <span class="name">Русский</span>
+    </button>
+    <button data-lang="EN">
+      <span class="name">English</span>
+    </button>
+    <button data-lang="UZ">
+      <span class="name">O‘zbek</span>
+    </button>
+  </div>
+</div>
+      <a href="#" class="header-cta">Забронировать</a>
+      <button class="burger" id="burgerBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16M4 6h16M4 18h16"/></svg>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#">Главная</a>
+      <a href="#">Выездной туризм</a>
+      <a href="#">Въездной туризм</a>
+      <a href="#">Отели</a>
+      <a href="#">Блог</a>
+      <a href="#">О нас</a>
+      <a href="#" style="background:var(--ink); color:var(--cream); border-radius:999px; text-align:center; padding:14px; margin-top:12px; border:none;">Забронировать</a>
+    </div>
+  </header>
+</div>
+
+<!-- ============================================
+     ABOUT HERO
+============================================ -->
+<section class="about-hero">
+  <div class="about-hero-content">
+
+    <!-- Заголовок -->
+    <h1 class="about-title">Мы — UzbekPulse</h1>
+    <span class="about-title-italic">глазами местных</span>
+
+    <!-- Описание -->
+    <p class="about-desc">
+      Показываем Узбекистан глазами местных — от древних городов Шёлкового пути до горных кишлаков.
+      И открываем мир за пределами: 12 стран, прямые рейсы, честные цены.
+    </p>
+
+    <!-- Нижняя подпись -->
+    <div class="about-footer">
+      Премиальный туроператор из старого города
+    </div>
+
+  </div>
+</section>
+
+  
+<section class="container">
+
+  <!-- ВЕРХНЯЯ ЧАСТЬ -->
+  <div class="about-stats-head">
+    <h2 class="about-stats-title">
+      Выстроено <span class="italic">вокруг</span><br>
+      Узбекистана
+    </h2>
+    <p class="about-stats-desc">
+      Мы выросли из одной чайханы в Бухаре. Сейчас — команда из 27 гидов, которые знают каждую махаллю. Без франшиз и посредников.
+    </p>
+  </div>
+
+  <!-- ============================================
+       РЯД 1 — УЗБЕКИСТАН • ВНУТРИ
+  ============================================ -->
+  <div class="stats-badge yellow">УЗБЕКИСТАН • ВНУТРИ</div>
+
+  <div class="stats-row">
+    <div class="stat-item">
+      <div class="stat-num">6</div>
+      <div class="stat-label">Лет • на рынке</div>
+    </div>
+
+    <div class="stat-item">
+      <div class="stat-num">4200+</div>
+      <div class="stat-label">4200+ • путешественников</div>
+    </div>
+
+    <div class="stat-item">
+      <div class="stat-num">27</div>
+      <div class="stat-label">27 • гидов из Бухары, Самарканда, Хивы</div>
+    </div>
+
+    <div class="stat-item">
+      <div class="stat-num">98%</div>
+      <div class="stat-label">98% • явки по отзывам — приходят по рекомендации</div>
+    </div>
+  </div>
+
+  <p class="stats-note">
+    Цифры про наших — локальная экспертиза, которая конвертируется в доверие
+  </p>
+
+  <!-- ============================================
+       РЯД 2 — ЗА ПРЕДЕЛАМИ
+  ============================================ -->
+  <div class="stats-block-2">
+    <div class="stats-badge dark">ЗА ПРЕДЕЛАМИ</div>
+
+    <div class="stats-row">
+      <div class="stat-item">
+        <div class="stat-num dark">12</div>
+        <div class="stat-label">Стран • от Турции до Японии прямыми рейсами</div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-num dark">1100+</div>
+        <div class="stat-label">Туров • собрано за пределами Узбекистана</div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-num dark">4.9</div>
+        <div class="stat-label">Рейтинг • на Google, TripAdvisor, Яндекс</div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-num dark">24/7</div>
+        <div class="stat-label">Поддержка • гид в WhatsApp, а не колл-центр</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<section class="container">
+
+  <!-- Заголовок -->
+  <span class="principles-label">Принципы • Как мы работаем</span>
+  <h2 class="principles-title">
+    Честно. Локально.<br>
+    С заботой о деталях.
+  </h2>
+
+  <!-- Сетка 4 карточек -->
+  <div class="principles-grid">
+
+    <!-- 1. Честные цены -->
+    <article class="principle-card">
+      <div class="principle-icon">
+        <svg viewBox="0 0 24 24">
+          <rect x="3" y="6" width="18" height="14" rx="2"/>
+          <path d="M3 10h18"/>
+          <circle cx="12" cy="15" r="2"/>
+          <path d="M7 15h.01M17 15h.01"/>
+        </svg>
+      </div>
+      <h3 class="principle-title">Честные цены</h3>
+      <p class="principle-desc">
+        Цена = итоговая. Без доплат на месте, скрытых экскурсий и «обязательных» магазинов.
+      </p>
+    </article>
+
+    <!-- 2. Локальная экспертиза -->
+    <article class="principle-card">
+      <div class="principle-icon">
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 7v5l3 2"/>
+        </svg>
+      </div>
+      <h3 class="principle-title">Локальная экспертиза</h3>
+      <p class="principle-desc">
+        Маршруты от гидов из Бухары, Самарканда, Хивы. Знаем, где плов в 6 утра, а где тишина в Регистане.
+      </p>
+    </article>
+
+    <!-- 3. Забота 24/7 -->
+    <article class="principle-card">
+      <div class="principle-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M21 12a9 9 0 1 1-9-9"/>
+          <path d="M12 3a9 9 0 0 1 9 9"/>
+          <path d="M12 12l4-4"/>
+          <path d="M12 12l4 4"/>
+        </svg>
+      </div>
+      <h3 class="principle-title">Забота 24/7</h3>
+      <p class="principle-desc">
+        Ваш гид в WhatsApp — днём и ночью. Заблудились, нужен чай, задержали рейс? Пишите.
+      </p>
+    </article>
+
+    <!-- 4. Индивидуальный подход -->
+    <article class="principle-card">
+      <div class="principle-icon">
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M4 21a8 8 0 0 1 16 0"/>
+        </svg>
+      </div>
+      <h3 class="principle-title">Индивидуальный подход</h3>
+      <p class="principle-desc">
+        Подстраиваем тур под вас, а не наоборот. Вегетарианец, фотограф, с детьми — маршрут будет ваш.
+      </p>
+    </article>
+
+  </div>
+
+</section>
+
+
+<section class="container">
+
+  <!-- Заголовок -->
+  <h2 class="why-title">Почему выбирают нас</h2>
+  <p class="why-desc">
+    Сравниваем не чтобы критиковать других, а чтобы показать разницу в подходе.
+    Мы тоже начинали с шаблонов — и ушли от них.
+  </p>
+
+  <!-- Сетка -->
+  <div class="why-grid">
+
+    <!-- ===== ДРУГИЕ ===== -->
+    <div class="why-card others">
+      <div class="why-card-head">
+        <span class="why-card-label">Другие</span>
+        <span class="why-card-note">Как обычно</span>
+      </div>
+
+      <ul class="why-list">
+
+        <li class="why-item">
+          <span class="why-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </span>
+          <span class="why-item-text">Шаблонные туры по чек-листу из интернета</span>
+        </li>
+
+        <li class="why-item">
+          <span class="why-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </span>
+          <span class="why-item-text">Скрытые платежи: доплаты за вход, обед, «шоу-программу»</span>
+        </li>
+
+        <li class="why-item">
+          <span class="why-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </span>
+          <span class="why-item-text">Колл-центр отвечает скриптами</span>
+        </li>
+
+        <li class="why-item">
+          <span class="why-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </span>
+          <span class="why-item-text">Посмотреть достопримечательности — галочки</span>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- ===== МЫ ===== -->
+    <div class="why-card us">
+      <div class="why-card-head">
+        <span class="why-card-label">Мы — UzbekPulse</span>
+        <span class="why-card-note">Бухара, Старый город</span>
+      </div>
+
+      <ul class="why-list">
+
+        <li class="why-item">
+          <span class="why-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+          </span>
+          <span class="why-item-text">Маршруты от местных — где чай, где тишина, где семья гончара</span>
+        </li>
+
+        <li class="why-item">
+          <span class="why-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+          </span>
+          <span class="why-item-text">Фикс цена: в договоре всё, что вы получите</span>
+        </li>
+
+        <li class="why-item">
+          <span class="why-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+          </span>
+          <span class="why-item-text">Гид в WhatsApp — отвечает человек, который вас ведёт</span>
+        </li>
+
+        <li class="why-item">
+          <span class="why-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+          </span>
+          <span class="why-item-text">Почувствовать место: махалля, базар в 6 утра, разговор на тапичане</span>
+        </li>
+
+      </ul>
+
+      <!-- Нижняя подпись -->
+      <div class="why-footer">
+        <strong>98% приходят по рекомендации.</strong> Это наша метрика.
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="container">
+
+  <!-- Верхняя метка -->
+  <div class="partners-label">
+    Лицензированы, сертифицированы, проверены.
+  </div>
+
+  <!-- ============================================
+       БЕГУЩАЯ СТРОКА — ЛОГОТИПЫ
+  ============================================ -->
+  <div class="marquee">
+    <div class="marquee-track">
+
+      <!-- Первый набор -->
+      <div class="marquee-item">
+        <span class="dot"></span>
+        M • PARTNER
+      </div>
+
+      <div class="marquee-item">
+        <span class="dot"></span>
+        TURKISH AIRLINES
+      </div>
+
+      <div class="marquee-item">
+        <span class="dot"></span>
+        UZBEKISTAN AIRWAYS
+      </div>
+
+      <div class="marquee-item">
+        <span class="dot"></span>
+        OFFICIAL
+      </div>
+
+      <div class="marquee-item">
+        <span class="dot"></span>
+        UZBEKISTAN TOURISM
+      </div>
+
+      <div class="marquee-item">
+        <span class="dot"></span>
+        LICENSED
+      </div>
+
+      <!-- Второй набор (дубликат для бесконечности) -->
+      <div class="marquee-item">
+        <span class="dot"></span>
+        M • PARTNER
+      </div>
+
+      <div class="marquee-item">
+        <span class="dot"></span>
+        TURKISH AIRLINES
+      </div>
+
+      <div class="marquee-item">
+        <span class="dot"></span>
+        UZBEKISTAN AIRWAYS
+      </div>
+
+      <div class="marquee-item">
+        <span class="dot"></span>
+        OFFICIAL
+      </div>
+
+      <div class="marquee-item">
+        <span class="dot"></span>
+        UZBEKISTAN TOURISM
+      </div>
+
+      <div class="marquee-item">
+        <span class="dot"></span>
+        LICENSED
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================
+       НИЖНЯЯ СТРОКА — ЛИЦЕНЗИИ
+  ============================================ -->
+  <div class="licenses">
+    <div class="licenses-item">Лицензия № Т-1234</div>
+    <div class="licenses-item">IATA 99-12345</div>
+    <div class="licenses-item">Бухара, ул. Ходжа Гунджари, 12</div>
+    <div class="licenses-item">ИНН 123456789</div>
+    <div class="licenses-item">
+      <a href="#" class="licenses-link">Проверьте нас в реестре UZBTourism</a>
+    </div>
+  </div>
+
+</section>
+
+
+<section class="container">
+
+  <!-- Заголовок -->
+  <h2 class="stories-title">
+    Не сток. Реальные группы.<br>
+    Реальные истории.
+  </h2>
+  <p class="stories-desc">
+    Все фото — с наших туров. Без постановки, без фильтров. Просто оставили телефоны в руках гида.
+  </p>
+
+  <!-- Сетка -->
+  <div class="stories-grid">
+
+    <!-- ===== 1. Бухара ===== -->
+    <article class="story-card">
+      <div class="story-bg" style="background-image:url('../img/about/Buxara.webp')"></div>
+
+      <div class="story-top">
+        <span class="story-badge">Бухара • Старый город</span>
+        <span class="story-arrow">
+          <svg viewBox="0 0 24 24"><path d="M7 7h10v10M7 17 17 7"/></svg>
+        </span>
+      </div>
+
+      <div class="story-info">
+        <p class="story-text">
+          «Мы приехали за архитектурой, остались за людьми. Фарход показал чайхану, куда ходят только местные.»
+        </p>
+        <div class="story-meta">
+          <div class="story-author">
+            <span class="story-name">Ани, Германия</span>
+            <span class="story-tour">Семейный тур • 7 дней</span>
+          </div>
+          <span class="story-duration">Отзыв В</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===== 2. Кызылкум ===== -->
+    <article class="story-card">
+      <div class="story-bg" style="background-image:url('../img/about/yurta.webp')"></div>
+
+      <div class="story-top">
+        <span class="story-badge">Кызылкум • Юрты</span>
+        <span class="story-arrow">
+          <svg viewBox="0 0 24 24"><path d="M7 7h10v10M7 17 17 7"/></svg>
+        </span>
+      </div>
+
+      <div class="story-info">
+        <p class="story-text">
+          «Полночь в пустыне, плов на костре. Лучший день рождения. Никакого сигнала, только звёзды.»
+        </p>
+        <div class="story-meta">
+          <div class="story-author">
+            <span class="story-name">Дмитрий и команда</span>
+            <span class="story-tour">Путешествие • Махачкала</span>
+          </div>
+          <span class="story-duration">Отзыв В</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===== 3. Регистан ===== -->
+    <article class="story-card">
+      <div class="story-bg" style="background-image:url('../img/about/Samarkand.webp')"></div>
+
+      <div class="story-top">
+        <span class="story-badge">Регистан • Рассвет</span>
+        <span class="story-arrow">
+          <svg viewBox="0 0 24 24"><path d="M7 7h10v10M7 17 17 7"/></svg>
+        </span>
+      </div>
+
+      <div class="story-info">
+        <p class="story-text">
+          «Никаких толп, только мы и свет. UzbekPulse знает, когда приходить. В 5:30 там магия.»
+        </p>
+        <div class="story-meta">
+          <div class="story-author">
+            <span class="story-name">Софи, Франция</span>
+            <span class="story-tour">Семейный • 3 дня</span>
+          </div>
+          <span class="story-duration">Отзыв В</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+</section>
+
+
+
+<section class="container">
+
+  <!-- Заголовок -->
+  <h2 class="change-title">
+    Что меняется <span class="italic">после тура</span>
+  </h2>
+
+  <!-- Сетка -->
+  <div class="change-grid">
+
+    <!-- ===== ДО ===== -->
+    <div class="change-card before">
+      <h3 class="change-card-title">
+        Хочу посмотреть<br>
+        Бухару
+      </h3>
+
+      <ul class="change-list">
+        <li class="change-item dash">Список достопримечательностей из блога</li>
+        <li class="change-item dash">Боюсь, что будет «туристическое шоу»</li>
+        <li class="change-item dash">Не понимаю, как торговаться, что есть, куда идти</li>
+        <li class="change-item dash">Фото Регистана на закате с толпой</li>
+      </ul>
+
+      <div class="change-footer">До • ожидания</div>
+    </div>
+
+    <!-- Стрелка -->
+    <div class="change-arrow">
+      <svg viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </div>
+
+    <!-- ===== ПОСЛЕ ===== -->
+    <div class="change-card after">
+      <h3 class="change-card-title">
+        Теперь я понимаю,<br>
+        <span class="italic">что такое Восток</span>
+      </h3>
+
+      <ul class="change-list">
+        <li class="change-item check">Понимаю махаллю — как живут, почему чай пьют лёжа</li>
+        <li class="change-item check">Вкус настоящего плова — в 6 утра у дяди Бахрома</li>
+        <li class="change-item check">Друг в Бухаре — пишу Фарходу, он встретит как родного</li>
+        <li class="change-item check">Рассвет в Регистане без толп — знаем во сколько приходить</li>
+      </ul>
+
+      <div class="change-footer">После • опыт</div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="container">
+  <div class="cta-card">
+    <div class="cta-grid">
+
+      <!-- Заголовок слева -->
+      <h2 class="cta-title">
+        Расскажите, о чем<br>
+        мечтаете.<br>
+        Мы подберем тур<br>
+        <span class="italic">под вас.</span>
+      </h2>
+
+      <!-- Правая часть -->
+      <div class="cta-right">
+        <p class="cta-desc">
+          Отвечаем в среднем за 12 минут. Без спама, без шаблонов. Просто спросим, что вы любите — пустыню или горы, плов или лагман, тишину или базар.
+        </p>
+
+        <form class="cta-form" onsubmit="event.preventDefault();">
+          <input
+            type="text"
+            class="cta-input"
+            placeholder="Ваш WhatsApp или Telegram"
+            required
+          >
+          <button type="submit" class="cta-btn">Написать в WhatsApp</button>
+        </form>
+
+        <a href="#" class="cta-btn-outline">
+          Посмотреть туры по Шелковому пути
+        </a>
+
+        <p class="cta-note">
+          <strong>Бухара, Старый город, 12</strong> • Работаем ежедневно 08:00–23:00 TASHKENT<br>
+          Нажимая, вы соглашаетесь — мы напишем только по вашему запросу. Никаких рассылок.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <!-- КОЛОНКА 1 — ЛОГОТИП -->
+      <div>
+        <a href="#" class="footer-logo">
+          <span>Uzbek</span><span class="accent">Pulse</span>
+        </a>
+        <p class="footer-desc">
+          Премиальные путешествия из Бухары. EST 2024. Лицензия № 123. Честно, с заботой.
+        </p>
+
+        <!-- Социальные иконки -->
+        <div class="socials">
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/uzbekpulse?igsh=MTZmMTlyemE5M21kcw==" class="social-icon instagram" aria-label="Instagram" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        
+          <!-- Telegram -->
+          <a href="https://t.me/UzbekPulse" class="social-icon telegram" aria-label="Telegram" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          </a>
+        
+          <!-- YouTube -->
+          <a href="https://www.youtube.com/@UzbekPulse2026" class="social-icon youtube" aria-label="YouTube" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        
+          <!-- Facebook -->
+          <a href="#" class="social-icon facebook" aria-label="Facebook" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        
+          <!-- WhatsApp -->
+          <a href="https://whatsapp.com/channel/0029VbDC3mLKGGGPmxRoi016" class="social-icon whatsapp" aria-label="WhatsApp" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </a>
+        
+          <!-- X (Twitter) -->
+          <a href="#" class="social-icon x-twitter" aria-label="X" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        
+          <!-- Max -->
+          <a href="#" class="social-icon max" aria-label="Max" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 5.94 2 10.8c0 2.485 1.094 4.727 2.859 6.328V22l3.734-2.05a11.31 11.31 0 003.407.525c5.523 0 10-3.94 10-8.8S17.523 2 12 2zm-4.5 9.6a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7zm4.5 0a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7zm4.5 0a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7z"/></svg>
+          </a>
+        
+        </div>
+      </div>
+
+      <!-- КОЛОНКА 2 — ВЫЕЗД -->
+      <div class="footer-col">
+        <h4>Выезд</h4>
+        <ul>
+          <li><a href="#">Все зарубежные туры</a></li>
+          <li><a href="#">Пляжный отдых</a></li>
+          <li><a href="#">Семейные туры</a></li>
+          <li><a href="#">Экскурсионные</a></li>
+          <li><a href="#">Страны</a></li>
+          <li><a href="#">Индивидуальный подбор</a></li>
+        </ul>
+      </div>
+
+      <!-- КОЛОНКА 3 — УЗБЕКИСТАН -->
+      <div class="footer-col">
+        <h4>Узбекистан</h4>
+        <ul>
+          <li><a href="#">Все туры по Узбекистану</a></li>
+          <li><a href="#">Бухара</a></li>
+          <li><a href="#">Самарканд</a></li>
+          <li><a href="#">Хива</a></li>
+          <li><a href="#">Ташкент</a></li>
+          <li><a href="#">Шелковый путь</a></li>
+          <li><a href="#">Исторические</a></li>
+          <li><a href="#">Индивидуальные</a></li>
+          <li><a href="#">Однодневные</a></li>
+        </ul>
+      </div>
+
+      <!-- КОЛОНКА 4 — КОНТАКТЫ -->
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <div class="contacts">
+          <div>Бухара, ул. Ляби-Хауз 12</div>
+          <div><a href="tel:+998900000000">+998 90 000 00 00</a></div>
+          <div><a href="mailto:hello@uzbekpulse.uz">hello@uzbekpulse.uz</a></div>
+          <div class="schedule">
+            Пн-Сб 09:00-19:00<br>
+            Вс — по записи
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- НИЖНЯЯ ПОЛОСА -->
+    <div class="footer-bottom">
+      <span>© 2026 UzbekPulse Travel. Все права защищены.</span>
+      <div class="footer-links">
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Договор оферты</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+  <script src="../js/about.js"></script>
+</body>
+</html>

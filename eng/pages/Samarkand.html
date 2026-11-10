@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BukharaPulse</title>
+<link rel="stylesheet" href="../../css/attraction.css">
+</head>
+<body>
+
+<!-- ============================================
+     HEADER
+============================================ -->
+<div class="header-wrap">
+  <header class="header">
+    <a href="#" class="logo">
+      <div class="logo-mark">B</div>
+      <div class="logo-text">
+        <span class="name">BukharaPulse</span>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+      <a href="#">Tours</a>
+      <a href="#">Hotels</a>
+      <a href="./blog.html">Blog</a>
+      <a href="./about.html">About Us</a>
+    </nav>
+
+    <div style="display:flex; align-items:center; gap:10px;">
+
+      <!-- Переключатель языка -->
+      <div class="lang-dropdown" id="langDropdown">
+        <button class="lang-current" id="langBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <span id="currentLang">EN</span>
+          <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
+        </button>
+
+        <div class="lang-menu" id="langMenu">
+          <button data-lang="RU"><span class="name">Русский</span></button>
+          <button data-lang="EN" class="active"><span class="name">English</span></button>
+          <button data-lang="UZ"><span class="name">O‘zbek</span></button>
+        </div>
+      </div>
+
+      <a href="#" class="header-cta">Book Now</a>
+      <button class="burger" id="burgerBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 12h16M4 6h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#">Home</a>
+      <a href="#">Outbound Tourism</a>
+      <a href="#">Inbound Tourism</a>
+      <a href="#">Hotels</a>
+      <a href="#">Blog</a>
+      <a href="#">About Us</a>
+    </div>
+  </header>
+</div>
+
+<!-- ============================================
+     HERO VIDEO
+============================================ -->
+<section class="hero-video">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="#" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-text" id="heroContent">
+    <span class="hero-label">— 2750 YEARS OF HISTORY —</span>
+    <h1>SAMARKAND</h1>
+    <p>Contemporaneous with Rome and the capital of Tamerlane. The city of blue domes, majestic madrasahs, and the legendary Silk Road.</p>
+  </div>
+</section>
+
+<!-- ============================================
+     HISTORY
+============================================ -->
+<section class="history">
+  <div class="container history-grid">
+    <div class="history-sticky">
+      <span class="section-label">History</span>
+      <div class="big-num">2750+</div>
+      <span class="big-num-label">years of history<br>3000+ monuments<br>UNESCO</span>
+    </div>
+    <div class="history-content">
+      <h2>A Brief History of Samarkand</h2>
+      <p class="lead">Samarkand is one of the oldest cities in the world, founded over <strong>2750 years</strong> ago. The city was a key center on the Great Silk Road and the capital of Tamerlane's empire.</p>
+      <p>Great scholars, astronomers, and poets created here. Mirzo Ulugh Beg built the famous observatory, and Amir Timur erected architectural masterpieces that still amaze the world. Today, Samarkand is the pearl of Uzbekistan and a UNESCO World Heritage Site.</p>
+      <div class="history-stats">
+        <div><strong>XIV</strong><span>century of Tamerlane</span></div>
+        <div><strong>35m</strong><span>Ulugh Beg Observatory</span></div>
+        <div><strong>3</strong><span>madrasahs of Registan</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     PLACES (38 достопримечательностей)
+============================================ -->
+<section class="places">
+  <div class="container">
+    <span class="section-label">Heritage</span>
+    <h2 class="section-title">Attractions of Samarkand</h2>
+    <p class="subtitle">38 pearls of the ancient city — from Afrasiab to Gur-Emir.</p>
+
+    <div class="places-cards" id="placesCards">
+      <!-- Первые 6 видимые -->
+      <div class="place-card">
+        <div class="place-img" style="background-image:url('../img/attraction/Afrasiab.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">01</div>
+          <h3>Afrasiab</h3>
+          <p>An ancient settlement — the ruins of old Samarkand, where archaeologists find unique frescoes and artifacts from the Achaemenid era.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%90%D1%84%D1%80%D0%B0%D1%81%D0%B8%D0%B0%D0%B1_(%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D1%89%D0%B5)" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-img" style="background-image:url('../img/attraction/Xoja_Doniyor.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">02</div>
+          <h3>Khoja Doniyor Mausoleum</h3>
+          <p>A revered shrine associated with the name of the prophet Daniel. One of the most mysterious places in Samarkand.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%A5%D0%BE%D0%B4%D0%B6%D0%B0_%D0%94%D0%BE%D0%BD%D0%B8%D1%91%D1%80" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-img" style="background-image:url('../img/attraction/Shahi_Zinda.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">03</div>
+          <h3>Shahi-Zinda</h3>
+          <p>A unique necropolis with an ensemble of mausoleums from the 14th–15th centuries, one of the main monuments of Islamic architecture.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D1%85%D0%B8-%D0%97%D0%B8%D0%BD%D0%B4%D0%B0" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-img" style="background-image:url('../img/attraction/Hazrat_Xyzr.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">04</div>
+          <h3>Hazrat Khizr Mosque</h3>
+          <p>An ancient mosque dedicated to the prophet Khizr, the patron saint of travelers and a source of wisdom.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%87%D0%B5%D1%82%D1%8C_%D0%A5%D0%B0%D0%B7%D1%80%D0%B5%D1%82-%D0%A5%D1%8B%D0%B7%D1%80" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-img" style="background-image:url('../img/attraction/Emir_Zade.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">05</div>
+          <h3>Emir-Zade Mausoleum</h3>
+          <p>A historical mausoleum associated with the Timurid dynasty and the spiritual heritage of Samarkand.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%AD%D0%BC%D0%B8%D1%80-%D0%97%D0%B0%D0%B4%D0%B5" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-img" style="background-image:url('../img/attraction/Tuglu_Tekin.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">06</div>
+          <h3>Tuglu-Tekin Mausoleum</h3>
+          <p>The mausoleum of Emir Hussein, one of the noble representatives of the Timurid era.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%A2%D1%83%D0%B3%D0%BB%D1%83-%D0%A2%D0%B5%D0%BA%D0%B8%D0%BD_(%D0%AD%D0%BC%D0%B8%D1%80%D0%B0_%D0%A5%D1%83%D1%81%D0%B5%D0%B9%D0%BD%D0%B0)" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+
+      <!-- Остальные 32 скрытые -->
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Shadi_Mulk_Aka.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">07</div>
+          <h3>Shadi-Mulk-Aka Mausoleum</h3>
+          <p>The mausoleum of Tamerlane's sister, part of the Shahi-Zinda complex and decorated with unique majolica.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%A8%D0%B0%D0%B4%D0%B8-%D0%9C%D1%83%D0%BB%D1%8C%D0%BA-%D0%90%D0%BA%D0%B0" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Vosmigrannik.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">08</div>
+          <h3>"Octahedron" Mausoleum</h3>
+          <p>A unique octagonal structure in the Shahi-Zinda necropolis, striking in its geometry.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%C2%AB%D0%92%D0%BE%D1%81%D1%8C%D0%BC%D0%B8%D0%B3%D1%80%D0%B0%D0%BD%D0%BD%D0%B8%D0%BA%C2%BB" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Bezymyanny1.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">09</div>
+          <h3>"Nameless-1" Mausoleum</h3>
+          <p>A historical mausoleum in Shahi-Zinda, associated with the works of master Alim Nasafi.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%C2%AB%D0%91%D0%B5%D0%B7%D1%8B%D0%BC%D1%8F%D0%BD%D0%BD%D1%8B%D0%B9-1%C2%BB_(%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B_%D1%83%D1%81%D1%82%D0%BE_%D0%90%D0%BB%D0%B8%D0%BC%D0%B0_%D0%9D%D0%B0%D1%81%D0%B0%D1%84%D0%B8)" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Bezymyanny2.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">10</div>
+          <h3>"Nameless-2" Mausoleum</h3>
+          <p>Another mysterious mausoleum of the Shahi-Zinda ensemble, keeping the secrets of ancient masters.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%C2%AB%D0%91%D0%B5%D0%B7%D1%8B%D0%BC%D1%8F%D0%BD%D0%BD%D1%8B%D0%B9-2%C2%BB" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Burunduk.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">11</div>
+          <h3>Emir Burunduk Mausoleum</h3>
+          <p>The mausoleum of a noble emir of the Timurid era, located in the Shahi-Zinda complex.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%AD%D0%BC%D0%B8%D1%80%D0%B0_%D0%91%D1%83%D1%80%D1%83%D0%BD%D0%B4%D1%83%D0%BA%D0%B0" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Tuman_Aka.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">12</div>
+          <h3>Tuman-Aka Complex</h3>
+          <p>A historical complex including a mosque and mausoleum, associated with the name of Tuman-Aka.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%D0%A2%D1%83%D0%BC%D0%B0%D0%BD-%D0%B0%D0%BA%D0%B0" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Mavzoley_1360.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">13</div>
+          <h3>Mausoleum of 1360/1361</h3>
+          <p>An ancient mausoleum of the 14th century, one of the oldest in the Shahi-Zinda ensemble.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_1360/1361_%D0%B3%D0%BE%D0%B4%D0%BE%D0%B2" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Xoja_Ahmad.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">14</div>
+          <h3>Khoja Ahmad Mausoleum</h3>
+          <p>The mausoleum of a revered saint, part of the Shahi-Zinda complex.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%A5%D0%BE%D0%B4%D0%B6%D0%B8_%D0%90%D1%85%D0%BC%D0%B0%D0%B4%D0%B0" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Bibi_Xonim_mosque.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">15</div>
+          <h3>Bibi-Khanym Mosque</h3>
+          <p>The grandiose cathedral mosque of Tamerlane, built in honor of his beloved wife. A masterpiece of medieval architecture.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%87%D0%B5%D1%82%D1%8C_%D0%91%D0%B8%D0%B1%D0%B8-%D0%A5%D0%B0%D0%BD%D1%8B%D0%BC" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Bibi_Xonim_mavzoley.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">16</div>
+          <h3>Bibi-Khanym Mausoleum</h3>
+          <p>The mausoleum located opposite the Bibi-Khanym Mosque, associated with the name of the legendary queen.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%91%D0%B8%D0%B1%D0%B8_%D0%A5%D0%B0%D0%BD%D1%8B%D0%BC" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Ulugbek_madrasa_Samarkand.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">17</div>
+          <h3>Ulugh Beg Madrasah</h3>
+          <p>One of the three madrasahs of the Registan ensemble, built by the outstanding astronomer and ruler Mirzo Ulugh Beg in the 15th century.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%80%D0%B5%D1%81%D0%B5_%D0%A3%D0%BB%D1%83%D0%B3%D0%B1%D0%B5%D0%BA%D0%B0_(%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%D0%BD%D0%B4)" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Sherdor.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">18</div>
+          <h3>Sher-Dor Madrasah</h3>
+          <p>A famous madrasah of the 17th century with unique mosaics of lions and suns, part of the Registan ensemble.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%80%D0%B5%D1%81%D0%B5_%D0%A8%D0%B5%D1%80%D0%B4%D0%BE%D1%80" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Tillya_Kari.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">19</div>
+          <h3>Tillya-Kari Madrasah</h3>
+          <p>The third madrasah of the Registan ensemble, striking in the luxury of its interior decoration and golden paintings.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%80%D0%B5%D1%81%D0%B5_%D0%A2%D0%B8%D0%BB%D0%BB%D1%8F-%D0%9A%D0%B0%D1%80%D0%B8" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Chorsu_Samarkand.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">20</div>
+          <h3>Chorsu</h3>
+          <p>The ancient covered bazaar of Samarkand, preserving the atmosphere of Eastern trade since the 14th century.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A7%D0%BE%D1%80%D1%81%D1%83_(%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%D0%BD%D0%B4)" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Dusmatbay.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">21</div>
+          <h3>Dusmatbay Madrasah</h3>
+          <p>A historical madrasah of the early 20th century, associated with the name of the patron Dusmatbay.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%80%D0%B5%D1%81%D0%B5_%D0%94%D1%83%D1%81%D0%BC%D0%B0%D1%82%D0%B1%D0%B0%D1%8F" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Gur_Emir.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">22</div>
+          <h3>Gur-Emir</h3>
+          <p>The tomb of Tamerlane and his descendants, a masterpiece of Timurid architecture with a legendary blue dome.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%93%D1%83%D1%80-%D0%AD%D0%BC%D0%B8%D1%80" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Ruxabad.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">23</div>
+          <h3>Rukhabad Mausoleum</h3>
+          <p>An ancient mausoleum of the 14th century, associated with the name of Sheikh Burkhaneddin Sagarji.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%A0%D1%83%D1%85%D0%B0%D0%B1%D0%B0%D0%B4" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Aksaray.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">24</div>
+          <h3>Aksaray Mausoleum</h3>
+          <p>A historical mausoleum of the 15th century, associated with the Timurid dynasty.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%90%D0%BA%D1%81%D0%B0%D1%80%D0%B0%D0%B9" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Ulugbek_observatory.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">25</div>
+          <h3>Ulugh Beg Observatory</h3>
+          <p>The legendary observatory of the 15th century, where the great astronomer compiled a star catalog that is still accurate today.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D1%81%D0%B5%D1%80%D0%B2%D0%B0%D1%82%D0%BE%D1%80%D0%B8%D1%8F_%D0%A3%D0%BB%D1%83%D0%B3%D0%B1%D0%B5%D0%BA%D0%B0" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Abdi_Darun.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">26</div>
+          <h3>Abdi-Darun</h3>
+          <p>A historical complex with a mausoleum and mosque, associated with the name of the saint Abdi-Darun.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%90%D0%B1%D0%B4%D0%B8-%D0%94%D0%B0%D1%80%D1%83%D0%BD" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Ishratxona.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">27</div>
+          <h3>Ishratkhana</h3>
+          <p>The tomb of women of the Timurid dynasty, known as the "house of joy".</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%98%D1%88%D1%80%D0%B0%D1%82%D1%85%D0%BE%D0%BD%D0%B0" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Aleksey_sobor.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">28</div>
+          <h3>Cathedral of St. Alexius</h3>
+          <p>An Orthodox cathedral of the early 20th century, an active church in the center of Samarkand.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%B1%D0%BE%D1%80_%D0%A1%D0%B2%D1%8F%D1%82%D0%B8%D1%82%D0%B5%D0%BB%D1%8F_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B8%D1%8F_%D0%9C%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_(%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%D0%BD%D0%B4)" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Ioann_Krestitel.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">29</div>
+          <h3>Church of St. John the Baptist</h3>
+          <p>A Catholic church in Samarkand, built in the early 20th century.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%A1%D0%B2%D1%8F%D1%82%D0%BE%D0%B3%D0%BE_%D0%98%D0%BE%D0%B0%D0%BD%D0%BD%D0%B0_%D0%9A%D1%80%D0%B5%D1%81%D1%82%D0%B8%D1%82%D0%B5%D0%BB%D1%8F_(%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%D0%BD%D0%B4)" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Bogorodica.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">30</div>
+          <h3>Church of the Holy Mother of God</h3>
+          <p>An Orthodox church, one of the oldest Christian churches in Samarkand.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%A1%D0%B2%D1%8F%D1%82%D0%BE%D0%B9_%D0%91%D0%BE%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D1%86%D1%8B_(%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%D0%BD%D0%B4)" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Georgiy_Pobedonosets.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">31</div>
+          <h3>Church of St. George the Victorious</h3>
+          <p>An inactive Orthodox church, preserving its historical appearance from the early 20th century.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A5%D1%80%D0%B0%D0%BC_%D0%A1%D0%B2%D1%8F%D1%82%D0%BE%D0%B3%D0%BE_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D1%8F_%D0%9F%D0%BE%D0%B1%D0%B5%D0%B4%D0%BE%D0%BD%D0%BE%D1%81%D1%86%D0%B0_(%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%D0%BD%D0%B4,_%D0%BD%D0%B5%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D1%83%D1%8E%D1%89%D0%B8%D0%B9)" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Gumbaz.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">32</div>
+          <h3>Kanesoi Gumbaz Synagogue</h3>
+          <p>A historical synagogue of Samarkand, testifying to the centuries-old presence of the Jewish community.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BD%D0%B0%D0%B3%D0%BE%D0%B3%D0%B0_%D0%9A%D0%B0%D0%BD%D0%B5%D1%81%D0%BE%D0%B8_%D0%93%D1%83%D0%BC%D0%B1%D0%B0%D0%B7" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Russko_Kitayskiy_bank.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">33</div>
+          <h3>Russian-Chinese Bank Building</h3>
+          <p>A historical building of the early 20th century, a monument of civil architecture in Samarkand.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%97%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%BE-%D0%9A%D0%B8%D1%82%D0%B0%D0%B9%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%B1%D0%B0%D0%BD%D0%BA%D0%B0_%D0%B2_%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%D0%BD%D0%B4%D0%B5" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Namazgoh.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">34</div>
+          <h3>Namazgoh Mosque</h3>
+          <p>An ancient country mosque of the 17th century, where holiday prayers were performed.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%87%D0%B5%D1%82%D1%8C_%D0%9D%D0%B0%D0%BC%D0%B0%D0%B7%D0%B3%D0%BE%D1%85_(%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%D0%BD%D0%B4)" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Chupan_Ata.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">35</div>
+          <h3>Chupan-Ata Mausoleum</h3>
+          <p>An ancient mausoleum associated with the legendary saint Chupan-Ata, the patron saint of shepherds.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A7%D1%83%D0%BF%D0%B0%D0%BD-%D0%B0%D1%82%D0%B0#%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%A7%D1%83%D0%BF%D0%B0%D0%BD-%D0%B0%D1%82%D0%B0" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Xoja_Zudmurod.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">36</div>
+          <h3>Khoja Zudmurod Mosque</h3>
+          <p>A historical mosque named after the revered saint Khoja Zudmurod.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%87%D0%B5%D1%82%D1%8C_%D0%A5%D0%BE%D0%B4%D0%B6%D0%B0_%D0%97%D1%83%D0%B4%D0%BC%D1%83%D1%80%D0%BE%D0%B4" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Abu_Mansur.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">37</div>
+          <h3>Abu Mansur Maturidi Mausoleum</h3>
+          <p>The mausoleum of the great Islamic theologian Abu Mansur al-Maturidi, the founder of one of the main Sunni schools of thought.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%90%D0%B1%D1%83_%D0%9C%D0%B0%D0%BD%D1%81%D1%83%D1%80%D0%B0_%D0%9C%D0%B0%D1%82%D1%83%D1%80%D0%B8%D0%B4%D0%B8" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Imam_Al_Buxari.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">38</div>
+          <h3>Imam Al-Bukhari Memorial Complex</h3>
+          <p>A shrine dedicated to the great hadith collector Imam Al-Bukhari, located near Samarkand.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%BC%D0%BE%D1%80%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%D0%B8%D0%BC%D0%B0%D0%BC%D0%B0_%D0%90%D0%BB%D1%8C-%D0%91%D1%83%D1%85%D0%B0%D1%80%D0%B8" target="_blank" class="place-btn">Learn More →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="show-more-container">
+      <button id="showMoreBtn">Show 32 more →</button>
+      <button id="hideBtn" style="display:none">Hide ↑</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOD
+============================================ -->
+<section class="food">
+  <div class="container">
+    <div class="food-header">
+      <span class="section-label">33 dishes</span>
+      <h2 class="food-title">Taste of Samarkand</h2>
+      <p class="food-subtitle">Samarkand cuisine is not just food, but a part of the great history of the Silk Road. Each dish is like a page from an ancient book that you can taste.</p>
+    </div>
+
+    <div class="tabs" id="foodTabs">
+      <button class="tab-btn active" data-category="all">All</button>
+      <button class="tab-btn" data-category="meaty">Meaty</button>
+      <button class="tab-btn" data-category="soups">Soups</button>
+      <button class="tab-btn" data-category="pastry">Pastry</button>
+      <button class="tab-btn" data-category="dairy">Dairy</button>
+      <button class="tab-btn" data-category="sweets">Sweets</button>
+    </div>
+
+    <div class="food-grid" id="foodGrid"></div>
+
+    <div class="show-more-container">
+      <button class="btn-show-more" id="showMoreFoodBtn">Show 27 more dishes →</button>
+      <button class="btn-hide" id="hideFoodBtn">Hide ↑</button>
+    </div>
+  </div>
+</section>
+
+<!-- Модалка -->
+<div class="modal" id="foodModal">
+  <div class="modal-content">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-img" id="modalImg"></div>
+    <div class="modal-body">
+      <h2 id="modalTitle"></h2>
+      <div class="modal-region" id="modalRegion"></div>
+      <div class="modal-desc" id="modalDesc"></div>
+      <div class="modal-tip" id="modalTip"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     SPIRITUALITY
+============================================ -->
+<section class="seven-pirs">
+  <div class="container">
+    <span class="section-label">Spirituality</span>
+    <h2>Spiritual Shrines of Samarkand</h2>
+    <p class="subtitle">Great Sufi mentors and places of pilgrimage that illuminate the spiritual history of the city.</p>
+    <div class="pir-cards">
+      <div class="pir-card featured">
+        <div class="pir-img" style="background-image:url('../img/attraction/Imam_Al_Buxari.webp')"></div>
+        <div class="pir-info"><span class="pir-num">01</span>
+          <h3><a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%BC%D0%BE%D1%80%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%D0%B8%D0%BC%D0%B0%D0%BC%D0%B0_%D0%90%D0%BB%D1%8C-%D0%91%D1%83%D1%85%D0%B0%D1%80%D0%B8" target="_blank">Imam Al-Bukhari</a></h3>
+          <p>A great hadith scholar, the "Sultan of Muhaddiths". His memorial complex near Samarkand is one of the main places of pilgrimage in the Islamic world.</p>
+        </div>
+      </div>
+      <div class="pir-card">
+        <div class="pir-img" style="background-image:url('../img/attraction/Mahdumi_Azam.webp')"></div>
+        <div class="pir-info"><span class="pir-num">02</span>
+          <h3><a href="https://ksa.mfa.uz/news/33022" target="_blank">Makhdumi Azam</a></h3>
+          <p>An outstanding Sufi scholar, one of the leading mentors of the Naqshbandi order. Author of over 30 works. His mausoleum in Dakhbed is an important center of pilgrimage.</p>
+        </div>
+      </div>
+      <div class="pir-card">
+        <div class="pir-img" style="background-image:url('../img/attraction/Xoja_Axror.webp')"></div>
+        <div class="pir-info"><span class="pir-num">03</span>
+          <h3><a href="https://stv.uz/ru/samarkand/place/40" target="_blank">Khoja Akhrar Vali</a></h3>
+          <p>An outstanding religious thinker of the 15th century, the head of the Naqshbandi Sufi order. He influenced the spiritual and political life of the Timurid era.</p>
+        </div>
+      </div>
+      <div class="pir-card">
+        <div class="pir-img" style="background-image:url('../img/attraction/Nuriddin_Basir.webp')"></div>
+        <div class="pir-info"><span class="pir-num">04</span>
+          <h3><a href="https://sv.zarnews.uz/post/nuriddin-basir-istoriya-odnogo-mavzoleya" target="_blank">Sheikh Nuriddin Basir</a></h3>
+          <p>A Sufi sheikh of the 13th century who reached the highest spiritual degree of "Kutbi-Chaardahum". Amir Timur revered him and often visited his mausoleum before campaigns.</p>
+        </div>
+      </div>
+      <div class="pir-card">
+        <div class="pir-img" style="background-image:url('../img/attraction/Burhanuddin_Sagarji.webp')"></div>
+        <div class="pir-info"><span class="pir-num">05</span>
+          <h3>Burkhaneddin Sagarji</h3>
+          <p>A spiritual mentor, the head of the Muslims of Beijing. According to his will, he was buried next to the mausoleum of Nuriddin Basir. The Rukhabad mausoleum was erected over his grave.</p>
+        </div>
+      </div>
+      <div class="pir-card">
+        <div class="pir-img" style="background-image:url('../img/attraction/Shamsiddin_Kulol.webp')"></div>
+        <div class="pir-info"><span class="pir-num">06</span>
+          <h3>Sheikh Shamsiddin Kulal</h3>
+          <p>The spiritual mentor of the young Amir Timur. He had a profound influence on his religious views and inspired him to a great destiny.</p>
+        </div>
+      </div>
+      <div class="pir-card">
+        <div class="pir-img" style="background-image:url('../img/attraction/Zayniddin_Kuyi_Orifon.webp')"></div>
+        <div class="pir-info"><span class="pir-num">07</span>
+          <h3>Sheikh Zayniddin Kuyi Orifon</h3>
+          <p>A famous Tashkent sheikh, the mentor of Nuriddin Basir. The Basir mausoleum was built by order of Amir Timur, who also erected a mausoleum over the grave of this sheikh in Tashkent.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+============================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div>
+        <a href="#" class="footer-logo">
+          <span>Uzbek</span><span class="accent">Pulse</span>
+        </a>
+        <p class="footer-desc">Premium travel from Samarkand. EST 2024. License No. 123. Honest, with care.</p>
+
+        <div class="socials">
+          <a href="#" class="social-icon instagram" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="#" class="social-icon telegram" aria-label="Telegram">
+            <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          </a>
+          <a href="#" class="social-icon youtube" aria-label="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="#" class="social-icon facebook" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" class="social-icon whatsapp" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </a>
+          <a href="#" class="social-icon x-twitter" aria-label="X">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="social-icon max" aria-label="Max">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 5.94 2 10.8c0 2.485 1.094 4.727 2.859 6.328V22l3.734-2.05a11.31 11.31 0 003.407.525c5.523 0 10-3.94 10-8.8S17.523 2 12 2zm-4.5 9.6a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7zm4.5 0a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7zm4.5 0a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Outbound</h4>
+        <ul>
+          <li><a href="#">All international tours</a></li>
+          <li><a href="#">Beach holidays</a></li>
+          <li><a href="#">Family tours</a></li>
+          <li><a href="#">Sightseeing tours</a></li>
+          <li><a href="#">Countries</a></li>
+          <li><a href="#">Custom selection</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Uzbekistan</h4>
+        <ul>
+          <li><a href="#">All tours in Uzbekistan</a></li>
+          <li><a href="#">Bukhara</a></li>
+          <li><a href="#">Samarkand</a></li>
+          <li><a href="#">Khiva</a></li>
+          <li><a href="#">Tashkent</a></li>
+          <li><a href="#">Silk Road</a></li>
+          <li><a href="#">Historical</a></li>
+          <li><a href="#">Custom</a></li>
+          <li><a href="#">One-day</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacts</h4>
+        <div class="contacts">
+          <div>Samarkand, Registan St. 12</div>
+          <div><a href="tel:+998900000000">+998 90 000 00 00</a></div>
+          <div><a href="mailto:hello@uzbekpulse.uz">hello@uzbekpulse.uz</a></div>
+          <div class="schedule">
+            Mon-Sat 09:00-19:00<br>
+            Sun — by appointment
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 UzbekPulse Travel. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Offer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="../../js/attraction.js"></script>
+
+</body>
+</html>

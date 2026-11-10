@@ -1,0 +1,1067 @@
+:root {
+  --ink: #1A1A1A;
+  --accent: #F5C842;
+  --accent-warm: #E8A020;
+  --cream: #F5F0E8;
+  --muted: #6B6B6B;
+  --muted-light: #8B8B8B;
+  --line: rgba(26, 26, 26, 0.1);
+  --line-dark: rgba(255, 255, 255, 0.08);
+  --dark: #1C2333;
+  --white: #FFFFFF;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+h1, h2, h3, .serif {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+button { border: none; background: none; cursor: pointer; font: inherit; color: inherit; }
+img { max-width: 100%; display: block; }
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   1-SECTION HEADER
+============================================ */
+.header-wrap {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 0 24px;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+.header {
+  width: 100%;
+  max-width: 1280px;
+  background: var(--cream);
+  border-radius: 999px;
+  padding: 12px 12px 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  pointer-events: auto;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.logo-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.logo-text .name {
+  font-family: Georgia, serif;
+  font-size: 17px;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-size: 14px;
+}
+.nav a { transition: color 0.2s; white-space: nowrap; }
+.nav a:hover { color: var(--accent); }
+
+/* ============================================
+   ВЫПАДАЮЩИЙ ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКА
+============================================ */
+.lang-dropdown {
+  position: relative;
+}
+
+/* Кнопка с текущим языком */
+.lang-current {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(26, 26, 26, 0.04);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lang-current:hover {
+  background: rgba(26, 26, 26, 0.08);
+  border-color: rgba(26, 26, 26, 0.2);
+}
+
+.lang-current .chevron {
+  transition: transform 0.3s ease;
+  opacity: 0.6;
+}
+
+.lang-dropdown.open .lang-current .chevron {
+  transform: rotate(180deg);
+}
+
+.lang-dropdown.open .lang-current {
+  background: var(--ink);
+  color: var(--cream);
+  border-color: var(--ink);
+}
+
+/* Выпадающее меню */
+.lang-menu {
+  position: absolute;
+  top: calc(80% + 10px);
+  right: 0;
+  min-width: 100px;
+  background: var(--cream);
+  border-radius: 16px;
+  padding: 6px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 200;
+  border: 1px solid var(--line);
+}
+
+.lang-dropdown.open .lang-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Пункт меню */
+.lang-menu button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  text-align: left;
+  transition: background 0.2s ease;
+}
+
+.lang-menu button:hover {
+  background: rgba(26, 26, 26, 0.06);
+}
+
+.lang-menu button.active {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+.lang-menu .flag {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.lang-menu .code {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  min-width: 24px;
+}
+
+.lang-menu .name {
+  font-weight: 400;
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.lang-menu button.active .name {
+  opacity: 1;
+}
+
+/* На мобильных — язык в бургер-меню */
+@media (max-width: 900px) {
+  .lang-dropdown {
+    display: none;
+  }
+}
+
+
+.header-cta {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+.header-cta:hover {
+  background: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+.burger {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--cream);
+  align-items: center;
+  justify-content: center;
+}
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: 0;
+  background: var(--cream);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  pointer-events: auto;
+}
+.mobile-menu.open { display: block; }
+.mobile-menu a {
+  display: block;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+}
+
+
+
+
+ /* ============================================
+       ВЕРХНЯЯ ЧАСТЬ: ГАЛЕРЕЯ И ЗАГОЛОВОК
+    ============================================ */
+    .page-header {
+      margin-bottom: 30px;
+      padding-top: 120px;
+    }
+    .page-header h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    /* Сетка галереи (1 большая + 4 маленьких) */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: repeat(2, 200px);
+      gap: 16px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+    .gallery-main {
+      grid-row: span 2;
+      position: relative;
+    }
+    .gallery-main img,
+    .gallery-thumb img {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.4s ease;
+    }
+    .gallery-main:hover img,
+    .gallery-thumb:hover img {
+      transform: scale(1.03);
+    }
+    /* --- Стили для модального окна (Lightbox) --- */
+.lightbox {
+  display: none; /* Скрыто по умолчанию */
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(26, 26, 26, 0.95); /* Темный фон, как ваш --ink */
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+}
+
+/* Показываем модалку при добавлении класса */
+.lightbox.active {
+  display: flex;
+}
+
+/* Сама картинка в модалке */
+.lightbox img {
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  object-fit: contain;
+  animation: zoomIn 0.3s ease;
+}
+
+/* Кнопка закрытия (крестик) */
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: var(--cream);
+  font-size: 40px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.lightbox-close:hover {
+  color: var(--accent);
+}
+
+/* Кнопки влево/вправо */
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--cream);
+  border: none;
+  font-size: 24px;
+  padding: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s, color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+}
+
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+/* Анимация появления фото */
+@keyframes zoomIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* На мобильных кнопки ближе к краям */
+@media (max-width: 768px) {
+  .lightbox-prev, .lightbox-next {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+  .lightbox-close {
+    top: 10px;
+    right: 20px;
+    font-size: 35px;
+  }
+}
+
+/* Убедитесь, что у .gallery-thumb курсор-указатель */
+.gallery-thumb, .gallery-main {
+  cursor: pointer;
+}
+    /* Бейдж с ценой */
+    .price-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--white);
+      padding: 8px 16px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .price-badge span {
+      display: block;
+      font-size: 10px;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .price-badge strong {
+      font-size: 18px;
+      color: #F04438; /* Красный цвет как на скрине */
+    }
+    /* Кнопка Все фото */
+    .all-photos-btn {
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      background: var(--white);
+      padding: 10px 16px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .thumb-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    /* ============================================
+       НАВИГАЦИЯ (Вкладки)
+    ============================================ */
+    .tabs-nav {
+      display: flex;
+      gap: 24px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 16px;
+      margin-bottom: 30px;
+      overflow-x: auto;
+    }
+    .tabs-nav a {
+      font-size: 15px;
+      color: var(--muted);
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+    .tabs-nav a.active,
+    .tabs-nav a:hover {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+/* ============================================
+   БЛОКИ ВКЛЮЧЕНО / НЕ ВКЛЮЧЕНО
+============================================ */
+.included-block {
+  margin-bottom: 30px;
+}
+
+.included-block h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+
+.included-block.included h3 {
+  color: #2E7D32; /* Зеленый цвет для "Включено" */
+}
+
+.included-block.not-included h3 {
+  color: #C62828; /* Красный цвет для "Не включено" */
+}
+
+/* Списки */
+.included-list,
+.not-included-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.included-list li,
+.not-included-list li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* Кастомные маркеры (галочки и звездочки) */
+.included-list li::before {
+  content: '✓'; /* Или используйте SVG */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--muted-light);
+  font-weight: bold;
+}
+
+.not-included-list li::before {
+  content: '*';
+  position: absolute;
+  left: 4px;
+  top: 0;
+  color: var(--muted-light);
+  font-weight: bold;
+}
+
+/* Если хотите, чтобы "Не включено" было серым, как на скриншоте */
+.not-included-list li {
+  color: var(--muted);
+}
+
+    
+    /* ============================================
+       КОНТЕНТНЫЕ БЛОКИ
+    ============================================ */
+    .content-block {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    }
+    .content-block h2 {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+    .content-block h3 {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+    .content-block p, .content-block li {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+    .content-block a {
+      color: #E85D25; /* Оранжевый цвет ссылок как на скрине */
+      text-decoration: underline;
+    }
+
+    /* Списки в программе */
+    .program-list {
+      list-style: disc;
+      padding-left: 20px;
+      margin-top: 16px;
+    }
+    .program-list li {
+      margin-bottom: 12px;
+    }
+    .duration-text {
+      font-style: italic;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    /* ============================================
+       ТАБЛИЦА ЦЕН
+    ============================================ */
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+    .price-table th,
+    .price-table td {
+      padding: 16px 20px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      font-size: 15px;
+    }
+    .price-table th {
+      background: #FAFAFA;
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .price-table td:last-child {
+      color: #F04438; /* Красный цвет цен */
+      font-weight: 600;
+    }
+    .price-table tr:last-child td {
+      border-bottom: none;
+    }
+    .price-note {
+      font-size: 12px;
+      color: var(--muted-light);
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* --- Адаптив для мобильных --- */
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 250px 100px 100px;
+      }
+      .gallery-main {
+        grid-row: span 1;
+      }
+      /* Скрываем 4-ю картинку на мобилке */
+      .gallery-thumb:nth-child(4) {
+        display: none;
+      }
+      .content-block {
+        padding: 20px;
+      }
+      .price-table th, .price-table td {
+        padding: 12px;
+        font-size: 14px;
+      }
+    }
+
+/* ============================================
+   БЛОК ГОСТИНИЦЫ
+============================================ */
+.hotel-section {
+  margin-bottom: 40px;
+}
+.hotel-section h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2E7D32; /* Зеленый, как на скрине */
+  margin-bottom: 12px;
+}
+.hotel-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.hotel-table th {
+  background: #f5f5f5;
+  padding: 10px 16px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  border-bottom: 1px solid #eaeaea;
+}
+.hotel-table td {
+  padding: 12px 16px;
+  font-size: 14px;
+  color: var(--muted);
+  border-bottom: 1px solid #eaeaea;
+  line-height: 1.5;
+}
+.hotel-table tr:last-child td {
+  border-bottom: none;
+}
+.hotel-table td strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* ============================================
+   ФОРМА БРОНИРОВАНИЯ
+============================================ */
+.booking-section {
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+.booking-section h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+
+/* Желтая плашка с предупреждением */
+.booking-alert {
+  background-color: #FFF9E6;
+  border: 1px solid #FFE58F;
+  border-radius: 6px;
+  padding: 14px 16px;
+  font-size: 13px;
+  color: #8C6F26;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+.booking-alert em {
+  font-style: italic;
+  display: block;
+}
+
+/* Белый контейнер для формы */
+.booking-form-container {
+  background-color: var(--white);
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+/* Поля ввода */
+.form-input, 
+.form-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  color: var(--ink);
+  background: #fff;
+  transition: border-color 0.2s;
+}
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #999;
+}
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #00A3C4; /* Цвет кнопки для фокуса */
+}
+
+/* Специфичные ширины для полей */
+.input-count {
+  max-width: 180px;
+}
+.input-date {
+  max-width: 180px;
+  color: var(--muted);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+  margin-bottom: 24px;
+}
+
+/* Кнопка отправки */
+.btn-submit-booking {
+  background-color: #00A3C4; /* Бирюзовый цвет, как на скрине */
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.2s;
+}
+.btn-submit-booking:hover {
+  background-color: #00829E;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .input-count,
+  .input-date {
+    max-width: 100%;
+  }
+  .booking-form-container {
+    padding: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================
+     ФУТЕР
+  ============================================ */
+  .footer {
+    padding: 60px 0 40px;
+    background: var(--cream);
+  }
+
+  /* Сетка колонок */
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+
+  /* ============================================
+     КОЛОНКА 1 — ЛОГОТИП И ОПИСАНИЕ
+  ============================================ */
+  .footer-logo {
+    display: inline-flex;
+    align-items: baseline;
+    font-family: Georgia, serif;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  .footer-logo .accent {
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  .footer-desc {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 280px;
+    margin-bottom: 24px;
+  }
+
+  /* Социальные иконки */
+  .socials {
+    display: flex;
+    gap: 10px;
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    background: transparent;
+    color: #fff;
+  }
+  .social-icon:hover {
+    background: var(--ink);
+    color: var(--cream);
+    border-color: var(--ink);
+    transform: translateY(-2px);
+  }
+  .social-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    transition: fill 0.3s ease;
+  }
+
+  /* -------- Instagram -------- */
+.social-icon.instagram {
+  background: linear-gradient(45deg, #F09433 0%, #E6683C 25%, #DC2743 50%, #CC2366 75%, #BC1888 100%);
+}
+.social-icon.instagram:hover {
+  box-shadow: 0 10px 25px rgba(220, 39, 67, 0.5);
+}
+
+/* -------- Telegram -------- */
+.social-icon.telegram {
+  background: #229ED9;
+}
+.social-icon.telegram:hover {
+  box-shadow: 0 10px 25px rgba(34, 158, 217, 0.5);
+}
+
+/* -------- YouTube -------- */
+.social-icon.youtube {
+  background: #FF0000;
+}
+.social-icon.youtube:hover {
+  box-shadow: 0 10px 25px rgba(255, 0, 0, 0.5);
+}
+
+/* -------- Facebook -------- */
+.social-icon.facebook {
+  background: #1877F2;
+}
+.social-icon.facebook:hover {
+  box-shadow: 0 10px 25px rgba(24, 119, 242, 0.5);
+}
+
+/* -------- WhatsApp -------- */
+.social-icon.whatsapp {
+  background: #25D366;
+}
+.social-icon.whatsapp:hover {
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+}
+
+/* -------- X (Twitter) -------- */
+.social-icon.x-twitter {
+  background: #000000;
+}
+.social-icon.x-twitter:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* -------- Max -------- */
+.social-icon.max {
+  background: #7B61FF;
+}
+.social-icon.max:hover {
+  box-shadow: 0 10px 25px rgba(123, 97, 255, 0.5);
+}
+
+  /* ============================================
+     КОЛОНКИ 2, 3, 4 — ССЫЛКИ
+  ============================================ */
+  .footer-col h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-col ul a {
+    font-size: 13.5px;
+    color: var(--ink);
+    transition: color 0.3s ease;
+    display: inline-block;
+  }
+  .footer-col ul a:hover {
+    color: var(--accent);
+  }
+
+  /* ============================================
+     КОЛОНКА 4 — КОНТАКТЫ
+  ============================================ */
+  .contacts {
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: var(--ink);
+  }
+  .contacts a {
+    transition: color 0.3s ease;
+  }
+  .contacts a:hover {
+    color: var(--accent);
+  }
+  .contacts .schedule {
+    margin-top: 16px;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ============================================
+     НИЖНЯЯ ПОЛОСА
+  ============================================ */
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    border-top: 1px solid var(--line);
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 28px;
+  }
+  .footer-links a {
+    transition: color 0.3s ease;
+  }
+  .footer-links a:hover {
+    color: var(--ink);
+  }
+
+  /* ============================================
+     АДАПТИВ
+  ============================================ */
+  @media (max-width: 900px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer {
+      padding: 40px 0 30px;
+    }
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .footer-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }

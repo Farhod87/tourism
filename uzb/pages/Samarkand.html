@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BukharaPulse</title>
+<link rel="stylesheet" href="../../css/attraction.css">
+</head>
+<body>
+
+<!-- ============================================
+     HEADER
+============================================ -->
+<div class="header-wrap">
+  <header class="header">
+    <a href="#" class="logo">
+      <div class="logo-mark">B</div>
+      <div class="logo-text">
+        <span class="name">BukharaPulse</span>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="../index.html">Asosiy sahifa</a>
+      <a href="#">Turlar</a>
+      <a href="#">Mehmonxonalar</a>
+      <a href="./blog.html">Blog</a>
+      <a href="./about.html">Biz haqimizda</a>
+    </nav>
+
+    <div style="display:flex; align-items:center; gap:10px;">
+
+      <!-- Переключатель языка -->
+      <div class="lang-dropdown" id="langDropdown">
+        <button class="lang-current" id="langBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <span id="currentLang">UZ</span>
+          <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
+        </button>
+
+        <div class="lang-menu" id="langMenu">
+          <button data-lang="RU"><span class="name">Русский</span></button>
+          <button data-lang="EN"><span class="name">English</span></button>
+          <button data-lang="UZ" class="active"><span class="name">O‘zbek</span></button>
+        </div>
+      </div>
+
+      <a href="#" class="header-cta">Band qilish</a>
+      <button class="burger" id="burgerBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 12h16M4 6h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#">Asosiy sahifa</a>
+      <a href="#">Chiquvchi turizm</a>
+      <a href="#">Kiruvchi turizm</a>
+      <a href="#">Mehmonxonalar</a>
+      <a href="#">Blog</a>
+      <a href="#">Biz haqimizda</a>
+    </div>
+  </header>
+</div>
+
+<!-- ============================================
+     HERO VIDEO
+============================================ -->
+<section class="hero-video">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="#" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-text" id="heroContent">
+    <span class="hero-label">— 2750 YILLIK TARIX —</span>
+    <h1>SAMARQAND</h1>
+    <p>Rim bilan tengdosh va Temur poytaxti. Ko'k gumbazlar, ulug'vor madrasalar va afsonaviy Buyuk ipak yo'li shahri.</p>
+  </div>
+</section>
+
+<!-- ============================================
+     HISTORY
+============================================ -->
+<section class="history">
+  <div class="container history-grid">
+    <div class="history-sticky">
+      <span class="section-label">Tarix</span>
+      <div class="big-num">2750+</div>
+      <span class="big-num-label">yillik tarix<br>3000+ yodgorlik<br>UNESCO</span>
+    </div>
+    <div class="history-content">
+      <h2>Samarqand tarixiga qisqacha nazar</h2>
+      <p class="lead">Samarqand — dunyoning eng qadimiy shaharlaridan biri bo'lib, <strong>2750 yildan</strong> ko'proq vaqt oldin tashkil etilgan. Shahar Buyuk ipak yo'lidagi asosiy markaz va Temur imperiyasining poytaxti bo'lgan.</p>
+      <p>Bu yerda buyuk olimlar, astronomlar va shoirlar ijod qilishgan. Mirzo Ulug'bek mashhur rasadxonani qurgan, Amir Temur esa dunyoni hayratga solayotgan me'moriy durdonalarni barpo etgan. Bugungi kunda Samarqand — O'zbekistonning durdonasi va YUNESKOning Butunjahon merosi obyekti.</p>
+      <div class="history-stats">
+        <div><strong>XIV</strong><span>Temur asri</span></div>
+        <div><strong>35m</strong><span>Ulug'bek rasadxonasi</span></div>
+        <div><strong>3</strong><span>Registon madrasasi</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     PLACES (38 достопримечательностей)
+============================================ -->
+<section class="places">
+  <div class="container">
+    <span class="section-label">Meros</span>
+    <h2 class="section-title">Samarqand diqqatga sazovor joylari</h2>
+    <p class="subtitle">Qadimiy shaharning 38 ta durdonasi — Afrosiyobdan Go'ri Amirgacha.</p>
+
+    <div class="places-cards" id="placesCards">
+      <!-- Первые 6 видимые -->
+      <div class="place-card">
+        <div class="place-img" style="background-image:url('../img/attraction/Afrasiab.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">01</div>
+          <h3>Afrosiyob</h3>
+          <p>Qadimiy shahar xarobasi — eski Samarqand qoldiqlari, arxeologlar bu yerda Ahamoniylar davriga oid noyob freskalar va artefaktlarni topishadi.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%90%D1%84%D1%80%D0%B0%D1%81%D0%B8%D0%B0%D0%B1_(%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D1%89%D0%B5)" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-img" style="background-image:url('../img/attraction/Xoja_Doniyor.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">02</div>
+          <h3>Xoja Doniyor maqbarasi</h3>
+          <p>Doniyor payg'ambar nomi bilan bog'liq e'zozli ziyoratgoh. Samarqandning eng sirli joylaridan biri.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%A5%D0%BE%D0%B4%D0%B6%D0%B0_%D0%94%D0%BE%D0%BD%D0%B8%D1%91%D1%80" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-img" style="background-image:url('../img/attraction/Shahi_Zinda.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">03</div>
+          <h3>Shohi Zinda</h3>
+          <p>XIV–XV asrlarga oid maqbaralar ansambli bo'lgan noyob qabriston, islom me'morchiligining asosiy yodgorliklaridan biri.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A8%D0%B0%D1%85%D0%B8-%D0%97%D0%B8%D0%BD%D0%B4%D0%B0" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-img" style="background-image:url('../img/attraction/Hazrat_Xyzr.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">04</div>
+          <h3>Hazrat Xizr masjidi</h3>
+          <p>Sayohatchilar homiysi va donolik manbai bo'lgan Xizr payg'ambarga bag'ishlangan qadimiy masjid.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%87%D0%B5%D1%82%D1%8C_%D0%A5%D0%B0%D0%B7%D1%80%D0%B5%D1%82-%D0%A5%D1%8B%D0%B7%D1%80" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-img" style="background-image:url('../img/attraction/Emir_Zade.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">05</div>
+          <h3>Amirzoda maqbarasi</h3>
+          <p>Temuriylar sulolasi va Samarqandning ma'naviy merosi bilan bog'liq tarixiy maqbara.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%AD%D0%BC%D0%B8%D1%80-%D0%97%D0%B0%D0%B4%D0%B5" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card">
+        <div class="place-img" style="background-image:url('../img/attraction/Tuglu_Tekin.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">06</div>
+          <h3>Tug'lu Tekin maqbarasi</h3>
+          <p>Temuriylar davrining zodagon vakillaridan biri bo'lgan amir Husayn maqbarasi.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%A2%D1%83%D0%B3%D0%BB%D1%83-%D0%A2%D0%B5%D0%BA%D0%B8%D0%BD_(%D0%AD%D0%BC%D0%B8%D1%80%D0%B0_%D0%A5%D1%83%D1%81%D0%B5%D0%B9%D0%BD%D0%B0)" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+
+      <!-- Остальные 32 скрытые -->
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Shadi_Mulk_Aka.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">07</div>
+          <h3>Shodi Mulk Oko maqbarasi</h3>
+          <p>Temurning singlisi maqbarasi bo'lib, Shohi Zinda majmuasiga kiradi va noyob majolika bilan bezatilgan.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%A8%D0%B0%D0%B4%D0%B8-%D0%9C%D1%83%D0%BB%D1%8C%D0%BA-%D0%90%D0%BA%D0%B0" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Vosmigrannik.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">08</div>
+          <h3>«Sakkiz qirrali» maqbara</h3>
+          <p>Shohi Zinda qabristonidagi noyob sakkiz qirrali inshoot bo'lib, o'z geometriyasi bilan hayratga soladi.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%C2%AB%D0%92%D0%BE%D1%81%D1%8C%D0%BC%D0%B8%D0%B3%D1%80%D0%B0%D0%BD%D0%BD%D0%B8%D0%BA%C2%BB" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Bezymyanny1.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">09</div>
+          <h3>«Nomsiz-1» maqbarasi</h3>
+          <p>Shohi Zindadagi tarixiy maqbara bo'lib, usta Alim Nasafiyning ishlari bilan bog'liq.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%C2%AB%D0%91%D0%B5%D0%B7%D1%8B%D0%BC%D1%8F%D0%BD%D0%BD%D1%8B%D0%B9-1%C2%BB_(%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B_%D1%83%D1%81%D1%82%D0%BE_%D0%90%D0%BB%D0%B8%D0%BC%D0%B0_%D0%9D%D0%B0%D1%81%D0%B0%D1%84%D0%B8)" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Bezymyanny2.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">10</div>
+          <h3>«Nomsiz-2» maqbarasi</h3>
+          <p>Shohi Zinda ansamblidagi yana bir sirli maqbara bo'lib, qadimiy ustalarning sirlarini saqlaydi.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%C2%AB%D0%91%D0%B5%D0%B7%D1%8B%D0%BC%D1%8F%D0%BD%D0%BD%D1%8B%D0%B9-2%C2%BB" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Burunduk.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">11</div>
+          <h3>Amir Burunduq maqbarasi</h3>
+          <p>Shohi Zinda majmuasida joylashgan Temuriylar davrining zodagon amiri maqbarasi.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%AD%D0%BC%D0%B8%D1%80%D0%B0_%D0%91%D1%83%D1%80%D1%83%D0%BD%D0%B4%D1%83%D0%BA%D0%B0" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Tuman_Aka.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">12</div>
+          <h3>Tuman Oka majmuasi</h3>
+          <p>Tuman Oka nomi bilan bog'liq bo'lgan masjid va maqbarani o'z ichiga olgan tarixiy majmua.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%D0%A2%D1%83%D0%BC%D0%B0%D0%BD-%D0%B0%D0%BA%D0%B0" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Mavzoley_1360.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">13</div>
+          <h3>1360/1361-yillar maqbarasi</h3>
+          <p>Shohi Zinda ansamblidagi eng qadimiy maqbaralardan biri bo'lgan XIV asrga oid qadimiy maqbara.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_1360/1361_%D0%B3%D0%BE%D0%B4%D0%BE%D0%B2" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Xoja_Ahmad.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">14</div>
+          <h3>Xoja Ahmad maqbarasi</h3>
+          <p>Shohi Zinda majmuasiga kiruvchi e'zozli avliyo maqbarasi.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%A5%D0%BE%D0%B4%D0%B6%D0%B8_%D0%90%D1%85%D0%BC%D0%B0%D0%B4%D0%B0" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Bibi_Xonim_mosque.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">15</div>
+          <h3>Bibi Xonim masjidi</h3>
+          <p>Temurning sevimli xotini sharafiga qurilgan ulug'vor jome masjidi. O'rta asr me'morchiligining durdonasi.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%87%D0%B5%D1%82%D1%8C_%D0%91%D0%B8%D0%B1%D0%B8-%D0%A5%D0%B0%D0%BD%D1%8B%D0%BC" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Bibi_Xonim_mavzoley.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">16</div>
+          <h3>Bibi Xonim maqbarasi</h3>
+          <p>Bibi Xonim masjidi ro'parasida joylashgan, afsonaviy malika nomi bilan bog'liq maqbara.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%91%D0%B8%D0%B1%D0%B8_%D0%A5%D0%B0%D0%BD%D1%8B%D0%BC" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Ulugbek_madrasa_Samarkand.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">17</div>
+          <h3>Ulug'bek madrasasi</h3>
+          <p>Registon ansamblidagi uchta madrasadan biri bo'lib, XV asrda buyuk astronom va hukmdor Mirzo Ulug'bek tomonidan qurilgan.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%80%D0%B5%D1%81%D0%B5_%D0%A3%D0%BB%D1%83%D0%B3%D0%B1%D0%B5%D0%BA%D0%B0_(%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%D0%BD%D0%B4)" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Sherdor.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">18</div>
+          <h3>Sherdor madrasasi</h3>
+          <p>Registon ansambliga kiruvchi, sherlar va quyosh tasvirlangan noyob mozaikalarga ega XVII asrga oid mashhur madrasa.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%80%D0%B5%D1%81%D0%B5_%D0%A8%D0%B5%D1%80%D0%B4%D0%BE%D1%80" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Tillya_Kari.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">19</div>
+          <h3>Tillakori madrasasi</h3>
+          <p>Registon ansamblidagi uchinchi madrasa bo'lib, ichki bezaklarining hashamati va tilla naqshlari bilan hayratga soladi.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%80%D0%B5%D1%81%D0%B5_%D0%A2%D0%B8%D0%BB%D0%BB%D1%8F-%D0%9A%D0%B0%D1%80%D0%B8" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Chorsu_Samarkand.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">20</div>
+          <h3>Chorsu</h3>
+          <p>XIV asrdan beri sharq savdosi muhitini saqlab qolgan Samarqandning qadimiy yopiq bozori.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A7%D0%BE%D1%80%D1%81%D1%83_(%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%D0%BD%D0%B4)" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Dusmatbay.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">21</div>
+          <h3>Do'smatboy madrasasi</h3>
+          <p>Homiy Do'smatboy nomi bilan bog'liq XX asr boshlariga oid tarixiy madrasa.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%B4%D1%80%D0%B5%D1%81%D0%B5_%D0%94%D1%83%D1%81%D0%BC%D0%B0%D1%82%D0%B1%D0%B0%D1%8F" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Gur_Emir.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">22</div>
+          <h3>Go'ri Amir</h3>
+          <p>Temur va uning avlodlari dafn etilgan maqbara, afsonaviy ko'k gumbazli temuriylar me'morchiligining durdonasi.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%93%D1%83%D1%80-%D0%AD%D0%BC%D0%B8%D1%80" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Ruxabad.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">23</div>
+          <h3>Ruhobod maqbarasi</h3>
+          <p>Shayx Burhoniddin Sog'arjiy nomi bilan bog'liq XIV asrga oid qadimiy maqbara.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%A0%D1%83%D1%85%D0%B0%D0%B1%D0%B0%D0%B4" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Aksaray.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">24</div>
+          <h3>Oqsaroy maqbarasi</h3>
+          <p>Temuriylar sulolasi bilan bog'liq XV asrga oid tarixiy maqbara.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%90%D0%BA%D1%81%D0%B0%D1%80%D0%B0%D0%B9" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Ulugbek_observatory.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">25</div>
+          <h3>Ulug'bek rasadxonasi</h3>
+          <p>Buyuk astronom bugungi kungacha aniq bo'lgan yulduzlar katalogini tuzgan XV asrga oid afsonaviy rasadxona.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D1%81%D0%B5%D1%80%D0%B2%D0%B0%D1%82%D0%BE%D1%80%D0%B8%D1%8F_%D0%A3%D0%BB%D1%83%D0%B3%D0%B1%D0%B5%D0%BA%D0%B0" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Abdi_Darun.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">26</div>
+          <h3>Abdi Darun</h3>
+          <p>Abdi Darun avliyosi nomi bilan bog'liq bo'lgan maqbara va masjidga ega tarixiy majmua.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%90%D0%B1%D0%B4%D0%B8-%D0%94%D0%B0%D1%80%D1%83%D0%BD" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Ishratxona.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">27</div>
+          <h3>Ishratxona</h3>
+          <p>«Shodlik uyi» nomi bilan mashhur bo'lgan Temuriylar sulolasi ayollarining maqbarasi.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%98%D1%88%D1%80%D0%B0%D1%82%D1%85%D0%BE%D0%BD%D0%B0" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Aleksey_sobor.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">28</div>
+          <h3>Muqaddas Aleksey sobori</h3>
+          <p>Samarqand markazidagi amaldagi ibodatxona bo'lgan XX asr boshlariga oid pravoslav sobori.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%B1%D0%BE%D1%80_%D0%A1%D0%B2%D1%8F%D1%82%D0%B8%D1%82%D0%B5%D0%BB%D1%8F_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B8%D1%8F_%D0%9C%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_(%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%D0%BD%D0%B4)" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Ioann_Krestitel.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">29</div>
+          <h3>Ioann Krestitele cherkovi</h3>
+          <p>XX asr boshlarida qurilgan Samarqanddagi katolik cherkovi.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%A1%D0%B2%D1%8F%D1%82%D0%BE%D0%B3%D0%BE_%D0%98%D0%BE%D0%B0%D0%BD%D0%BD%D0%B0_%D0%9A%D1%80%D0%B5%D1%81%D1%82%D0%B8%D1%82%D0%B5%D0%BB%D1%8F_(%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%D0%BD%D0%B4)" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Bogorodica.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">30</div>
+          <h3>Muqaddas Bibi Maryam cherkovi</h3>
+          <p>Samarqandning eng qadimiy xristian ibodatxonalaridan biri bo'lgan pravoslav cherkovi.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C_%D0%A1%D0%B2%D1%8F%D1%82%D0%BE%D0%B9_%D0%91%D0%BE%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B8%D1%86%D1%8B_(%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%D0%BD%D0%B4)" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Georgiy_Pobedonosets.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">31</div>
+          <h3>Muqaddas Georgiy Pobedonosets cherkovi</h3>
+          <p>XX asr boshlaridagi tarixiy qiyofasini saqlab qolgan amaldagi bo'lmagan pravoslav cherkovi.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A5%D1%80%D0%B0%D0%BC_%D0%A1%D0%B2%D1%8F%D1%82%D0%BE%D0%B3%D0%BE_%D0%93%D0%B5%D0%BE%D1%80%D0%B3%D0%B8%D1%8F_%D0%9F%D0%BE%D0%B1%D0%B5%D0%B4%D0%BE%D0%BD%D0%BE%D1%81%D1%86%D0%B0_(%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%D0%BD%D0%B4,_%D0%BD%D0%B5%D0%B4%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D1%83%D1%8E%D1%89%D0%B8%D0%B9)" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Gumbaz.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">32</div>
+          <h3>Kanesoi Gumbaz sinagogasi</h3>
+          <p>Yahudiy jamoasining ko'p asrlik mavjudligidan dalolat beruvchi Samarqandning tarixiy sinagogasi.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B8%D0%BD%D0%B0%D0%B3%D0%BE%D0%B3%D0%B0_%D0%9A%D0%B0%D0%BD%D0%B5%D1%81%D0%BE%D0%B8_%D0%93%D1%83%D0%BC%D0%B1%D0%B0%D0%B7" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Russko_Kitayskiy_bank.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">33</div>
+          <h3>Rus-Xitoy banki binosi</h3>
+          <p>Samarqandning fuqarolik me'morchiligi yodgorligi bo'lgan XX asr boshlariga oid tarixiy bino.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%97%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%BE-%D0%9A%D0%B8%D1%82%D0%B0%D0%B9%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_%D0%B1%D0%B0%D0%BD%D0%BA%D0%B0_%D0%B2_%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%D0%BD%D0%B4%D0%B5" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Namazgoh.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">34</div>
+          <h3>Namozgoh masjidi</h3>
+          <p>Hayit namozlari o'qilgan XVII asrga oid qadimiy shahar tashqarisidagi masjid.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%87%D0%B5%D1%82%D1%8C_%D0%9D%D0%B0%D0%BC%D0%B0%D0%B7%D0%B3%D0%BE%D1%85_(%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%D0%BD%D0%B4)" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Chupan_Ata.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">35</div>
+          <h3>Cho'pon ota maqbarasi</h3>
+          <p>Cho'ponlar homiysi bo'lgan afsonaviy avliyo Cho'pon ota bilan bog'liq qadimiy maqbara.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%A7%D1%83%D0%BF%D0%B0%D0%BD-%D0%B0%D1%82%D0%B0#%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%A7%D1%83%D0%BF%D0%B0%D0%BD-%D0%B0%D1%82%D0%B0" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Xoja_Zudmurod.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">36</div>
+          <h3>Xoja Zudmurod masjidi</h3>
+          <p>E'zozli avliyo Xoja Zudmurod sharafiga nomlangan tarixiy masjid.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%87%D0%B5%D1%82%D1%8C_%D0%A5%D0%BE%D0%B4%D0%B6%D0%B0_%D0%97%D1%83%D0%B4%D0%BC%D1%83%D1%80%D0%BE%D0%B4" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Abu_Mansur.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">37</div>
+          <h3>Abu Mansur Moturidiy maqbarasi</h3>
+          <p>Asosiy sunniy mazhablaridan birining asoschisi bo'lgan buyuk islom ilohiyotchisi Abu Mansur al-Moturidiy maqbarasi.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%B2%D0%B7%D0%BE%D0%BB%D0%B5%D0%B9_%D0%90%D0%B1%D1%83_%D0%9C%D0%B0%D0%BD%D1%81%D1%83%D1%80%D0%B0_%D0%9C%D0%B0%D1%82%D1%83%D1%80%D0%B8%D0%B4%D0%B8" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+      <div class="place-card hidden">
+        <div class="place-img" style="background-image:url('../img/attraction/Imam_Al_Buxari.webp')"></div>
+        <div class="place-info">
+          <div class="place-number">38</div>
+          <h3>Imom al-Buxoriy yodgorlik majmuasi</h3>
+          <p>Samarqand yaqinida joylashgan buyuk hadis to'plovchi Imom al-Buxoriyga bag'ishlangan ziyoratgoh.</p>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%BC%D0%BE%D1%80%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%D0%B8%D0%BC%D0%B0%D0%BC%D0%B0_%D0%90%D0%BB%D1%8C-%D0%91%D1%83%D1%85%D0%B0%D1%80%D0%B8" target="_blank" class="place-btn">Batafsil →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="show-more-container">
+      <button id="showMoreBtn">Yana 32 tasini ko'rsatish →</button>
+      <button id="hideBtn" style="display:none">Yashirish ↑</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOD
+============================================ -->
+<section class="food">
+  <div class="container">
+    <div class="food-header">
+      <span class="section-label">33 ta taom</span>
+      <h2 class="food-title">Samarqand ta'mi</h2>
+      <p class="food-subtitle">Samarqand oshxonasi — bu shunchaki ovqat emas, balki Buyuk ipak yo'lining buyuk tarixining bir qismi. Har bir taom qadimiy kitobning bir sahifasiga o'xshaydi, uni tatib ko'rish mumkin.</p>
+    </div>
+
+    <div class="tabs" id="foodTabs">
+      <button class="tab-btn active" data-category="all">Barchasi</button>
+      <button class="tab-btn" data-category="meaty">Go'shtli</button>
+      <button class="tab-btn" data-category="soups">Sho'rvalar</button>
+      <button class="tab-btn" data-category="pastry">Xamirdan</button>
+      <button class="tab-btn" data-category="dairy">Sutli</button>
+      <button class="tab-btn" data-category="sweets">Shirinliklar</button>
+    </div>
+
+    <div class="food-grid" id="foodGrid"></div>
+
+    <div class="show-more-container">
+      <button class="btn-show-more" id="showMoreFoodBtn">Yana 27 ta taomni ko'rsatish →</button>
+      <button class="btn-hide" id="hideFoodBtn">Yashirish ↑</button>
+    </div>
+  </div>
+</section>
+
+<!-- Модалка -->
+<div class="modal" id="foodModal">
+  <div class="modal-content">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-img" id="modalImg"></div>
+    <div class="modal-body">
+      <h2 id="modalTitle"></h2>
+      <div class="modal-region" id="modalRegion"></div>
+      <div class="modal-desc" id="modalDesc"></div>
+      <div class="modal-tip" id="modalTip"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     SPIRITUALITY
+============================================ -->
+<section class="seven-pirs">
+  <div class="container">
+    <span class="section-label">Ma'naviyat</span>
+    <h2>Samarqandning ma'naviy ziyoratgohlari</h2>
+    <p class="subtitle">Shaharning ma'naviy tarixini yoritib turuvchi buyuk so'fiy ustozlar va ziyoratgohlar.</p>
+    <div class="pir-cards">
+      <div class="pir-card featured">
+        <div class="pir-img" style="background-image:url('../img/attraction/Imam_Al_Buxari.webp')"></div>
+        <div class="pir-info"><span class="pir-num">01</span>
+          <h3><a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D0%BC%D0%BE%D1%80%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%D0%B8%D0%BC%D0%B0%D0%BC%D0%B0_%D0%90%D0%BB%D1%8C-%D0%91%D1%83%D1%85%D0%B0%D1%80%D0%B8" target="_blank">Imom al-Buxoriy</a></h3>
+          <p>Buyuk hadisshunos, «muhaddislar sultoni». Uning Samarqand yaqinidagi yodgorlik majmuasi islom olamidagi asosiy ziyoratgohlardan biridir.</p>
+        </div>
+      </div>
+      <div class="pir-card">
+        <div class="pir-img" style="background-image:url('../img/attraction/Mahdumi_Azam.webp')"></div>
+        <div class="pir-info"><span class="pir-num">02</span>
+          <h3><a href="https://ksa.mfa.uz/news/33022" target="_blank">Mahdumi A'zam</a></h3>
+          <p>Naqshbandiya tariqatining yetakchi ustozlaridan biri bo'lgan taniqli so'fiy olim. 30 dan ortiq asar muallifi. Dahbeddagi maqbarasi muhim ziyorat markazidir.</p>
+        </div>
+      </div>
+      <div class="pir-card">
+        <div class="pir-img" style="background-image:url('../img/attraction/Xoja_Axror.webp')"></div>
+        <div class="pir-info"><span class="pir-num">03</span>
+          <h3><a href="https://stv.uz/ru/samarkand/place/40" target="_blank">Xoja Ahror Vali</a></h3>
+          <p>XV asrning taniqli diniy mutafakkiri, Naqshbandiya so'fiylik tariqatining rahbari. Temuriylar davrining ma'naviy va siyosiy hayotiga ta'sir o'tkazgan.</p>
+        </div>
+      </div>
+      <div class="pir-card">
+        <div class="pir-img" style="background-image:url('../img/attraction/Nuriddin_Basir.webp')"></div>
+        <div class="pir-info"><span class="pir-num">04</span>
+          <h3><a href="https://sv.zarnews.uz/post/nuriddin-basir-istoriya-odnogo-mavzoleya" target="_blank">Shayx Nuriddin Basir</a></h3>
+          <p>«Qutbi-Chaarda» oliy ma'naviy darajasiga erishgan XIII asr so'fiy shayxi. Amir Temur uni e'zozlagan va yurishlardan oldin uning maqbarasini ko'p ziyorat qilgan.</p>
+        </div>
+      </div>
+      <div class="pir-card">
+        <div class="pir-img" style="background-image:url('../img/attraction/Burhanuddin_Sagarji.webp')"></div>
+        <div class="pir-info"><span class="pir-num">05</span>
+          <h3>Burhoniddin Sog'arjiy</h3>
+          <p>Pekin musulmonlarining rahbari bo'lgan ma'naviy ustoz. Vasiyatiga ko'ra, Nuriddin Basir maqbarasi yoniga dafn etilgan. Uning qabri ustiga Ruhobod maqbarasi qurilgan.</p>
+        </div>
+      </div>
+      <div class="pir-card">
+        <div class="pir-img" style="background-image:url('../img/attraction/Shamsiddin_Kulol.webp')"></div>
+        <div class="pir-info"><span class="pir-num">06</span>
+          <h3>Shayx Shamsiddin Kulol</h3>
+          <p>Yosh Amir Temurning ma'naviy ustozi. Uning diniy qarashlariga chuqur ta'sir ko'rsatgan va buyuk taqdirga ilhomlantirgan.</p>
+        </div>
+      </div>
+      <div class="pir-card">
+        <div class="pir-img" style="background-image:url('../img/attraction/Zayniddin_Kuyi_Orifon.webp')"></div>
+        <div class="pir-info"><span class="pir-num">07</span>
+          <h3>Shayx Zayniddin Kuyi Orifon</h3>
+          <p>Nuriddin Basirning ustozi bo'lgan taniqli Toshkent shayxi. Basir maqbarasi Amir Temur ko'rsatmasi bilan qurilgan, u ham Toshkentdagi bu shayx qabri ustiga maqbara qurdirgan.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     FOOTER
+============================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div>
+        <a href="#" class="footer-logo">
+          <span>Uzbek</span><span class="accent">Pulse</span>
+        </a>
+        <p class="footer-desc">Samarqanddan premium sayohatlar. EST 2024. Litsenziya № 123. Halol, g'amxo'rlik bilan.</p>
+
+        <div class="socials">
+          <a href="#" class="social-icon instagram" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="#" class="social-icon telegram" aria-label="Telegram">
+            <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          </a>
+          <a href="#" class="social-icon youtube" aria-label="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="#" class="social-icon facebook" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" class="social-icon whatsapp" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </a>
+          <a href="#" class="social-icon x-twitter" aria-label="X">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" class="social-icon max" aria-label="Max">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 5.94 2 10.8c0 2.485 1.094 4.727 2.859 6.328V22l3.734-2.05a11.31 11.31 0 003.407.525c5.523 0 10-3.94 10-8.8S17.523 2 12 2zm-4.5 9.6a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7zm4.5 0a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7zm4.5 0a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Chiqish</h4>
+        <ul>
+          <li><a href="#">Barcha xorijiy turlar</a></li>
+          <li><a href="#">Plyaj dam olish</a></li>
+          <li><a href="#">Oilaviy turlar</a></li>
+          <li><a href="#">Ekskursiya turlari</a></li>
+          <li><a href="#">Mamlakatlar</a></li>
+          <li><a href="#">Individual tanlov</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>O'zbekiston</h4>
+        <ul>
+          <li><a href="#">O'zbekiston bo'ylab barcha turlar</a></li>
+          <li><a href="#">Buxoro</a></li>
+          <li><a href="#">Samarqand</a></li>
+          <li><a href="#">Xiva</a></li>
+          <li><a href="#">Toshkent</a></li>
+          <li><a href="#">Buyuk ipak yo'li</a></li>
+          <li><a href="#">Tarixiy</a></li>
+          <li><a href="#">Individual</a></li>
+          <li><a href="#">Bir kunlik</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Kontaktlar</h4>
+        <div class="contacts">
+          <div>Samarqand, Registon ko'chasi, 12</div>
+          <div><a href="tel:+998900000000">+998 90 000 00 00</a></div>
+          <div><a href="mailto:hello@uzbekpulse.uz">hello@uzbekpulse.uz</a></div>
+          <div class="schedule">
+            Du-Sha 09:00-19:00<br>
+            Yak — kelishilgan holda
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 UzbekPulse Travel. Barcha huquqlar himoyalangan.</span>
+      <div class="footer-links">
+        <a href="#">Maxfiylik siyosati</a>
+        <a href="#">Ommaviy oferta shartnomasi</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="../../js/attraction.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BukharaPulse</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================================
+     HEADER
+============================================ -->
+<div class="header-wrap">
+  <header class="header">
+    <a href="#" class="logo">
+      <div class="logo-mark">B</div>
+      <div class="logo-text">
+        <span class="name">BukharaPulse</span>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="index.html">Главная</a>
+      <a href="./pages/tours.html">Туры</a>
+      <a href="./pages/hotels.html">Отели</a>
+      <a href="./pages/blog.html">Блог</a>
+      <a href="./pages/about.html">О нас</a>
+    </nav>
+
+    <div style="display:flex; align-items:center; gap:10px;">
+
+      <!-- Выпадающий переключатель языка -->
+<div class="lang-dropdown" id="langDropdown">
+  <button class="lang-current" id="langBtn">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+    </svg>
+    <span id="currentLang">RU</span>
+    <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="m6 9 6 6 6-6"/>
+    </svg>
+  </button>
+
+  <div class="lang-menu" id="langMenu">
+    <button data-lang="ru" class="active">
+      <span class="name">Русский</span>
+    </button>
+    <button data-lang="en">
+      <span class="name">English</span>
+    </button>
+    <button data-lang="uz">
+      <span class="name">O‘zbek</span>
+    </button>
+  </div>
+</div>
+      <a href="./pages/tours.html" class="header-cta">Забронировать</a>
+      <button class="burger" id="burgerBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16M4 6h16M4 18h16"/></svg>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#">Главная</a>
+      <a href="#">Выездной туризм</a>
+      <a href="#">Въездной туризм</a>
+      <a href="#">Отели</a>
+      <a href="#">Блог</a>
+      <a href="#">О нас</a>
+      <a href="#" style="background:var(--ink); color:var(--cream); border-radius:999px; text-align:center; padding:14px; margin-top:12px; border:none;">Забронировать</a>
+    </div>
+  </header>
+</div>
+
+<!-- ============================================
+     HERO SLIDER — 100vh, изображение на всю площадь
+============================================ -->
+<section class="hero">
+  <div class="slider" id="slider">
+
+    <!-- 1. Бухара -->
+    <div class="slide active">
+      <div class="slide-bg" style="background-image: url('./img/main/Bukhara-1.webp');"></div>
+    </div>
+
+    <!-- 2. Самарканд -->
+    <div class="slide">
+      <div class="slide-bg" style="background-image: url('./img/main/Samarkand.webp');"></div>
+    </div>
+
+    <!-- 3. Турция -->
+    <div class="slide">
+      <div class="slide-bg" style="background-image: url('./img/main/Turkey.webp');"></div>
+    </div>
+
+    <!-- 4. ОАЭ -->
+    <div class="slide">
+      <div class="slide-bg" style="background-image: url('./img/main/UAE.webp');"></div>
+    </div>
+
+    <!-- 5. Малайзия -->
+    <div class="slide">
+      <div class="slide-bg" style="background-image: url('./img/main/Malaysia.webp');"></div>
+    </div>
+
+    <!-- 6. Мальдивы -->
+    <div class="slide">
+      <div class="slide-bg" style="background-image: url('./img/main/Maldives.webp');"></div>
+    </div>
+
+    <!-- ====== КОНТЕНТ СНИЗУ ====== -->
+    <div class="slide-content">
+      <h1 class="slide-title" id="titleText">
+        Бухара —<br>
+        <span class="italic">Город, где</span><br>
+        время<br>
+        остановилось
+      </h1>
+      <div class="slide-actions">
+        <a href="#" class="btn-light">
+          Исследовать туры
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7h10v10M7 17 17 7"/></svg>
+        </a>
+        <a href="#" class="btn-ghost">
+          <span class="play-icon"><svg viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3"/></svg></span>
+          Смотреть видео
+        </a>
+      </div>
+    </div>
+
+    <!-- Прогресс -->
+    <div class="slider-progress">
+      <span class="progress-current"><span class="accent" id="currentNum">01</span></span>
+      <span class="progress-divider">/</span>
+      <span class="progress-total" id="totalNum">06</span>
+      <div class="progress-dots" id="dotsContainer"></div>
+    </div>
+
+    <!-- Стрелки -->
+    <button class="nav-arrow prev" id="prevBtn" aria-label="Назад">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button class="nav-arrow next" id="nextBtn" aria-label="Вперёд">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+
+  </div>
+</section>
+
+
+
+<section class="container">
+
+  <!-- ЗАГОЛОВОК И ОПИСАНИЕ -->
+  <div class="section-head">
+    <h2 class="section-title">
+      <span class="line">Два</span>
+      <span class="line">направления</span>
+      <span class="line italic">одно качество</span>
+    </h2>
+    <p class="section-desc">
+      Мы одинаково бережно делаем и выезд за границу, и погружение в Узбекистан. Разный масштаб — один стандарт заботы.
+    </p>
+  </div>
+
+  <!-- КАРТОЧКИ -->
+  <div class="directions">
+
+    <!-- Карточка 1 — Выездной туризм -->
+    <div class="card card-dark">
+      <div class="card-deco"></div>
+
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>
+          <path d="M20 3v4M22 5h-4M4 17v2M5 18H3"/>
+        </svg>
+      </div>
+
+      <div class="card-content">
+        <h3 class="card-title">Выездной туризм</h3>
+        <p class="card-text">
+          Пляжи, мегаполисы и паломничество. 12 стран с прямыми рейсами из Ташкента и Бухары. Визы, страховки, трансферы — всё включено.
+        </p>
+      </div>
+
+      <div class="card-footer">
+        <a href="./pages/tours.html" class="btn-tour">
+          Смотреть туры
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M7 7h10v10M7 17 17 7"/>
+          </svg>
+        </a>
+        <span class="price">от $25</span>
+      </div>
+    </div>
+
+    <!-- Карточка 2 — Въездной туризм -->
+    <div class="card card-light">
+      <div class="card-deco"></div>
+
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>
+          <path d="M20 3v4M22 5h-4M4 17v2M5 18H3"/>
+        </svg>
+      </div>
+
+      <div class="card-content">
+        <h3 class="card-title">Въездной туризм</h3>
+        <p class="card-text">
+          Бухара, Самарканд, Хива, Ташкент и Шёлковый путь. Авторские маршруты с лицензированными гидами и доступом к закрытым локациям.
+        </p>
+      </div>
+
+      <div class="card-footer">
+        <a href="./pages/tours.html" class="btn-tour">
+          Смотреть туры
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M7 7h10v10M7 17 17 7"/>
+          </svg>
+        </a>
+        <span class="price">от $25</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+
+  <!-- ЗАГОЛОВОК -->
+  <div class="section-head">
+    <h2 class="section-title">
+      Откройте Узбекистан <span class="italic">заново</span>
+    </h2>
+  </div>
+
+  <!-- СЕТКА КАРТОЧЕК -->
+  <div class="cards-grid">
+
+<!-- Бухара -->
+<div class="uzb-card" style="background-image: url('./img/main/Bukhara.webp');">
+  <div class="uzb-top">
+    <span class="uzb-badge">БУХАРА</span>
+  </div>
+  <div class="uzb-caption">
+    <h3 class="uzb-name">Бухара</h3>
+    <p class="uzb-sub">Старый город, медресе</p>
+    <!-- Кнопка-ссылка -->
+    <a href="./pages/Bukhara.html" class="uzb-btn">Подробнее →</a>
+  </div>
+</div>
+
+    <!-- Самарканд -->
+    <div class="uzb-card" style="background-image: url('./img/main/Samarkand.webp');">
+      <div class="uzb-top">
+        <span class="uzb-badge">САМАРКАНД</span>
+      </div>
+      <div class="uzb-caption">
+        <h3 class="uzb-name">Самарканд</h3>
+        <p class="uzb-sub">Регистан, Гур-Эмир</p>
+        <!-- Кнопка-ссылка -->
+        <a href="./pages/Samarkand.html" class="uzb-btn">Подробнее →</a>
+      </div>
+    </div>
+    
+
+
+    <!-- Хива -->
+    <div class="uzb-card" style="background-image: url('./img/main/Khiva.webp');">
+      <div class="uzb-top">
+        <span class="uzb-badge">ХИВА</span>
+      </div>
+      <div class="uzb-caption">
+        <h3 class="uzb-name">Хива</h3>
+        <p class="uzb-sub">Ичан-Кала, минареты</p>
+        <!-- Кнопка-ссылка -->
+        <a href="./pages/Khiva.html" class="uzb-btn">Подробнее →</a>
+      </div>
+    </div>
+
+    <!-- Ташкент -->
+    <div class="uzb-card" style="background-image: url('./img/main/Tashkent.webp');">
+      <div class="uzb-top">
+        <span class="uzb-badge">ТАШКЕНТ</span>
+      </div>
+      <div class="uzb-caption">
+        <h3 class="uzb-name">Ташкент</h3>
+        <p class="uzb-sub">Современный, базары</p>
+        <!-- Кнопка-ссылка -->
+        <a href="./pages/Tashkent.html" class="uzb-btn">Подробнее →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="container">
+
+  <!-- ЗАГОЛОВОК -->
+  <div class="section-head">
+    <h2 class="section-title">Куда поехать из Узбекистана</h2>
+  </div>
+
+  <!-- СЕТКА КАРТОЧЕК -->
+  <div class="cards-grid">
+
+    <!-- 1. Турция -->
+    <a href="./pages/tours.html#block-tours-list" class="dest-card">
+      <div class="dest-visual" style="background-image: url('./img/main/Turkey.webp');">
+        <div class="dest-top">
+          <span class="dest-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 7h10v10M7 17 17 7"/>
+            </svg>
+          </span>
+        </div>
+        <div class="dest-caption">
+          <h3 class="dest-name">Турция</h3>
+          <p class="dest-sub">Анталья, Стамбул, Каппадокия</p>
+        </div>
+      </div>
+      <div class="dest-footer">
+        <span class="dest-price">от $450</span>
+        <span class="dest-more">Подробнее</span>
+      </div>
+    </a>
+
+    <!-- 2. ОАЭ -->
+    <a href="./pages/tours.html#block-tours-list" class="dest-card">
+      <div class="dest-visual" style="background-image: url('./img/main/UAE.webp');">
+        <div class="dest-top">
+          <span class="dest-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 7h10v10M7 17 17 7"/>
+            </svg>
+          </span>
+        </div>
+        <div class="dest-caption">
+          <h3 class="dest-name">ОАЭ</h3>
+          <p class="dest-sub">Дубай, Абу-Даби, пустыня</p>
+        </div>
+      </div>
+      <div class="dest-footer">
+        <span class="dest-price">от $520</span>
+        <span class="dest-more">Подробнее</span>
+      </div>
+    </a>
+
+    <!-- 3. Египет -->
+    <a href="./pages/tours.html#block-tours-list" class="dest-card">
+      <div class="dest-visual" style="background-image: url('./img/main/Egypt.webp');">
+        <div class="dest-top">
+          <span class="dest-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 7h10v10M7 17 17 7"/>
+            </svg>
+          </span>
+        </div>
+        <div class="dest-caption">
+          <h3 class="dest-name">Египет</h3>
+          <p class="dest-sub">Хургада, Шарм, Нил</p>
+        </div>
+      </div>
+      <div class="dest-footer">
+        <span class="dest-price">от $390</span>
+        <span class="dest-more">Подробнее</span>
+      </div>
+    </a>
+
+    <!-- 4. Малайзия -->
+    <a href="./pages/tours.html#block-tours-list" class="dest-card">
+      <div class="dest-visual" style="background-image: url('./img/main/Malaysia.webp');">
+        <div class="dest-top">
+          <span class="dest-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 7h10v10M7 17 17 7"/>
+            </svg>
+          </span>
+        </div>
+        <div class="dest-caption">
+          <h3 class="dest-name">Малайзия</h3>
+          <p class="dest-sub">Куала-Лумпур, Лангкави</p>
+        </div>
+      </div>
+      <div class="dest-footer">
+        <span class="dest-price">от $680</span>
+        <span class="dest-more">Подробнее</span>
+      </div>
+    </a>
+
+    <!-- 5. Китай -->
+    <a href="./pages/tours.html#block-tours-list" class="dest-card">
+      <div class="dest-visual" style="background-image: url('./img/main/China.webp');">
+        <div class="dest-top">
+          <span class="dest-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 7h10v10M7 17 17 7"/>
+            </svg>
+          </span>
+        </div>
+        <div class="dest-caption">
+          <h3 class="dest-name">Китай</h3>
+          <p class="dest-sub">Пекин, Шанхай, Сиань</p>
+        </div>
+      </div>
+      <div class="dest-footer">
+        <span class="dest-price">от $350</span>
+        <span class="dest-more">Подробнее</span>
+      </div>
+    </a>
+
+    <!-- 6. Азербайжан -->
+    <a href="./pages/tours.html#block-tours-list" class="dest-card">
+      <div class="dest-visual" style="background-image: url('./img/main/Azerbaijan.webp');">
+        <div class="dest-top">
+          <span class="dest-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 7h10v10M7 17 17 7"/>
+            </svg>
+          </span>
+        </div>
+        <div class="dest-caption">
+          <h3 class="dest-name">Азербайжан</h3>
+          <p class="dest-sub">Баку, Габала, Шахдаг</p>
+        </div>
+      </div>
+      <div class="dest-footer">
+        <span class="dest-price">от $550</span>
+        <span class="dest-more">Подробнее</span>
+      </div>
+    </a>
+
+    <!-- 7. Грузия -->
+    <a href="./pages/tours.html#block-tours-list" class="dest-card">
+      <div class="dest-visual" style="background-image: url('./img/main/Georgia.webp');">
+        <div class="dest-top">
+          <span class="dest-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 7h10v10M7 17 17 7"/>
+            </svg>
+          </span>
+        </div>
+        <div class="dest-caption">
+          <h3 class="dest-name">Грузия</h3>
+          <p class="dest-sub">Тбилиси, Батуми, Казбеги</p>
+        </div>
+      </div>
+      <div class="dest-footer">
+        <span class="dest-price">от $450</span>
+        <span class="dest-more">Подробнее</span>
+      </div>
+    </a>
+
+    <!-- 8. Кыргызстан -->
+    <a href="./pages/tours.html#block-tours-list" class="dest-card">
+      <div class="dest-visual" style="background-image: url('./img/main/Kyrgyzstan.webp');">
+        <div class="dest-top">
+          <span class="dest-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 7h10v10M7 17 17 7"/>
+            </svg>
+          </span>
+        </div>
+        <div class="dest-caption">
+          <h3 class="dest-name">Кыргызстан</h3>
+          <p class="dest-sub">Бишкек, Иссык-Куль, Ала-Арча</p>
+        </div>
+      </div>
+      <div class="dest-footer">
+        <span class="dest-price">от $250</span>
+        <span class="dest-more">Подробнее</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+
+<section class="container">
+
+  <!-- ЗАГОЛОВОК -->
+  <h2 class="section-title">
+    Популярные <span class="italic">турпакеты</span><br>этого сезона
+  </h2>
+
+  <!-- СЕТКА КАРТОЧЕК -->
+  <div class="packages-grid">
+
+    <!-- Карточка 1 — Бухара -->
+    <a href="./pages/tours.html" class="pkg-card">
+      <div class="pkg-visual" style="background-image: url('./img/main/Bukhara.webp');">
+        <div class="pkg-tags">
+          <span class="pkg-tag light">Исторический</span>
+          <span class="pkg-tag dark">1 день</span>
+        </div>
+      </div>
+      <div class="pkg-body">
+        <h3 class="pkg-title">Бухара за 1 день</h3>
+        <div class="pkg-footer">
+          <span class="pkg-price">$35</span>
+          <span class="pkg-btn">Забронировать</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Карточка 2 — Турция -->
+    <a href="./pages/tours.html" class="pkg-card">
+      <div class="pkg-visual" style="background-image: url('./img/main/Turkey.webp');">
+        <div class="pkg-tags">
+          <span class="pkg-tag light">Пляжный</span>
+          <span class="pkg-tag dark">8 дней / 7 ночей</span>
+        </div>
+      </div>
+      <div class="pkg-body">
+        <h3 class="pkg-title">Отдых в Турции 7н</h3>
+        <div class="pkg-footer">
+          <span class="pkg-price">$499</span>
+          <span class="pkg-btn">Забронировать</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Карточка 3 — Шёлковый путь -->
+    <a href="./pages/tours.html" class="pkg-card">
+      <div class="pkg-visual" style="background-image: url('./img/about/SilkRoad.webp');">
+        <div class="pkg-tags">
+          <span class="pkg-tag light">Экскурсионный</span>
+          <span class="pkg-tag dark">7 дней</span>
+        </div>
+      </div>
+      <div class="pkg-body">
+        <h3 class="pkg-title">По Шёлковому пути</h3>
+        <div class="pkg-footer">
+          <span class="pkg-price">$420</span>
+          <span class="pkg-btn">Забронировать</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+
+
+<section id="services" class="services-section">
+  <div class="container">
+
+    <h2 class="section-title">Наши <span class="italic">услуги</span></h2>
+    <p class="section-subtitle">
+      Полный спектр туристических услуг — от билетов до сопровождения в поездке
+    </p>
+
+    <div class="services-grid">
+
+      <!-- 1. Авиабилеты -->
+      <article class="service-card">
+        <div class="service-media">
+          <img src="./img/about/Booking_airline_tickets.webp" alt="Авиабилеты" loading="lazy">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/>
+            </svg>
+          </div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">Авиабилеты</h3>
+          <p class="service-desc">Подбор и оформление по лучшим тарифам</p>
+          
+        </div>
+      </article>
+
+      <!-- 2. Отели -->
+      <article class="service-card">
+        <div class="service-media">
+          <img src="./img/about/booking_hotels.webp" alt="Отели" loading="lazy">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
+              <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
+              <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
+              <path d="M10 6h4M10 10h4M10 14h4M10 18h4"/>
+            </svg>
+          </div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">Отели 3–5★</h3>
+          <p class="service-desc">Проверенные отели с гарантиями</p>
+          
+        </div>
+      </article>
+
+      <!-- 3.Экскурсии по городу -->
+<article class="service-card">
+  <div class="service-media">
+    <img src="./img/about/Tour_organization.webp" alt="Экскурсии по городу" loading="lazy">
+    <div class="service-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M3 21h18"/>
+        <path d="M5 21V7l7-4 7 4v14"/>
+        <path d="M9 21v-6h6v6"/>
+        <path d="M9 10h.01M15 10h.01"/>
+      </svg>
+    </div>
+  </div>
+  <div class="service-body">
+    <h3 class="service-title">Экскурсии по городу</h3>
+    <p class="service-desc">Пешие и автомобильные маршруты по Бухаре и Самарканду</p>
+
+  </div>
+</article>
+
+      <!-- 4. Трансферы -->
+      <article class="service-card">
+        <div class="service-media">
+          <img src="./img/about/transfer.webp" alt="Трансферы" loading="lazy">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 8c0 3.613-3.869 7.429-5.393 8.795a1 1 0 0 1-1.214 0C9.87 15.429 6 11.613 6 8a6 6 0 0 1 12 0"/>
+              <circle cx="12" cy="8" r="2"/>
+              <path d="M8.714 14h-3.71a1 1 0 0 0-.948.683l-2.004 6A1 1 0 0 0 3 22h18a1 1 0 0 0 .948-1.316l-2-6a1 1 0 0 0-.949-.684h-3.712"/>
+            </svg>
+          </div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">Трансферы</h3>
+          <p class="service-desc">Встречи в аэропорту и поездки между городами</p>
+          
+        </div>
+      </article>
+
+      <!-- 5. Гиды -->
+      <article class="service-card">
+        <div class="service-media">
+          <img src="./img/about/guide_services.webp" alt="Гиды" loading="lazy">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">Гиды</h3>
+          <p class="service-desc">Лицензированные гиды на RU / EN / UZ</p>
+
+        </div>
+      </article>
+
+      <!-- 6. Поддержка -->
+      <article class="service-card">
+        <div class="service-media">
+          <img src="./img/about/support.webp" alt="Поддержка 24/7" loading="lazy">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            </svg>
+          </div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">24/7 поддержка</h3>
+          <p class="service-desc">На связи в путешествии круглосуточно</p>
+
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section class="container">
+
+  <!-- ЗАГОЛОВОК + ФИЛЬТРЫ -->
+  <div class="reviews-head">
+    <h2 class="section-title">Отзывы</h2>
+
+    <div class="filters">
+      <button class="filter-btn active">Все</button>
+      <button class="filter-btn">Зарубежные</button>
+      <button class="filter-btn">Узбекистан</button>
+      <button class="filter-btn">Семейные</button>
+    </div>
+  </div>
+
+  <!-- СЕТКА ОТЗЫВОВ -->
+  <div class="reviews-grid">
+
+    <!-- Отзыв 1 -->
+    <div class="review-card">
+      <div class="stars">
+        <svg viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+      </div>
+      <p class="review-text">
+        "Все было идеально, от трансфера до отеля. Менеджеры UzbekPulse на связи всегда."
+      </p>
+      <div class="review-meta">
+        <div class="review-author">
+          <span class="review-name">Азиза К.</span>
+          <span class="review-city">Турция</span>
+        </div>
+        <span class="review-tag">Зарубежные</span>
+      </div>
+    </div>
+
+    <!-- Отзыв 2 -->
+    <div class="review-card">
+      <div class="stars">
+        <svg viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+      </div>
+      <p class="review-text">
+        "Исторический тур с глубоким погружением. Гид — энциклопедия."
+      </p>
+      <div class="review-meta">
+        <div class="review-author">
+          <span class="review-name">Jasur M.</span>
+          <span class="review-city">Самарканд</span>
+        </div>
+        <span class="review-tag">Узбекистан</span>
+      </div>
+    </div>
+
+    <!-- Отзыв 3 -->
+    <div class="review-card">
+      <div class="stars">
+        <svg viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+      </div>
+      <p class="review-text">
+        "Семейный тур с детьми — продумали каждую деталь, даже детское меню."
+      </p>
+      <div class="review-meta">
+        <div class="review-author">
+          <span class="review-name">Елена В.</span>
+          <span class="review-city">ОАЭ</span>
+        </div>
+        <span class="review-tag">Семейные</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="container">
+  <div class="video-block">
+
+    <!-- Фоновое видео — автовоспроизведение, без звука, зациклено -->
+    <video class="video-bg" autoplay muted loop playsinline preload="auto">
+      <source src="./video/showreel.mp4" type="video/mp4">
+    </video>
+
+    <!-- Заголовок -->
+    <div class="video-caption">
+      <h2 class="video-title">Почувствуйте<br>атмосферу</h2>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<section class="container">
+
+  <!-- ЗАГОЛОВОК + ССЫЛКА -->
+  <div class="blog-head">
+    <h2 class="section-title">Блог</h2>
+    <a href="./pages/blog.html" class="all-link">Все статьи →</a>
+  </div>
+
+  <!-- СЕТКА СТАТЕЙ -->
+  <div class="blog-grid">
+
+    <!-- 1 -->
+    <a href="https://president.uz/ru/lists/view/9535" class="blog-card">
+      <div class="blog-visual" style="background-image: url('./img/blog/Azerbaijan-president.webp');"></div>
+      <div class="blog-info">
+        <span class="blog-date">12 мая 2024</span>
+        <h3 class="blog-title">Что надеть в Бухаре летом: уважение и комфорт</h3>
+      </div>
+    </a>
+
+    <!-- 2 -->
+    <a href="https://president.uz/ru/lists/view/9097" class="blog-card">
+      <div class="blog-visual" style="background-image: url('./img/blog/Kazakhstan-president.webp');"></div>
+      <div class="blog-info">
+        <span class="blog-date">3 мая 2024</span>
+        <h3 class="blog-title">7 дней по Шёлковому пути без спешки</h3>
+      </div>
+    </a>
+
+    <!-- 3 -->
+    <a href="https://president.uz/ru/lists/view/9059" class="blog-card">
+      <div class="blog-visual" style="background-image: url('./img/blog/Tadjikistan-president.webp');"></div>
+      <div class="blog-info">
+        <span class="blog-date">21 апреля 2024</span>
+        <h3 class="blog-title">Плов в чайхане: 3 места где едят местные</h3>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+
+
+
+<section class="container">
+  <div class="faq-grid">
+
+    <!-- ЛЕВАЯ ЧАСТЬ -->
+    <div class="faq-left">
+      <h2 class="faq-title">Частые<br>вопросы</h2>
+      <p class="faq-desc">
+        Отвечаем честно. Если не нашли ответ — напишите в Telegram, отвечаем за 5 минут.
+      </p>
+    </div>
+
+    <!-- ПРАВАЯ ЧАСТЬ -->
+    <div class="faq-list">
+
+      <!-- 1 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Как забронировать тур?</span>
+          <span class="faq-plus"></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Оставьте заявку на сайте, мы подберём варианты за 30 минут и закрепим цену на 24 часа без предоплаты.
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Есть ли рассрочка?</span>
+          <span class="faq-plus"></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Да, 3/6/12 месяцев через банки-партнёры. Без скрытых комиссий и переплат.
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Что включено в стоимость?</span>
+          <span class="faq-plus"></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Перелёт, проживание, завтраки, трансферы, страховка, сопровождение. Экскурсии — по программе тура.
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Можно ли индивидуальный маршрут?</span>
+          <span class="faq-plus"></span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Конечно. 60% наших туров — кастомные. Соберём под ваши даты, бюджет и интересы.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="container">
+  <div class="cta">
+    <div class="cta-grid">
+
+      <!-- Заголовок -->
+      <h2 class="cta-title">
+        Готовы<br>
+        открыть<br>
+        <span class="italic">мир?</span>
+      </h2>
+
+      <!-- Форма справа -->
+      <div class="cta-right">
+        <p class="cta-desc">
+          Оставьте номер — подберём 3 варианта за 30 минут. Без спама, только туры.
+        </p>
+
+        <form class="cta-form" onsubmit="event.preventDefault();">
+          <input
+            type="tel"
+            class="cta-input"
+            placeholder="+998 90 000 00 00"
+            required
+          >
+          <button type="submit" class="cta-btn">Оставить заявку</button>
+        </form>
+
+        <p class="cta-note">
+          Нажимая, вы соглашаетесь с обработкой данных • Bukhara, Uzbekistan
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <!-- КОЛОНКА 1 — ЛОГОТИП -->
+      <div>
+        <a href="#" class="footer-logo">
+          <span>Uzbek</span><span class="accent">Pulse</span>
+        </a>
+        <p class="footer-desc">
+          Премиальные путешествия из Бухары. EST 2024. Лицензия № 123. Честно, с заботой.
+        </p>
+
+        <!-- Социальные иконки -->
+        <div class="socials">
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/uzbekpulse?igsh=MTZmMTlyemE5M21kcw==" class="social-icon instagram" aria-label="Instagram" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        
+          <!-- Telegram -->
+          <a href="https://t.me/UzbekPulse" class="social-icon telegram" aria-label="Telegram" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          </a>
+        
+          <!-- YouTube -->
+          <a href="https://www.youtube.com/@UzbekPulse2026" class="social-icon youtube" aria-label="YouTube" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+        
+          <!-- Facebook -->
+          <a href="#" class="social-icon facebook" aria-label="Facebook" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        
+          <!-- WhatsApp -->
+          <a href="https://whatsapp.com/channel/0029VbDC3mLKGGGPmxRoi016" class="social-icon whatsapp" aria-label="WhatsApp" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </a>
+        
+          <!-- X (Twitter) -->
+          <a href="#" class="social-icon x-twitter" aria-label="X" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        
+          <!-- Max -->
+          <a href="#" class="social-icon max" aria-label="Max" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 5.94 2 10.8c0 2.485 1.094 4.727 2.859 6.328V22l3.734-2.05a11.31 11.31 0 003.407.525c5.523 0 10-3.94 10-8.8S17.523 2 12 2zm-4.5 9.6a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7zm4.5 0a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7zm4.5 0a1.35 1.35 0 110-2.7 1.35 1.35 0 010 2.7z"/></svg>
+          </a>
+        
+        </div>
+      </div>
+
+      <!-- КОЛОНКА 2 — ВЫЕЗД -->
+      <div class="footer-col">
+        <h4>Выезд</h4>
+        <ul>
+          <li><a href="#">Все зарубежные туры</a></li>
+          <li><a href="#">Пляжный отдых</a></li>
+          <li><a href="#">Семейные туры</a></li>
+          <li><a href="#">Экскурсионные</a></li>
+          <li><a href="#">Страны</a></li>
+          <li><a href="#">Индивидуальный подбор</a></li>
+        </ul>
+      </div>
+
+      <!-- КОЛОНКА 3 — УЗБЕКИСТАН -->
+      <div class="footer-col">
+        <h4>Узбекистан</h4>
+        <ul>
+          <li><a href="#">Все туры по Узбекистану</a></li>
+          <li><a href="#">Бухара</a></li>
+          <li><a href="#">Самарканд</a></li>
+          <li><a href="#">Хива</a></li>
+          <li><a href="#">Ташкент</a></li>
+          <li><a href="#">Шелковый путь</a></li>
+          <li><a href="#">Исторические</a></li>
+          <li><a href="#">Индивидуальные</a></li>
+          <li><a href="#">Однодневные</a></li>
+        </ul>
+      </div>
+
+      <!-- КОЛОНКА 4 — КОНТАКТЫ -->
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <div class="contacts">
+          <div>Бухара, ул. Ляби-Хауз 12</div>
+          <div><a href="tel:+998900000000">+998 90 000 00 00</a></div>
+          <div><a href="mailto:hello@uzbekpulse.uz">hello@uzbekpulse.uz</a></div>
+          <div class="schedule">
+            Пн-Сб 09:00-19:00<br>
+            Вс — по записи
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- НИЖНЯЯ ПОЛОСА -->
+    <div class="footer-bottom">
+      <span>© 2026 UzbekPulse Travel. Все права защищены.</span>
+      <div class="footer-links">
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Договор оферты</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+<script src="./main.js"></script>
+</body>
+</html>
