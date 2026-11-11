@@ -147,4 +147,4 @@ document.addEventListener('click', (e) => {
     if (e.key === 'Escape' && lightbox.classList.contains('active')) {
       closeLightbox();
     }
-  });
+  })
